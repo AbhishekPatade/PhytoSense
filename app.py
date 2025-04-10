@@ -888,6 +888,8 @@ def show_crop_test_page():
                     st.session_state.water_content = results["water_content"]
                     st.session_state.diseases = results["diseases"]
                     st.session_state.pests = results["pests"]
+                    st.session_state.crop_details = results.get("crop_details", {})
+                    st.session_state.deficiencies = results.get("deficiencies", {})
                     st.session_state.preventive_measures = preventive_measures
                     st.session_state.fertilizer_recommendations = fertilizer_recommendations
                     st.session_state.analysis_complete = True
@@ -1036,6 +1038,54 @@ def show_crop_test_page():
                 st.markdown("<p><span class='status-healthy'>No pests detected.</span> The plant appears pest-free.</p>", unsafe_allow_html=True)
                 st.markdown("</div>", unsafe_allow_html=True)
         
+        # Crop Information (if available)
+        if hasattr(st.session_state, 'crop_details') and st.session_state.crop_details:
+            st.markdown("---")
+            st.markdown("<h2 class='fadeIn'>Detailed Crop Information</h2>", unsafe_allow_html=True)
+            
+            crop_details = st.session_state.crop_details
+            
+            # Create expandable sections for detailed information
+            with st.expander("Crop Details", expanded=True):
+                # Show varieties
+                if "varieties" in crop_details and crop_details["varieties"]:
+                    st.markdown("### Common Varieties")
+                    varieties_html = '<div class="variety-container">'
+                    for variety in crop_details["varieties"]:
+                        varieties_html += f'<span class="variety-pill">{variety}</span>'
+                    varieties_html += '</div>'
+                    st.markdown(varieties_html, unsafe_allow_html=True)
+                
+                # Show growing information
+                if "best_season" in crop_details and crop_details["best_season"]:
+                    st.markdown(f"### Best Growing Season")
+                    st.markdown(f"{crop_details['best_season']}")
+                
+                if "best_soil" in crop_details and crop_details["best_soil"]:
+                    st.markdown(f"### Ideal Soil Type")
+                    st.markdown(f"{crop_details['best_soil']}")
+                
+                if "time_period" in crop_details and crop_details["time_period"]:
+                    st.markdown(f"### Growth Period")
+                    st.markdown(f"{crop_details['time_period']}")
+            
+            # Show nutrient deficiencies if available
+            if hasattr(st.session_state, 'deficiencies') and st.session_state.deficiencies:
+                with st.expander("Common Nutrient Deficiencies", expanded=True):
+                    deficiencies = st.session_state.deficiencies
+                    for deficiency_name, deficiency_info in deficiencies.items():
+                        st.markdown(f"<div class='deficiency-card'>", unsafe_allow_html=True)
+                        st.markdown(f"<h3>{deficiency_name} Deficiency</h3>", unsafe_allow_html=True)
+                        
+                        if "symptoms" in deficiency_info:
+                            st.markdown(f"<p><strong>Symptoms:</strong> {deficiency_info['symptoms']}</p>", unsafe_allow_html=True)
+                        
+                        if "treatment" in deficiency_info:
+                            st.markdown(f"<p><strong>Treatment:</strong> {deficiency_info['treatment']}</p>", unsafe_allow_html=True)
+                        
+                        st.markdown("</div>", unsafe_allow_html=True)
+                        st.markdown("<br>", unsafe_allow_html=True)
+        
         # Recommendations section
         st.markdown("---")
         st.markdown("## Recommendations")
@@ -1056,7 +1106,23 @@ def show_crop_test_page():
             st.markdown("### Fertilizer Recommendations")
             if st.session_state.fertilizer_recommendations:
                 for recommendation in st.session_state.fertilizer_recommendations:
-                    st.markdown(f"- {recommendation}")
+                    if isinstance(recommendation, dict):
+                        # Format dictionary recommendations
+                        st.markdown(f"<div class='fertilizer-rec'>", unsafe_allow_html=True)
+                        st.markdown(f"<h4>{recommendation.get('name', 'Fertilizer')}</h4>", unsafe_allow_html=True)
+                        if 'npk' in recommendation:
+                            st.markdown(f"<p><strong>NPK Ratio:</strong> {recommendation['npk']}</p>", unsafe_allow_html=True)
+                        if 'description' in recommendation:
+                            st.markdown(f"<p>{recommendation['description']}</p>", unsafe_allow_html=True)
+                        if 'application' in recommendation:
+                            st.markdown(f"<p><strong>Application:</strong> {recommendation['application']}</p>", unsafe_allow_html=True)
+                        if 'conditions' in recommendation:
+                            st.markdown(f"<p><strong>Best For:</strong> {recommendation['conditions']}</p>", unsafe_allow_html=True)
+                        st.markdown("</div>", unsafe_allow_html=True)
+                        st.markdown("<br>", unsafe_allow_html=True)
+                    else:
+                        # Handle string recommendations
+                        st.markdown(f"- {recommendation}")
             else:
                 st.info("No specific fertilizer recommendations available.")
         

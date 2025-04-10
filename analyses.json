@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-10T17:20:18.066093",
+    "analysis_type": "plant",
+    "image_path": "uploads/33a25530-7268-45e6-be42-b6a54fedef8b.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Tomato",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 25,
+        "status": "Critical"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Early Blight",
+            "confidence": 77,
+            "scientific_name": "Alternaria solani",
+            "description": "Dark brown lesions with concentric rings (target-like) on lower leaves spreading upward",
+            "treatment": "Apply appropriate Chlorothalonil, Azoxystrobin or organic options: Copper hydroxide, Neem oil"
+          }
+        ]
+      },
+      "pests": {
+        "detected": false,
+        "pests": []
+      },
+      "preventive_measures": [
+        "Remove and destroy infected plant parts immediately",
+        "Apply appropriate fungicide/bactericide for the specific pathogen",
+        "Improve growing conditions to reduce disease pressure",
+        "Use floating row covers until flowering to prevent early pest damage",
+        "Install reflective mulch to repel aphids and whiteflies (50% reduction)",
+        "Apply calcium nitrate foliar spray weekly to prevent blossom end rot",
+        "Maintain optimal plant spacing for good air circulation (prevents 85% of fungal issues)",
+        "Use drip irrigation instead of overhead (reduces disease spread by 40%)",
+        "Maintain soil pH between 6.0-6.8 for optimal nutrient availability"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        },
+        {
+          "type": "vegetative",
+          "name": "Calcium Nitrate",
+          "npk": "15-0-0 + 19% Ca",
+          "description": "Provides readily available nitrogen and prevents blossom end rot by supplying calcium during fruit development.",
+          "application": "Apply 1-2 tbsp/gal as foliar spray or 1 lb/100 sq ft as soil application every 2 weeks during fruiting.",
+          "conditions": "For fruiting stage, especially when blossom end rot is a concern",
+          "scientific_backing": "Reduces blossom end rot incidence by up to 80% in field trials"
+        },
+        {
+          "type": "flowering",
+          "name": "Phosphorus-Potassium Booster",
+          "npk": "3-15-15",
+          "description": "Lower nitrogen with higher phosphorus and potassium to encourage flowering and fruit development instead of excessive vegetative growth.",
+          "application": "Apply 1 lb/100 sq ft at first flower cluster formation and repeat every 3-4 weeks.",
+          "conditions": "When plants are transitioning from vegetative to flowering stage",
+          "scientific_backing": "Improves fruit set by 25-30% compared to high-nitrogen fertilizers"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Tomato",
+        "plant_age": "Mature",
+        "symptoms": null,
+        "planting_date": "2024-12-13",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  }
+]
