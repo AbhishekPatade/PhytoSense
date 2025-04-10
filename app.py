@@ -998,6 +998,24 @@ def show_crop_test_page():
                     if "treatment" in disease:
                         st.markdown(f"<p><strong>Treatment:</strong> {disease['treatment']}</p>", unsafe_allow_html=True)
                     
+                    # Display detailed database information if available
+                    if "detailed_info" in disease:
+                        st.markdown("<div class='detailed-info'>", unsafe_allow_html=True)
+                        
+                        if disease["detailed_info"]["symptoms"]:
+                            st.markdown(f"<p><strong>Symptoms:</strong> {disease['detailed_info']['symptoms']}</p>", unsafe_allow_html=True)
+                        
+                        if disease["detailed_info"]["causes"]:
+                            st.markdown(f"<p><strong>Causes:</strong> {disease['detailed_info']['causes']}</p>", unsafe_allow_html=True)
+                        
+                        if disease["detailed_info"]["treatment"]:
+                            st.markdown(f"<p><strong>Recommended Treatment:</strong> {disease['detailed_info']['treatment']}</p>", unsafe_allow_html=True)
+                            
+                        if disease["detailed_info"]["prevention"]:
+                            st.markdown(f"<p><strong>Prevention:</strong> {disease['detailed_info']['prevention']}</p>", unsafe_allow_html=True)
+                        
+                        st.markdown("</div>", unsafe_allow_html=True)
+                    
                     st.markdown("</div></div>", unsafe_allow_html=True)
             else:
                 st.markdown("<div class='analysis-result'>", unsafe_allow_html=True)
@@ -1031,6 +1049,21 @@ def show_crop_test_page():
                     
                     if "treatment" in pest:
                         st.markdown(f"<p><strong>Treatment:</strong> {pest['treatment']}</p>", unsafe_allow_html=True)
+                        
+                    # Display detailed database information if available
+                    if "detailed_info" in pest:
+                        st.markdown("<div class='detailed-info'>", unsafe_allow_html=True)
+                        
+                        if pest["detailed_info"]["symptoms"]:
+                            st.markdown(f"<p><strong>Symptoms:</strong> {pest['detailed_info']['symptoms']}</p>", unsafe_allow_html=True)
+                        
+                        if pest["detailed_info"]["description"]:
+                            st.markdown(f"<p><strong>About:</strong> {pest['detailed_info']['description']}</p>", unsafe_allow_html=True)
+                        
+                        if pest["detailed_info"]["treatment"]:
+                            st.markdown(f"<p><strong>Recommended Treatment:</strong> {pest['detailed_info']['treatment']}</p>", unsafe_allow_html=True)
+                        
+                        st.markdown("</div>", unsafe_allow_html=True)
                     
                     st.markdown("</div></div>", unsafe_allow_html=True)
             else:
