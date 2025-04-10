@@ -911,12 +911,12 @@ def show_crop_test_page():
     # Display analysis results
     if st.session_state.analysis_complete and st.session_state.analysis_results:
         st.markdown("---")
-        st.markdown("<h2 class='fadeIn'>Analysis Results</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 class='fadeIn'>Plant Analysis Results</h2>", unsafe_allow_html=True)
         
         results = st.session_state.analysis_results
         
-        # Create columns for results
-        col1, col2 = st.columns([2, 3])
+        # Side-by-side layout with image and structured report
+        col1, col2 = st.columns([1, 2])
         
         with col1:
             # Display the processed image
