@@ -970,8 +970,43 @@ def show_crop_test_page():
                     st.info("No region-specific recommendations available for this crop.")
         
         with col2:
-            # Disease detection
-            st.markdown("### Disease Detection")
+            # Create a structured report following the requested format
+            st.markdown("<div class='structured-report'>", unsafe_allow_html=True)
+            
+            # Section 1: General Information of Plant & Water Content
+            st.markdown("<h3 class='section-general'>1. General Information</h3>", unsafe_allow_html=True)
+            st.markdown("<div class='analysis-section'>", unsafe_allow_html=True)
+            
+            # Basic plant information
+            st.markdown("<div class='analysis-result'>", unsafe_allow_html=True)
+            st.markdown(f"<p><strong>Identified Plant:</strong> {plant_info['name']}</p>", unsafe_allow_html=True)
+            if "scientific_name" in plant_info and plant_info["scientific_name"]:
+                st.markdown(f"<p><strong>Scientific Name:</strong> <em>{plant_info['scientific_name']}</em></p>", unsafe_allow_html=True)
+            
+            # Water content analysis
+            water_content = results["water_content"]
+            status = water_content["status"]
+            
+            # Determine water status class for styling
+            if status == "Low":
+                water_status_class = "status-warning"
+            elif status == "Critical":
+                water_status_class = "status-danger"
+            elif status == "Optimal":
+                water_status_class = "status-healthy"
+            else:
+                water_status_class = ""
+            
+            st.markdown(f"<p><strong>Water Content Status:</strong> <span class='{water_status_class}'>{status}</span></p>", unsafe_allow_html=True)
+            st.markdown(f"<p><strong>Estimated Water Content:</strong> {water_content['percentage']}%</p>", unsafe_allow_html=True)
+            st.markdown("</div>", unsafe_allow_html=True)  # Close analysis-result
+            
+            st.markdown("</div>", unsafe_allow_html=True)  # Close analysis-section
+            
+            # Section 2: Disease Detection with preventive measures
+            st.markdown("<h3 class='section-disease'>2. Disease Detection</h3>", unsafe_allow_html=True)
+            st.markdown("<div class='analysis-section'>", unsafe_allow_html=True)
+            
             diseases = results["diseases"]
             
             if diseases["detected"]:
@@ -1020,10 +1055,12 @@ def show_crop_test_page():
             else:
                 st.markdown("<div class='analysis-result'>", unsafe_allow_html=True)
                 st.markdown("<p><span class='status-healthy'>No diseases detected.</span> The plant appears healthy.</p>", unsafe_allow_html=True)
-                st.markdown("</div>", unsafe_allow_html=True)
+                st.markdown("</div>", unsafe_allow_html=True)  # Close the disease analysis section
             
-            # Pest detection
-            st.markdown("### Pest Detection")
+            # Section 3: Pest/Insect Detection with treatments
+            st.markdown("<h3 class='section-pest'>3. Pest/Insect Detection</h3>", unsafe_allow_html=True)
+            st.markdown("<div class='analysis-section'>", unsafe_allow_html=True)
+            
             pests = results["pests"]
             
             if pests["detected"]:
@@ -1070,6 +1107,91 @@ def show_crop_test_page():
                 st.markdown("<div class='analysis-result'>", unsafe_allow_html=True)
                 st.markdown("<p><span class='status-healthy'>No pests detected.</span> The plant appears pest-free.</p>", unsafe_allow_html=True)
                 st.markdown("</div>", unsafe_allow_html=True)
+            
+            st.markdown("</div>", unsafe_allow_html=True)  # Close pest section
+            
+            # Section 4: Nutrient Deficiency with cures
+            st.markdown("<h3 class='section-deficiency'>4. Nutrient Deficiency</h3>", unsafe_allow_html=True)
+            st.markdown("<div class='analysis-section'>", unsafe_allow_html=True)
+            
+            if hasattr(st.session_state, 'deficiencies') and st.session_state.deficiencies:
+                deficiencies = st.session_state.deficiencies
+                for deficiency_name, deficiency_info in deficiencies.items():
+                    st.markdown("<div class='analysis-result'>", unsafe_allow_html=True)
+                    st.markdown(f"<div class='result-header'><div class='result-icon'>🧪</div><h4 class='result-title'>{deficiency_name} Deficiency</h4></div>", unsafe_allow_html=True)
+                    st.markdown("<div class='result-content'>", unsafe_allow_html=True)
+                    
+                    if "symptoms" in deficiency_info:
+                        st.markdown(f"<p><strong>Symptoms:</strong> {deficiency_info['symptoms']}</p>", unsafe_allow_html=True)
+                    
+                    if "treatment" in deficiency_info:
+                        st.markdown(f"<p><strong>Cure/Treatment:</strong> {deficiency_info['treatment']}</p>", unsafe_allow_html=True)
+                    
+                    st.markdown("</div></div>", unsafe_allow_html=True)
+            else:
+                st.markdown("<div class='analysis-result'>", unsafe_allow_html=True)
+                st.markdown("<p>No specific nutrient deficiencies identified based on the image analysis.</p>", unsafe_allow_html=True)
+                st.markdown("</div>", unsafe_allow_html=True)
+            
+            st.markdown("</div>", unsafe_allow_html=True)  # Close nutrient deficiency section
+            
+            # Section 5: Overall Assessment
+            st.markdown("<h3 class='section-assessment'>5. Overall Assessment</h3>", unsafe_allow_html=True)
+            st.markdown("<div class='analysis-section'>", unsafe_allow_html=True)
+            
+            # Generate an overall assessment based on all findings
+            has_disease = diseases["detected"]
+            has_pests = pests["detected"]
+            water_status = water_content["status"]
+            
+            overall_status = "Healthy"
+            overall_class = "status-healthy"
+            overall_recommendations = []
+            
+            if has_disease or has_pests or water_status in ["Low", "Critical"]:
+                if has_disease and has_pests:
+                    overall_status = "Critical Attention Needed"
+                    overall_class = "status-danger"
+                    overall_recommendations.append("The plant is showing signs of both disease and pest infestation which require immediate attention.")
+                elif has_disease:
+                    overall_status = "Attention Required"
+                    overall_class = "status-warning"
+                    overall_recommendations.append("The plant is showing disease symptoms that need to be addressed promptly.")
+                elif has_pests:
+                    overall_status = "Attention Required"
+                    overall_class = "status-warning"
+                    overall_recommendations.append("The plant has pest infestations that need to be controlled.")
+                
+                if water_status == "Low":
+                    overall_recommendations.append("The plant needs more water. Increase watering frequency.")
+                elif water_status == "Critical":
+                    overall_status = "Critical Attention Needed"
+                    overall_class = "status-danger"
+                    overall_recommendations.append("The plant is severely dehydrated and needs immediate watering.")
+            else:
+                overall_recommendations.append("The plant appears to be in good health with no major issues detected.")
+            
+            st.markdown("<div class='assessment-box'>", unsafe_allow_html=True)
+            st.markdown(f"<p><strong>Overall Plant Status:</strong> <span class='{overall_class}'>{overall_status}</span></p>", unsafe_allow_html=True)
+            
+            st.markdown("<p><strong>Assessment Summary:</strong></p>", unsafe_allow_html=True)
+            for recommendation in overall_recommendations:
+                st.markdown(f"<p>• {recommendation}</p>", unsafe_allow_html=True)
+            
+            # Add crop-specific care advice if available
+            if hasattr(st.session_state, 'crop_details') and st.session_state.crop_details:
+                crop_details = st.session_state.crop_details
+                if "best_season" in crop_details and crop_details["best_season"]:
+                    st.markdown(f"<p><strong>Optimal Growing Season:</strong> {crop_details['best_season']}</p>", unsafe_allow_html=True)
+                
+                if "best_soil" in crop_details and crop_details["best_soil"]:
+                    st.markdown(f"<p><strong>Ideal Soil Conditions:</strong> {crop_details['best_soil']}</p>", unsafe_allow_html=True)
+            
+            st.markdown("</div>", unsafe_allow_html=True)  # Close assessment box
+            
+            st.markdown("</div>", unsafe_allow_html=True)  # Close analysis section
+            
+            st.markdown("</div>", unsafe_allow_html=True)  # Close structured report
         
         # Crop Information (if available)
         if hasattr(st.session_state, 'crop_details') and st.session_state.crop_details:

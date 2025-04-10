@@ -317,6 +317,9 @@ footer {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     color: #2E7D32;
+    /* Add section numbering style */
+    display: flex;
+    align-items: center;
 }
 
 .structured-report h3:first-child {
@@ -326,6 +329,49 @@ footer {
 .analysis-section {
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #E0E0E0;
+}
+
+.analysis-section:last-child {
+    border-bottom: none;
+}
+
+/* Section styling */
+.section-general {
+    border-left: 4px solid #4CAF50;
+    padding-left: 1rem;
+}
+
+.section-disease {
+    border-left: 4px solid #F44336;
+    padding-left: 1rem;
+}
+
+.section-pest {
+    border-left: 4px solid #FF9800;
+    padding-left: 1rem;
+}
+
+.section-deficiency {
+    border-left: 4px solid #9C27B0;
+    padding-left: 1rem;
+}
+
+.section-assessment {
+    border-left: 4px solid #2196F3;
+    padding-left: 1rem;
+    background-color: #E8F5E9;
+    border-radius: 0 0 8px 8px;
+    padding: 1rem;
+}
+
+/* Overall assessment box */
+.assessment-box {
+    background-color: #E8F5E9;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-left: 4px solid #4CAF50;
 }
 
 /* Animations */
