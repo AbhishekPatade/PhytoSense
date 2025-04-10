@@ -80,5 +80,190 @@
         "previous_treatments": null
       }
     }
+  },
+  {
+    "id": 2,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-10T17:35:04.641539",
+    "analysis_type": "plant",
+    "image_path": "uploads/5ffc7456-e0df-44fb-aa21-dc7da3e4e1a2.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Tomato",
+        "scientific_name": "Solanum lycopersicum",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 25,
+        "status": "Critical"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Early Blight",
+            "confidence": 77,
+            "scientific_name": "Alternaria solani",
+            "description": "Dark brown lesions with concentric rings (target-like) on lower leaves spreading upward",
+            "treatment": "Apply appropriate Chlorothalonil, Azoxystrobin or organic options: Copper hydroxide, Neem oil",
+            "detailed_info": {
+              "symptoms": "Dark brown spots with concentric rings on older leaves ('target board' appearance). Yellowing of leaves leading to defoliation",
+              "causes": "Fungus (Alternaria solani) persists in soil and plant debris. Spread facilitated by splashing water and wind",
+              "treatment": "Spray Chlorothalonil or Mancozeb @ 2\u20132.5 g/L. Use Azoxystrobin as systemic option",
+              "prevention": "Practice crop rotation, remove plant debris after harvest, ensure balanced fertilization (especially nitrogen and potassium)"
+            }
+          }
+        ]
+      },
+      "pests": {
+        "detected": false,
+        "pests": []
+      },
+      "preventive_measures": [
+        "Remove and destroy infected plant parts immediately",
+        "Apply appropriate fungicide/bactericide for the specific pathogen",
+        "Improve growing conditions to reduce disease pressure",
+        "Prune to 2-3 main stems for optimal airflow (reduces disease pressure 30%)",
+        "Apply calcium nitrate foliar spray weekly to prevent blossom end rot",
+        "Stake plants at 45\u00b0 angle for maximum sun exposure and air flow",
+        "Maintain soil pH between 6.0-6.8 for optimal nutrient availability",
+        "Water at the base in early morning (reduces leaf wetness duration by 60%)",
+        "Introduce beneficial insects 2 weeks before expected pest outbreaks"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        },
+        {
+          "type": "vegetative",
+          "name": "Calcium Nitrate",
+          "npk": "15-0-0 + 19% Ca",
+          "description": "Provides readily available nitrogen and prevents blossom end rot by supplying calcium during fruit development.",
+          "application": "Apply 1-2 tbsp/gal as foliar spray or 1 lb/100 sq ft as soil application every 2 weeks during fruiting.",
+          "conditions": "For fruiting stage, especially when blossom end rot is a concern",
+          "scientific_backing": "Reduces blossom end rot incidence by up to 80% in field trials"
+        },
+        {
+          "type": "flowering",
+          "name": "Phosphorus-Potassium Booster",
+          "npk": "3-15-15",
+          "description": "Lower nitrogen with higher phosphorus and potassium to encourage flowering and fruit development instead of excessive vegetative growth.",
+          "application": "Apply 1 lb/100 sq ft at first flower cluster formation and repeat every 3-4 weeks.",
+          "conditions": "When plants are transitioning from vegetative to flowering stage",
+          "scientific_backing": "Improves fruit set by 25-30% compared to high-nitrogen fertilizers"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Tomato",
+        "plant_age": "Mature",
+        "symptoms": null,
+        "planting_date": "2024-12-14",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 3,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-10T17:58:34.921537",
+    "analysis_type": "plant",
+    "image_path": "uploads/9a513ae2-ec06-4a6e-90c0-5f0817b7b48e.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Onion",
+        "scientific_name": "Allium cepa",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 61,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Purple Blotch",
+            "confidence": 84,
+            "scientific_name": "Alternaria porri",
+            "description": "Small, water-soaked lesions that quickly develop purple centers and yellow margins",
+            "treatment": "Apply appropriate Mancozeb, Chlorothalonil or organic options: Garlic extract spray, Neem oil",
+            "detailed_info": {
+              "symptoms": "Small water-soaked lesions on leaves that turn purplish with yellow halos",
+              "causes": "Warm and humid conditions, caused by fungus Alternaria porri",
+              "treatment": "Spray Mancozeb (0.25%) or Chlorothalonil (0.2%) every 10-15 days",
+              "prevention": "Ensure good field sanitation and crop rotation"
+            }
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Aphids",
+            "scientific_name": "Various species (e.g., Aphis gossypii, Myzus persicae)",
+            "infestation_level": "High",
+            "description": "Small (1-3mm), soft-bodied insects, often clustered on new growth, various colors. Stunted growth, leaf curling, transmission of plant viruses, honeydew secretion",
+            "treatment": "Chemical control: Imidacloprid, Acetamiprid. Organic options: Neem oil, Insecticidal soap"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Remove and destroy infected plant debris after harvest",
+        "Apply fungicides containing mancozeb or chlorothalonil at 7-10 day intervals",
+        "Use UV-reflective mulch which repels aphids by 60%",
+        "Apply flonicamid when populations exceed 50 aphids/leaf",
+        "Practice shallow cultivation to avoid damaging shallow root systems",
+        "Apply sulfur-containing fertilizers to enhance pungency and disease resistance",
+        "Plant disease-free sets or transplants from certified sources",
+        "Use drip irrigation instead of overhead (reduces disease spread by 40%)",
+        "Record pest/disease occurrences to predict and prevent future outbreaks",
+        "Maintain optimal plant spacing for good air circulation (prevents 85% of fungal issues)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        },
+        {
+          "type": "vegetative",
+          "name": "Nitrogen-Sulfur Blend",
+          "npk": "21-0-0-24S",
+          "description": "Provides nitrogen for leaf growth and sulfur which is essential for onion flavor development and disease resistance.",
+          "application": "Side-dress 1 lb/100 ft row at 3-leaf stage and again 3-4 weeks later.",
+          "conditions": "Early to mid-growth stage onions",
+          "scientific_backing": "Sulfur application increases pyruvic acid content by 30%, enhancing flavor"
+        },
+        {
+          "type": "bulbing",
+          "name": "Low-N, High-K Blend",
+          "npk": "5-10-20",
+          "description": "Lower nitrogen with higher potassium for bulb development phase. Reducing nitrogen prevents excess leaf growth that can delay bulbing.",
+          "application": "Apply 1 lb/100 ft row when bulbs begin to form, typically 6-8 weeks after planting.",
+          "conditions": "During bulb formation stage",
+          "scientific_backing": "Potassium application at bulbing improves storage quality by 25-40%"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Onion",
+        "plant_age": "Mature",
+        "symptoms": null,
+        "planting_date": "2024-12-14",
+        "irrigation_method": "Flood",
+        "previous_treatments": null
+      }
+    }
   }
 ]

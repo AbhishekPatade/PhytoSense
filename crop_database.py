@@ -228,46 +228,56 @@ CROP_DATABASE = {
         "diseases": {
             "Anthracnose": {
                 "symptoms": "Circular, sunken lesions on leaves, stems, and fruits. Fruits may develop cracks and rot",
-                "causes": "Caused by the fungus Colletotrichum orbiculare. Thrives in warm, humid conditions with frequent rainfall",
-                "treatment": "Apply fungicides like chlorothalonil, mancozeb, or azoxystrobin at regular intervals. Apply fertilizers rich in potassium and phosphorus",
-                "prevention": "Use disease-resistant varieties, practice crop rotation, remove infected plant debris, avoid overhead irrigation, ensure proper spacing"
+                "causes": "Caused by the fungus Colletotrichum orbiculare, thrives in warm, humid conditions",
+                "treatment": "Apply fungicides like chlorothalonil, mancozeb, or azoxystrobin at regular intervals during the growing season",
+                "prevention": "Use disease-resistant varieties, practice crop rotation, avoid overhead irrigation"
             },
             "Fusarium Wilt": {
                 "symptoms": "Yellowing and wilting of leaves, vascular discoloration, and eventual plant death",
-                "causes": "Caused by the fungus Fusarium oxysporum f. sp. niveum. Thrives in warm, sandy soils with low pH",
-                "treatment": "Apply fertilizers rich in potassium and phosphorus. Use fungicides like prothioconazole through drip irrigation",
-                "prevention": "Crop rotation for 5-6 years, plant resistant varieties, maintain soil pH above 6.5, remove infected plants"
+                "causes": "Caused by the fungus Fusarium oxysporum f. sp. niveum, thrives in warm, sandy soils with low pH",
+                "treatment": "Apply fungicides like prothioconazole through drip irrigation to reduce disease severity",
+                "prevention": "Rotate with non-cucurbit crops for 5-6 years, plant resistant varieties, maintain soil pH above 6.5"
+            },
+            "Powdery Mildew": {
+                "symptoms": "White powdery spots on leaves and stems, leads to leaf distortion and reduced photosynthesis",
+                "causes": "Caused by the fungus Podosphaera xanthii, thrives in warm, dry conditions with high humidity",
+                "treatment": "Use sulfur-based fungicides or systemic fungicides like azoxystrobin or myclobutanil",
+                "prevention": "Plant resistant varieties, ensure proper spacing for airflow, avoid overhead irrigation"
             }
         },
         "pests": {
             "Aphids": {
-                "symptoms": "Curled leaves, stunted growth, honeydew secretion",
-                "description": "Small, soft-bodied insects that feed on plant sap",
-                "treatment": "Apply insecticidal soap, neem oil, or introduce natural predators like ladybugs"
+                "symptoms": "Sticky honeydew secretions on leaves, curled or distorted leaves",
+                "description": "Small soft-bodied insects that suck plant sap",
+                "treatment": "Apply neem-based organic fertilizers, systemic insecticides like imidacloprid, introduce beneficial insects"
             },
-            "Cucumber Beetles": {
-                "symptoms": "Holes in leaves, damaged flowers, scarring on fruit surface",
-                "description": "Small beetles with yellow and black stripes or spots",
-                "treatment": "Use row covers, apply botanical insecticides, practice crop rotation"
+            "Spider Mites": {
+                "symptoms": "Fine webbing on leaves, yellow speckling or bronzing of leaves, leaf drop in severe cases",
+                "description": "Tiny spider-like pests that suck plant juices, often found on leaf undersides",
+                "treatment": "Apply miticides, horticultural oils, or insecticidal soaps, maintain adequate humidity"
             }
         },
         "deficiencies": {
             "Nitrogen": {
                 "symptoms": "Yellowing of older leaves, stunted growth, and reduced foliage",
-                "treatment": "Apply nitrogen-rich fertilizers like urea or ammonium nitrate. Organic options include composted manure or fish emulsion"
+                "treatment": "Apply nitrogen-rich fertilizers like urea or ammonium nitrate, or organic options like composted manure"
             },
             "Potassium": {
                 "symptoms": "Browning or scorching of leaf edges and tips, weak stems, and poor fruit quality",
-                "treatment": "Use potassium sulfate or muriate of potash. Organic alternatives include wood ash or banana peels"
+                "treatment": "Use potassium sulfate or muriate of potash, or organic alternatives like wood ash or banana peels"
+            },
+            "Calcium": {
+                "symptoms": "Distorted young leaves, yellow or brown spots, and cracking of fruits",
+                "treatment": "Add lime, gypsum, or crushed eggshells to the soil, use calcium-rich compost"
             }
         }
     },
     "Pomegranate": {
         "info": {
             "scientific_name": "Punica granatum",
-            "best_season": "Semi-arid and tropical climates. Monsoon Planting: June to August. Spring Planting: February to March in regions with irrigation",
-            "best_soil": "Variety of soils from sandy loam to black soil. Slightly acidic to neutral soil pH of 6.0–7.5 is ideal",
-            "time_period": "Trees typically start bearing fruits 2–3 years after planting. Fruits are harvested 5–7 months after flowering",
+            "best_season": "Thrives in semi-arid and tropical climates. Best planted during monsoon (June to August) or spring (February to March) with irrigation",
+            "best_soil": "Grows well in sandy loam to black soil with pH 6.0-7.5. Well-drained soil is essential to avoid waterlogging",
+            "time_period": "Starts bearing fruits 2-3 years after planting. Fruits are harvested 5-7 months after flowering",
             "estimated_cost": "₹80,000–₹1,60,000 per acre",
             "varieties": [
                 "Bhagwa", "Ganesh", "Arakta", "Mridula", "Kandhari", "Wonderful"
@@ -275,230 +285,174 @@ CROP_DATABASE = {
         },
         "diseases": {
             "Cercospora Fruit Spot": {
-                "symptoms": "Yellowish spots with halos on leaves and fruits, which turn black and corky. Severe infections cause defoliation and fruit cracking",
-                "causes": "Caused by the fungus Cercospora punicae. Thrives in warm, humid conditions with frequent rainfall",
-                "treatment": "Apply Mancozeb (0.25%) or Propiconazole (0.1%) at regular intervals. Apply fertilizers rich in potassium and phosphorus",
-                "prevention": "Use certified pathogen-free planting material, prune infected parts, ensure proper spacing, avoid overhead irrigation"
+                "symptoms": "Yellowish spots with halos on leaves and fruits, which turn black and corky. Severe infections cause defoliation",
+                "causes": "Caused by the fungus Cercospora punicae, thrives in warm, humid conditions",
+                "treatment": "Apply fungicides like Hexaconazole (0.1%) or Carbendazim (0.1%), use Mancozeb (0.25%) or Propiconazole (0.1%)",
+                "prevention": "Use pathogen-free planting material, prune infected parts, ensure proper spacing and airflow"
             },
             "Anthracnose": {
-                "symptoms": "Leaf blight, fruit spots, and dieback. Fruits develop brownish-black patches that lead to rot",
-                "causes": "Caused by the fungus Colletotrichum gloeosporioides. Thrives in warm, humid conditions with frequent rainfall",
-                "treatment": "Use copper fungicides and prune infected branches. Apply fungicides like Mancozeb (0.25%) or Propiconazole (0.1%)",
-                "prevention": "Use disease-free planting material, prune infected parts, ensure proper spacing, avoid overhead irrigation"
-            }
-        },
-        "pests": {
-            "Aphids": {
-                "symptoms": "Curled leaves, stunted growth, honeydew secretion",
-                "description": "Small, soft-bodied insects that feed on plant sap",
-                "treatment": "Apply insecticidal soap, neem oil, or introduce natural predators like ladybugs"
-            },
-            "Fruit Borers": {
-                "symptoms": "Holes in fruits, premature fruit drop, rotting of affected fruits",
-                "description": "Larvae that bore into fruits, causing damage and rot",
-                "treatment": "Apply approved insecticides, use pheromone traps, practice orchard sanitation"
-            }
-        },
-        "deficiencies": {
-            "Nitrogen": {
-                "symptoms": "Yellowing of older leaves, stunted growth, reduced foliage",
-                "treatment": "Apply nitrogen-rich fertilizers like urea or ammonium nitrate. Organic options include composted manure"
-            },
-            "Potassium": {
-                "symptoms": "Browning or scorching of leaf edges and tips, weak stems, poor fruit quality",
-                "treatment": "Use potassium sulfate or muriate of potash. Organic alternatives include wood ash"
-            }
-        }
-    },
-    "Ladyfinger (Okra)": {
-        "info": {
-            "scientific_name": "Abelmoschus esculentus",
-            "best_season": "Warm-season crop that thrives in hot, sunny conditions. Generally grown in spring and summer. Optimal temperature: 25°C-35°C",
-            "best_soil": "Well-drained, loamy soil with plenty of organic matter. pH range of 6.0 to 7.5",
-            "time_period": "About 50 to 65 days from planting to harvest, depending on the variety",
-            "estimated_cost": "₹50,000 to ₹150,000 per acre",
-            "varieties": [
-                "Clemson Spineless", "Annie Oakley II", "Emerald", "Red Velvet", "Burgundy", "Jambalaya"
-            ]
-        },
-        "diseases": {
-            "Yellow Vein Mosaic Virus": {
-                "symptoms": "Yellowing of veins in young leaves, whole leaf turns yellow; plant stunted, poor fruit development",
-                "causes": "Caused by a Begomovirus, transmitted by whiteflies",
-                "treatment": "No direct cure; control vectors (whiteflies). Spray Imidacloprid 17.8 SL @ 0.3 ml/l. Use Neem oil (2%) or NSKE (5%)",
-                "prevention": "Grow resistant varieties like Parbhani Kranti, Arka Anamika. Remove infected plants early. Use yellow sticky traps"
-            },
-            "Fusarium Wilt": {
-                "symptoms": "Yellowing of lower leaves, wilting, brown discoloration in vascular tissue",
-                "causes": "Caused by Fusarium oxysporum, soil-borne fungus",
-                "treatment": "Soil drenching with Carbendazim or Trichoderma viride",
-                "prevention": "Use resistant seeds, rotate with non-host crops like cereals"
-            }
-        },
-        "pests": {
-            "Fruit and Shoot Borer": {
-                "symptoms": "Boreholes on fruits with black excreta, twisted and dry shoots",
-                "description": "Caterpillars that bore into fruits and shoots",
-                "treatment": "Spray Spinosad 45 SC @ 0.5 ml/l, use Neem Seed Kernel Extract (5%), set up pheromone traps (10–12/acre)"
-            },
-            "Whiteflies": {
-                "symptoms": "Sticky honeydew and black sooty mold, yellowing and curling of leaves, vector for YVMV disease",
-                "description": "Small white flies that feed on plant sap and transmit diseases",
-                "treatment": "Spray Thiamethoxam or Imidacloprid, use yellow sticky traps"
-            }
-        },
-        "deficiencies": {
-            "Nitrogen": {
-                "symptoms": "Pale green to yellow older leaves, slow growth and fewer pods",
-                "treatment": "Apply Urea (46% N) in split doses, use farmyard manure, vermicompost, green manure"
-            },
-            "Phosphorus": {
-                "symptoms": "Purplish discoloration on leaves, poor flowering and fruit setting",
-                "treatment": "Apply Single Super Phosphate (SSP) or DAP, use bone meal compost or rock phosphate"
-            }
-        }
-    },
-    "Soybean": {
-        "info": {
-            "scientific_name": "Glycine max",
-            "best_season": "Kharif (June to October)",
-            "best_soil": "Well-drained loamy soils with good organic matter and pH 6.0 to 7.5",
-            "time_period": "90 to 110 days",
-            "estimated_cost": "₹30,000 to ₹45,000 per acre",
-            "varieties": [
-                "JS 335", "JS 95-60", "MAUS 71", "NRC 37", "MACS 1407"
-            ]
-        },
-        "diseases": {
-            "Soybean Rust": {
-                "symptoms": "Small brown lesions on the underside of leaves",
-                "causes": "Fungal spores spread in moist conditions",
-                "treatment": "Spray Propiconazole or Tebuconazole",
-                "prevention": "Use resistant varieties and maintain field sanitation"
-            },
-            "Anthracnose": {
-                "symptoms": "Irregular dark lesions on stems and pods",
-                "causes": "Fungal infection in humid environments",
-                "treatment": "Use certified seeds and spray Carbendazim or Mancozeb",
-                "prevention": "Crop rotation, proper field sanitation"
-            }
-        },
-        "pests": {
-            "Stem Fly": {
-                "symptoms": "Yellowing and drying of young plants",
-                "description": "Flies that lay eggs in stems, larvae feed inside",
-                "treatment": "Seed treatment with Thiamethoxam or Imidacloprid"
-            },
-            "Girdle Beetle": {
-                "symptoms": "Girdling of petiole causing defoliation",
-                "description": "Beetles that girdle stems and petioles",
-                "treatment": "Spray Quinalphos or Lambda Cyhalothrin"
-            }
-        },
-        "deficiencies": {
-            "Nitrogen": {
-                "symptoms": "Pale yellow leaves, stunted plants",
-                "treatment": "Apply Urea, DAP (initially, as soybean fixes nitrogen later)"
-            },
-            "Phosphorus": {
-                "symptoms": "Purpling of leaves, poor root growth",
-                "treatment": "Apply SSP, DAP"
-            }
-        }
-    },
-    "Cotton": {
-        "info": {
-            "scientific_name": "Gossypium spp.",
-            "best_season": "Kharif (June to October)",
-            "best_soil": "Well-drained black cotton soil, sandy loam with good moisture retention",
-            "time_period": "150 to 180 days depending on variety and climate",
-            "estimated_cost": "₹40,000 to ₹60,000 per acre",
-            "varieties": [
-                "Bt Cotton", "F1378", "Bunny", "RCH-2", "NCS-855", "Ankur 651", "JKCH Durga", "Suraj"
-            ]
-        },
-        "diseases": {
-            "Leaf Curl Virus": {
-                "symptoms": "Curling and thickening of leaves, stunted growth",
-                "causes": "Transmitted by whiteflies",
-                "treatment": "Grow resistant varieties. Spray Imidacloprid or Thiamethoxam for whitefly control",
-                "prevention": "Use resistant varieties, control whitefly populations"
+                "symptoms": "Leaf blight, dark brown lesions on fruits with concentric rings, dieback of twigs",
+                "causes": "Caused by the fungus Colletotrichum gloeosporioides, spreads through wind, rain, and infected plant debris",
+                "treatment": "Apply copper fungicides, use Mancozeb (0.25%) or Propiconazole (0.1%)",
+                "prevention": "Use disease-free planting material, remove infected plant parts, improve airflow"
             },
             "Alternaria Leaf Spot": {
-                "symptoms": "Brown circular spots with concentric rings",
-                "causes": "Fungal infection in humid conditions",
-                "treatment": "Spray Mancozeb or Chlorothalonil. Remove infected plant debris",
-                "prevention": "Crop rotation, proper field sanitation"
+                "symptoms": "Circular brown spots with concentric rings on leaves, leading to defoliation",
+                "causes": "Caused by the fungus Alternaria alternata, thrives in warm, humid conditions",
+                "treatment": "Apply fungicides like Mancozeb or Chlorothalonil at recommended doses",
+                "prevention": "Use certified disease-free material, avoid overhead irrigation, remove infected debris"
             }
         },
         "pests": {
-            "Bollworms": {
-                "symptoms": "Bore into flower buds and bolls",
-                "description": "Caterpillars that bore into buds and bolls",
-                "treatment": "Use Bt cotton, spray Spinosad or Emamectin Benzoate"
-            },
             "Aphids": {
-                "symptoms": "Sticky honeydew, curled leaves",
-                "description": "Small insects that suck plant sap",
-                "treatment": "Spray Neem oil or Imidacloprid"
+                "symptoms": "Curled leaves, stunted growth, honeydew secretion on leaves",
+                "description": "Small soft-bodied insects that suck plant sap",
+                "treatment": "Apply neem oil, insecticidal soap, or imidacloprid. Encourage natural predators like ladybugs"
+            },
+            "Fruit Borer": {
+                "symptoms": "Holes in fruits, larval feeding damage, fruit drop",
+                "description": "Caterpillars that bore into fruits and feed on the pulp",
+                "treatment": "Apply Bacillus thuringiensis (Bt), spinosad, or carbaryl. Use pheromone traps for monitoring"
             }
         },
         "deficiencies": {
             "Nitrogen": {
-                "symptoms": "Pale leaves, stunted plants",
-                "treatment": "Apply Urea, Ammonium Sulphate"
+                "symptoms": "Yellowing of older leaves, stunted growth, reduced foliage and fruit yield",
+                "treatment": "Apply nitrogen-rich fertilizers like urea or ammonium nitrate, or organic alternatives like compost"
             },
-            "Potassium": {
-                "symptoms": "Leaf margin necrosis, poor boll development",
-                "treatment": "Apply MOP"
+            "Zinc": {
+                "symptoms": "Small, narrow leaves, shortened internodes, chlorosis between veins",
+                "treatment": "Apply zinc sulfate as foliar spray or soil application, use organic composts with zinc additives"
+            },
+            "Iron": {
+                "symptoms": "Interveinal chlorosis in young leaves while veins remain green",
+                "treatment": "Apply iron chelates or ferrous sulfate as foliar spray, improve soil organic matter"
             }
         }
     },
-    "Onion": {
+    "Bottle Gourd": {
         "info": {
-            "scientific_name": "Allium cepa",
-            "best_season": "In Maharashtra, onion is typically grown in three seasons: Kharif (June-July), Late Kharif (August-September), Rabi (December-January)",
-            "best_soil": "Well-drained sandy loam to clay loam soils with a pH range of 6.0–7.5",
-            "time_period": "90 to 150 days depending on variety and season",
-            "estimated_cost": "Approximately ₹25,000 to ₹35,000 per acre",
+            "scientific_name": "Lagenaria siceraria",
+            "best_season": "Summer season crop that grows well in warm temperatures between 25°C to 35°C. Best planted from February to July in most regions",
+            "best_soil": "Well-drained sandy loam to loamy soil with good organic matter content. Soil pH of 6.5-7.5 is ideal",
+            "time_period": "Flowering begins 40-45 days after planting. Fruits are ready for harvest in 60-70 days from sowing",
+            "estimated_cost": "₹40,000 to ₹60,000 per acre",
             "varieties": [
-                "Phule Samarth", "Phule Swaraj", "N-53", "Bhima Shakti", "Agrifound Light Red", "Bhima Super"
+                "Pusa Naveen", "Pusa Sandesh", "Pusa Summer Prolific Long", "Punjab Komal", "Arka Bahar"
             ]
         },
         "diseases": {
-            "Purple Blotch": {
-                "symptoms": "Small water-soaked lesions on leaves that turn purplish with yellow halos",
-                "causes": "Warm and humid conditions, caused by fungus Alternaria porri",
-                "treatment": "Spray Mancozeb (0.25%) or Chlorothalonil (0.2%) every 10-15 days",
-                "prevention": "Ensure good field sanitation and crop rotation"
+            "Powdery Mildew": {
+                "symptoms": "White powdery patches on leaves and stems that gradually cover entire surfaces. Leads to leaf yellowing, withering, and reduced yield",
+                "causes": "Fungal disease caused by Erysiphe cichoracearum, favored by warm, dry days and cool, humid nights",
+                "treatment": "Apply sulfur-based fungicides or systemic fungicides like Myclobutanil. Organic options include neem oil or potassium bicarbonate sprays",
+                "prevention": "Proper plant spacing, avoid overhead irrigation, remove infected plants, and practice crop rotation"
             },
-            "Stemphylium Blight": {
-                "symptoms": "Yellow to brown spots on leaves and seed stalks",
-                "causes": "High humidity and temperature, caused by fungus Stemphylium vesicarium",
-                "treatment": "Use fungicides like Azoxystrobin (0.1%) or Mancozeb",
-                "prevention": "Proper spacing, field sanitation"
+            "Downy Mildew": {
+                "symptoms": "Yellow or pale green spots on upper leaf surfaces with grayish-white fungal growth on the undersides. Leaves eventually turn brown and die",
+                "causes": "Caused by Pseudoperonospora cubensis, favored by cool, wet conditions with high humidity",
+                "treatment": "Apply copper-based fungicides or specific downy mildew fungicides like Mancozeb or Metalaxyl",
+                "prevention": "Provide good air circulation, avoid overhead irrigation, remove crop debris after harvest"
+            },
+            "Fusarium Wilt": {
+                "symptoms": "Yellowing and wilting of leaves, brown discoloration of vascular tissue, stunted growth, and eventual plant death",
+                "causes": "Soil-borne fungal pathogen Fusarium oxysporum that invades through roots and blocks water transport",
+                "treatment": "No effective chemical treatment once infected. Use resistant varieties and soil solarization",
+                "prevention": "Use disease-free seeds, practice crop rotation with non-host crops, manage soil pH and drainage"
             }
         },
         "pests": {
-            "Onion Thrips": {
-                "symptoms": "Silver streaks and curling leaves",
-                "description": "Tiny insects that scrape plant tissue and feed on sap",
-                "treatment": "Blue sticky traps, Neem oil, Spinosad 45 SC (0.3 ml/l)"
+            "Red Pumpkin Beetle": {
+                "symptoms": "Holes in leaves, damaged seedlings, reduced plant vigor",
+                "description": "Small red-brown beetles that feed on leaves and flowers",
+                "treatment": "Apply neem oil, spinosad, or carbaryl. Use row covers for young plants"
             },
-            "Onion Maggot": {
-                "symptoms": "Wilting and yellowing due to larval feeding on roots",
-                "description": "Maggots that feed on roots and bulbs",
-                "treatment": "Crop rotation, soil treatment with Chlorpyrifos"
+            "Fruit Fly": {
+                "symptoms": "Small punctures on fruits, maggots inside fruits, fruit rotting",
+                "description": "Small flies that lay eggs in young fruits, larvae feed inside fruit causing rot",
+                "treatment": "Use fruit fly traps with methyl eugenol, cover young fruits with paper bags, apply malathion or spinosad as needed"
+            },
+            "Aphids": {
+                "symptoms": "Curled leaves, stunted growth, sticky honeydew on leaves",
+                "description": "Small soft-bodied insects that suck plant sap, often clustered on new growth",
+                "treatment": "Spray insecticidal soap, neem oil, or imidacloprid. Encourage natural predators like ladybugs"
             }
         },
         "deficiencies": {
             "Nitrogen": {
-                "symptoms": "Yellowing of older leaves, poor growth",
-                "treatment": "Apply Urea, Ammonium Sulphate"
+                "symptoms": "Yellowing of older leaves, stunted growth, thin stems, and poor fruit development",
+                "treatment": "Apply nitrogen-rich fertilizers like urea or ammonium sulfate. Organic alternatives include compost or well-rotted manure"
             },
-            "Sulphur": {
-                "symptoms": "Overall yellowing, thin stems",
-                "treatment": "Apply Gypsum, Ammonium Sulphate"
+            "Calcium": {
+                "symptoms": "Blossom end rot in fruits, distorted new leaves, poor root development",
+                "treatment": "Apply calcium nitrate as foliar spray or soil application. Add lime or gypsum to calcium-deficient soils"
+            },
+            "Boron": {
+                "symptoms": "Cracked fruits, hollow stems, stunted growth, and thickened leaves",
+                "treatment": "Apply borax or solubor as foliar spray at very low concentrations (0.1-0.2%)"
+            }
+        }
+    },
+    "Cluster Beans": {
+        "info": {
+            "scientific_name": "Cyamopsis tetragonoloba",
+            "best_season": "Summer season crop, preferably grown from March to July. Requires warm weather with temperatures between 25°C to 35°C",
+            "best_soil": "Well-drained sandy loam to medium black soils. Tolerates slight salinity and alkalinity. Ideal pH range of 7.0-8.0",
+            "time_period": "First picking starts 45-60 days after sowing. Harvesting period extends for about 3-4 months",
+            "estimated_cost": "₹25,000 to ₹35,000 per acre",
+            "varieties": [
+                "Pusa Navbahar", "Pusa Sadabahar", "Durgapura Safed", "Durgapura Kanti", "HG-75"
+            ]
+        },
+        "diseases": {
+            "Bacterial Blight": {
+                "symptoms": "Water-soaked lesions on leaves that turn brown with yellow halos. Severe infections cause defoliation",
+                "causes": "Caused by Xanthomonas axonopodis pv. cyamopsidis, spreads through wind, rain, and infected seeds",
+                "treatment": "Apply copper-based bactericides like copper oxychloride. Streptocycline can be effective when applied early",
+                "prevention": "Use disease-free seeds, practice crop rotation, avoid overhead irrigation, remove infected plants"
+            },
+            "Powdery Mildew": {
+                "symptoms": "White powdery growth on leaves, stems, and pods. Affected leaves become yellow and may fall prematurely",
+                "causes": "Fungal disease caused by Leveillula taurica or Erysiphe polygoni, favored by moderate temperatures and high humidity",
+                "treatment": "Apply sulfur-based fungicides or wettable sulfur. Organic options include neem oil or potassium bicarbonate",
+                "prevention": "Provide adequate spacing between plants, avoid excessive nitrogen fertilization"
+            },
+            "Alternaria Leaf Spot": {
+                "symptoms": "Brown circular spots with concentric rings on leaves. Severe cases lead to defoliation",
+                "causes": "Caused by Alternaria cucumerina, thrives in warm, humid conditions with alternating wet and dry periods",
+                "treatment": "Apply mancozeb or copper oxychloride at recommended doses",
+                "prevention": "Crop rotation, proper field sanitation, use of disease-free seeds"
+            }
+        },
+        "pests": {
+            "Aphids": {
+                "symptoms": "Curled leaves, stunted growth, honeydew secretion, and black sooty mold",
+                "description": "Small soft-bodied insects that suck plant sap from tender shoots and leaves",
+                "treatment": "Apply neem oil, insecticidal soap, or imidacloprid. Encourage natural predators like ladybugs"
+            },
+            "Pod Borer": {
+                "symptoms": "Holes in pods, damaged seeds, frass (excrement) visible near entry holes",
+                "description": "Caterpillars that bore into pods and feed on developing seeds",
+                "treatment": "Apply Bacillus thuringiensis (Bt), spinosad, or neem-based insecticides. Use pheromone traps for monitoring"
+            },
+            "Jassids": {
+                "symptoms": "Yellowing of leaf margins, leaf curling, 'hopper burn' where leaf edges turn brown",
+                "description": "Small, wedge-shaped green insects that hop or fly when disturbed",
+                "treatment": "Apply imidacloprid, thiamethoxam, or neem oil. Avoid water stress as it increases susceptibility"
+            }
+        },
+        "deficiencies": {
+            "Nitrogen": {
+                "symptoms": "Pale green or yellow older leaves, stunted growth, reduced branching and yield",
+                "treatment": "Apply nitrogen fertilizers like urea, ammonium sulfate, or organic sources like compost and well-rotted manure"
+            },
+            "Iron": {
+                "symptoms": "Interveinal chlorosis (yellowing between veins) in young leaves while veins remain green",
+                "treatment": "Apply ferrous sulfate as foliar spray or use iron chelates for soil application"
+            },
+            "Zinc": {
+                "symptoms": "Small, narrow leaves, shortened internodes, rosetting of terminal leaves",
+                "treatment": "Apply zinc sulfate as foliar spray or soil application. Organic alternatives include composted manure with zinc additives"
             }
         }
     }

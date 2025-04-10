@@ -300,6 +300,34 @@ footer {
     margin: 0.4rem 0;
 }
 
+/* Structured crop report */
+.structured-report {
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    background-color: #FCFCFC;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.structured-report h3 {
+    font-size: 1.25rem;
+    border-bottom: 2px solid #A5D6A7;
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2E7D32;
+}
+
+.structured-report h3:first-child {
+    margin-top: 0;
+}
+
+.analysis-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
 /* Animations */
 .fadeIn {
     animation: fadeIn 0.8s ease forwards;
