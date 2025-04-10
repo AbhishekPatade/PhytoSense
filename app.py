@@ -879,8 +879,7 @@ def show_crop_test_page():
                     )
                     
                     fertilizer_recommendations = get_fertilizer_recommendations(
-                        results["plant_info"]["name"], 
-                        soil_type=None  # In a real app, this would come from soil analysis
+                        results["plant_info"]["name"]
                     )
                     
                     # Update session state with results

@@ -1,0 +1,15 @@
+{
+  "Aditya": {
+    "name": "Aditya Bhaurav Thete",
+    "farm_location": "Nashik,IN",
+    "farm_size": "1.2",
+    "farming_type": "Mixed",
+    "irrigation": "Drip",
+    "primary_crops": "tomato,onion",
+    "secondary_crops": "wheat,rice,cucumber",
+    "receive_weather_alerts": true,
+    "preferred_language": "Marathi",
+    "last_updated": "2025-04-10T17:14:30.325379",
+    "updated_at": "2025-04-10T17:14:30.329287"
+  }
+}
