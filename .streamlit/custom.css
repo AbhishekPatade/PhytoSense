@@ -314,8 +314,8 @@ footer {
     font-size: 1.25rem;
     border-bottom: 2px solid #A5D6A7;
     padding-bottom: 0.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
     color: #2E7D32;
     /* Add section numbering style */
     display: flex;
@@ -327,12 +327,8 @@ footer {
 }
 
 .analysis-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     padding-bottom: 0.5rem;
-    border-bottom: 1px dashed #E0E0E0;
-}
-
-.analysis-section:last-child {
     border-bottom: none;
 }
 
@@ -340,29 +336,46 @@ footer {
 .section-general {
     border-left: 4px solid #4CAF50;
     padding-left: 1rem;
+    background-color: #E8F5E9;
+    border-radius: 8px 8px 0 0;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0;
 }
 
 .section-disease {
     border-left: 4px solid #F44336;
     padding-left: 1rem;
+    background-color: #FFEBEE;
+    padding: 0.75rem 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .section-pest {
     border-left: 4px solid #FF9800;
     padding-left: 1rem;
+    background-color: #FFF3E0;
+    padding: 0.75rem 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .section-deficiency {
     border-left: 4px solid #9C27B0;
     padding-left: 1rem;
+    background-color: #F3E5F5;
+    padding: 0.75rem 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .section-assessment {
     border-left: 4px solid #2196F3;
     padding-left: 1rem;
-    background-color: #E8F5E9;
+    background-color: #E1F5FE;
     border-radius: 0 0 8px 8px;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
+    margin-top: 0;
 }
 
 /* Overall assessment box */
@@ -372,6 +385,35 @@ footer {
     padding: 1rem;
     margin-top: 0.5rem;
     border-left: 4px solid #4CAF50;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* Analysis results cardless version */
+.analysis-section .analysis-result {
+    margin-bottom: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    padding: 0.75rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-section .analysis-result:last-child {
+    margin-bottom: 0;
+}
+
+/* Connected sections without gaps */
+.structured-report .analysis-section {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+/* Ensure no margins between sections */
+.structured-report h3 + .analysis-section {
+    margin-top: 0;
+}
+
+.structured-report .analysis-section + h3 {
+    margin-top: 0;
 }
 
 /* Animations */

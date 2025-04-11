@@ -265,5 +265,106 @@
         "previous_treatments": null
       }
     }
+  },
+  {
+    "id": 4,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-11T02:44:29.022310",
+    "analysis_type": "plant",
+    "image_path": "uploads/2cec748f-50f8-48b0-99bc-4963fcf4ec16.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Onion",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 44,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Purple Blotch",
+            "confidence": 72,
+            "scientific_name": "Alternaria porri",
+            "description": "Small, water-soaked lesions that quickly develop purple centers and yellow margins",
+            "treatment": "Apply appropriate Mancozeb, Chlorothalonil or organic options: Garlic extract spray, Neem oil"
+          }
+        ]
+      },
+      "pests": {
+        "detected": false,
+        "pests": []
+      },
+      "preventive_measures": [
+        "Remove and destroy infected plant debris after harvest",
+        "Apply irrigation in morning so leaves dry quickly",
+        "Maintain consistent soil moisture to prevent splitting and secondary infections",
+        "Apply sulfur-containing fertilizers to enhance pungency and disease resistance",
+        "Practice shallow cultivation to avoid damaging shallow root systems",
+        "Maintain soil pH between 6.0-6.8 for optimal nutrient availability",
+        "Monitor plants weekly with a 10x magnifier for early pest/disease detection",
+        "Implement strict sanitation: disinfect tools with 70% alcohol between plants"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        },
+        {
+          "type": "vegetative",
+          "name": "Nitrogen-Sulfur Blend",
+          "npk": "21-0-0-24S",
+          "description": "Provides nitrogen for leaf growth and sulfur which is essential for onion flavor development and disease resistance.",
+          "application": "Side-dress 1 lb/100 ft row at 3-leaf stage and again 3-4 weeks later.",
+          "conditions": "Early to mid-growth stage onions",
+          "scientific_backing": "Sulfur application increases pyruvic acid content by 30%, enhancing flavor"
+        },
+        {
+          "type": "bulbing",
+          "name": "Low-N, High-K Blend",
+          "npk": "5-10-20",
+          "description": "Lower nitrogen with higher potassium for bulb development phase. Reducing nitrogen prevents excess leaf growth that can delay bulbing.",
+          "application": "Apply 1 lb/100 ft row when bulbs begin to form, typically 6-8 weeks after planting.",
+          "conditions": "During bulb formation stage",
+          "scientific_backing": "Potassium application at bulbing improves storage quality by 25-40%"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Onion",
+        "plant_age": "Mature",
+        "symptoms": null,
+        "planting_date": "2024-12-16",
+        "irrigation_method": "Flood",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 5,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-11T02:46:51.694998",
+    "analysis_type": "soil",
+    "image_path": "uploads/05fd3cb1-4d6b-4267-a5f3-057c65b048d3.jpg",
+    "results": {
+      "characteristics": "\n            - High sand content (>70%)\n            - Very low water retention\n            - Poor in organic matter and nutrients\n            - Excellent drainage (often excessive)\n            - May have salinity issues\n            - pH range: 7.0-8.5 (neutral to alkaline)\n            ",
+      "suitability": {
+        "onion": "Poor suitability for onions without significant amendments. Requires intensive management.",
+        "tomato": "Moderate suitability with irrigation, mulching, and nutrient management."
+      },
+      "recommendations": "\n            ### Recommendations for Coastal Sandy Soil:\n            \n            1. **Water Management:**\n               - Install drip irrigation systems\n               - Use mulching extensively to conserve moisture\n               - Apply hydrogels for improving water retention\n            \n            2. **Soil Improvement:**\n               - Add clay or silt-rich soil to improve texture\n               - Incorporate very high rates of organic matter (30-40 tonnes/ha)\n               - Use cocopeat or vermiculite as soil amendments\n            \n            3. **Crop-Specific Recommendations:**\n               - **For Onions:** Consider container or raised bed cultivation\n               - **For Tomatoes:** Use salt-tolerant varieties and mulching\n            ",
+      "properties": {
+        "ph": "7.7",
+        "organic_matter": "Very Low",
+        "drainage": "Excessive"
+      }
+    }
   }
 ]

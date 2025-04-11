@@ -784,7 +784,8 @@ def show_crop_test_page():
         with col1:
             crop_type = st.selectbox(
                 "Crop Type",
-                options=["Unknown", "Tomato", "Potato", "Corn", "Wheat", "Rice", "Onion", "Soybean", "Cotton"],
+                options=["Unknown", "Tomato", "Potato", "Corn", "Wheat", "Rice", "Onion", "Soybean", "Cotton", 
+                         "Cabbage", "Watermelon", "Pomegranate", "Cluster Beans", "Bottle Gourd", "Cauliflower", "Lady Finger"],
                 index=0
             )
             
@@ -1423,12 +1424,26 @@ def show_soil_analysis_page():
             
             # Soil type and characteristics
             st.markdown("### Soil Classification")
-            soil_type = list(soil_results.keys())[0]  # Get the soil type (key of the dict)
-            st.markdown(f"**Identified Soil Type:** {soil_type}")
             
-            # Display soil properties
-            st.markdown("### Soil Properties")
-            properties = soil_results[soil_type]["properties"]
+            # Handle soil_results based on its structure
+            if isinstance(soil_results, dict) and len(soil_results) > 0:
+                # The soil results might be structured with soil type as the key
+                soil_type = list(soil_results.keys())[0]  # Get the soil type (key of the dict)
+                st.markdown(f"**Identified Soil Type:** {soil_type}")
+                
+                # Display soil properties
+                st.markdown("### Soil Properties")
+                
+                if "properties" in soil_results[soil_type]:
+                    properties = soil_results[soil_type]["properties"]
+                else:
+                    # Fallback if properties aren't found
+                    properties = {"ph": "Unknown", "organic_matter": "Unknown", "drainage": "Unknown"}
+            else:
+                # Handle the case where soil_results is a string or has a different structure
+                st.markdown(f"**Identified Soil Type:** {soil_results if isinstance(soil_results, str) else 'Unknown'}")
+                st.markdown("### Soil Properties")
+                properties = {"ph": "Unknown", "organic_matter": "Unknown", "drainage": "Unknown"}
             
             # Create a two-column layout for properties
             prop_col1, prop_col2 = st.columns(2)
@@ -1443,20 +1458,31 @@ def show_soil_analysis_page():
         with col2:
             # Soil characteristics
             st.markdown("### Characteristics")
-            characteristics = soil_results[soil_type]["characteristics"]
-            st.markdown(characteristics)
             
-            # Crop suitability
-            st.markdown("### Crop Suitability")
-            suitability = soil_results[soil_type]["suitability"]
+            # Handle the case where soil_results might have a different structure
+            if isinstance(soil_results, dict) and len(soil_results) > 0 and isinstance(soil_type, str) and soil_type in soil_results:
+                characteristics = soil_results[soil_type].get("characteristics", "Information not available.")
+                st.markdown(characteristics)
+                
+                # Crop suitability
+                st.markdown("### Crop Suitability")
+                suitability = soil_results[soil_type].get("suitability", {})
+            else:
+                st.markdown("Detailed soil characteristics information not available.")
+                st.markdown("### Crop Suitability")
+                suitability = {}
             
             for crop, suitability_text in suitability.items():
                 st.markdown(f"**{crop.title()}:** {suitability_text}")
             
             # Recommendations
             st.markdown("### Recommendations")
-            recommendations = soil_results[soil_type]["recommendations"]
-            st.markdown(recommendations)
+            
+            if isinstance(soil_results, dict) and isinstance(soil_type, str) and soil_type in soil_results and "recommendations" in soil_results[soil_type]:
+                recommendations = soil_results[soil_type]["recommendations"]
+                st.markdown(recommendations)
+            else:
+                st.markdown("Specific recommendations not available for this soil type.")
         
         # Visualize soil properties
         st.markdown("---")
@@ -1530,30 +1556,59 @@ def show_soil_analysis_page():
             # In a real app, we'd generate a proper PDF report
             # For now, we'll just create a formatted markdown report
             
+            # Make sure variables are defined
+            soil_type_str = soil_type if isinstance(soil_type, str) else "Unknown"
+            
+            # Initialize report
             report_md = f"""
             # Soil Analysis Report
             
             ## Soil Classification
-            - **Identified Soil Type:** {soil_type}
+            - **Identified Soil Type:** {soil_type_str}
             
             ## Soil Properties
             - **pH Value:** {properties['ph']}
             - **Organic Matter:** {properties['organic_matter']}
             - **Drainage:** {properties['drainage']}
+            """
             
-            ## Characteristics
-            {characteristics}
+            # Add characteristics if available
+            if isinstance(soil_results, dict) and isinstance(soil_type, str) and soil_type in soil_results and "characteristics" in soil_results[soil_type]:
+                report_md += f"""
+                ## Characteristics
+                {soil_results[soil_type]['characteristics']}
+                """
+            else:
+                report_md += """
+                ## Characteristics
+                Detailed soil characteristics information not available.
+                """
             
+            # Add crop suitability if available
+            report_md += """
             ## Crop Suitability
             """
             
-            for crop, suitability_text in suitability.items():
-                report_md += f"- **{crop.title()}:** {suitability_text}\n"
+            if isinstance(suitability, dict):
+                for crop, suitability_text in suitability.items():
+                    report_md += f"- **{crop.title()}:** {suitability_text}\n"
+            else:
+                report_md += "No specific crop suitability information available.\n"
             
+            # Add recommendations if available
+            if isinstance(soil_results, dict) and isinstance(soil_type, str) and soil_type in soil_results and "recommendations" in soil_results[soil_type]:
+                report_md += f"""
+                ## Recommendations
+                {soil_results[soil_type]['recommendations']}
+                """
+            else:
+                report_md += """
+                ## Recommendations
+                Specific recommendations not available for this soil type.
+                """
+            
+            # Add date
             report_md += f"""
-            ## Recommendations
-            {recommendations}
-            
             ## Date of Analysis
             {datetime.now().strftime('%Y-%m-%d %H:%M')}
             """
