@@ -1,22 +1,26 @@
 # 🌿 PhytoSense – AI-Powered Smart Crop Advisory System
 
-## Overview
+## 📌 Overview
 
-PhytoSense is an AI-powered smart agriculture platform designed to help farmers identify plant diseases, analyze soil conditions, monitor weather, and receive intelligent crop recommendations. The platform combines image processing, machine learning, and agricultural datasets to provide real-time insights that improve crop health and productivity.
+PhytoSense is an AI-powered Smart Crop Advisory System designed to assist farmers in identifying plant diseases, analyzing soil conditions, monitoring weather, and receiving intelligent crop recommendations. The platform combines Artificial Intelligence, Image Processing, and Agricultural datasets to provide accurate insights for improving crop health and productivity.
 
-## Features
+---
 
-* 🌱 Plant disease detection using AI
-* 📷 Image-based crop health analysis
-* 🌍 Weather-aware crop recommendations
-* 🌾 Soil analysis and suitability checking
-* 📊 Crop recommendation engine
-* 🌐 Multi-language support
-* 👤 User profile management
-* 💾 Local database support
-* 📈 Detailed plant health reports
+## 🚀 Features
 
-## Tech Stack
+* 🌱 AI-based Plant Disease Detection
+* 📷 Image Processing using Computer Vision
+* 🌦️ Weather-based Crop Recommendations
+* 🌾 Soil Analysis and Suitability Prediction
+* 📊 Intelligent Crop Recommendation System
+* 🌍 Multi-language Support
+* 👤 Farmer Profile Management
+* 💾 Local SQLite Database
+* 📈 Detailed Crop Health Reports
+
+---
+
+## 🛠️ Tech Stack
 
 ### Frontend
 
@@ -28,8 +32,8 @@ PhytoSense is an AI-powered smart agriculture platform designed to help farmers 
 
 ### AI & Machine Learning
 
-* Custom Machine Learning Models
 * Image Processing
+* Machine Learning Models
 
 ### Database
 
@@ -39,12 +43,13 @@ PhytoSense is an AI-powered smart agriculture platform designed to help farmers 
 
 * Streamlit
 * OpenCV
-* NumPy
 * Pillow
+* NumPy
 * SQLite3
-* Requests
 
-## Project Structure
+---
+
+## 📂 Project Structure
 
 ```text
 PhytoSense/
@@ -60,54 +65,151 @@ PhytoSense/
 ├── crop_database.py
 ├── language_support.py
 ├── assets/
-├── translations/
 ├── uploads/
+├── translations/
+├── weather_data/
+├── pyproject.toml
+├── uv.lock
+├── Dockerfile
 └── README.md
 ```
 
-## Installation
+---
+
+# 🐳 Docker Support
+
+## Build Docker Image
+
+```bash
+docker build -t phytosense .
+```
+
+## Run Docker Container
+
+```bash
+docker run -d -p 8501:8501 --name phytosense phytosense
+```
+
+Open your browser:
+
+```text
+http://localhost:8501
+```
+
+or on AWS EC2:
+
+```text
+http://<EC2-PUBLIC-IP>:8501
+```
+
+---
+
+## Docker Commands
+
+### Build Image
+
+```bash
+docker build -t phytosense .
+```
+
+### View Images
+
+```bash
+docker images
+```
+
+### Run Container
+
+```bash
+docker run -d -p 8501:8501 --name phytosense phytosense
+```
+
+### Running Containers
+
+```bash
+docker ps
+```
+
+### Stop Container
+
+```bash
+docker stop phytosense
+```
+
+### Start Container
+
+```bash
+docker start phytosense
+```
+
+### Remove Container
+
+```bash
+docker rm phytosense
+```
+
+### View Logs
+
+```bash
+docker logs phytosense
+```
+
+---
+
+# 💻 Local Installation
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/AbhishekPatade/PhytoSense.git
+
 cd PhytoSense
 ```
 
 Install dependencies:
 
 ```bash
-pip install -r requirements.txt
-```
-
-If your project uses `pyproject.toml` instead of `requirements.txt`:
-
-```bash
 pip install .
 ```
 
-## Run the Application
+Run the application:
 
 ```bash
 streamlit run app.py
 ```
 
-The application will open automatically in your browser.
+The application will be available at:
 
-## Future Enhancements
+```text
+http://localhost:8501
+```
 
-* Cloud deployment on AWS
-* Mobile application integration
-* IoT sensor support
-* Drone-based crop monitoring
-* Real-time satellite data integration
-* Farmer analytics dashboard
-* AI chatbot for agricultural guidance
+---
 
-## Contributors
+# ☁️ Deployment
+
+PhytoSense can be deployed on:
+
+* Docker
+* AWS EC2
+* Azure Virtual Machine
+* Google Cloud VM
+* Render
+* Railway
+* Streamlit Community Cloud
+
+---
+
+# 👨‍💻 Author
 
 **Abhishek Patade**
 
-## License
+Computer Engineering Student | Full Stack Developer | Cloud & DevOps Enthusiast
 
-This project is intended for educational and research purposes.
+GitHub: https://github.com/AbhishekPatade
+
+---
+
+# 📄 License
+
+This project is developed for educational, research, and demonstration purposes.
