@@ -10,7 +10,19 @@ import json
 from datetime import datetime
 import random
 
+# -----------------------------
+# MUST BE FIRST STREAMLIT CALL
+# -----------------------------
+st.set_page_config(
+    page_title="PhytoSense - AI Plant Health Monitoring",
+    page_icon="🌱",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# -----------------------------
 # Import custom modules
+# -----------------------------
 from image_processing import preprocess_image, extract_features
 from model_handler import identify_plant, detect_water_content, detect_diseases, detect_pests
 from recommendations import get_preventive_measures, get_fertilizer_recommendations
@@ -22,7 +34,48 @@ from soil_analyzer import analyze_soil, get_soil_details
 from model import load_model
 from plant_analysis import enhanced_analysis
 from weather_service import display_weather_widget, show_weather_page, fetch_weather_data, fetch_forecast_data, get_weather_alerts
-from language_support import initialize_language, show_language_selector, t
+from language_support import initialize_language, t, translate_dataframe
+
+# -----------------------------
+# Initialize language AFTER config
+# -----------------------------
+lang = initialize_language()
+
+# Apply custom CSS
+with open(".streamlit/custom.css") as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+# Titles and text with translations
+st.title(t("PhytoSense - AI Plant Health Monitoring", lang))
+st.write(t("Welcome to the Smart Farming App. Get crop insights and weather forecasts.", lang))
+
+if st.button(t("Detect Disease", lang)):
+    st.success(t("Disease detection started.", lang))
+
+# Example for translating a DataFrame
+# st.dataframe(translate_dataframe(my_dataframe, lang))
+
+
+lang = initialize_language()
+
+st.title(t("PhytoSense - AI Plant Health Monitoring", lang))
+st.write(t("Welcome to the Smart Farming App. Get crop insights and weather forecasts.", lang))
+
+if st.button(t("Detect Disease", lang)):
+    st.success(t("Disease detection started.", lang))
+
+#st.dataframe(translate_dataframe(my_dataframe, lang))
+import streamlit as st
+from language_support import initialize_language, t
+
+# Initialize language selector
+lang = initialize_language()
+
+# Use translation helper
+st.title(t("Welcome to PhytoSense", lang))
+st.write(t("This is a multi-language demo.", lang))
+
+ 
 
 # Page configuration
 st.set_page_config(
@@ -38,6 +91,125 @@ with open(".streamlit/custom.css") as f:
 
 # Add some interactivity with CSS animations
 st.markdown("""
+<style>
+    /* Main container styling */
+    .auth-container {
+        background-color: #f8f9fa;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+    }
+    /* Camera Input Styling */
+.stCamera {
+    border: 2px dashed #4CAF50;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.stCamera button {
+    background-color: #4CAF50 !important;
+}
+[data-testid="stCameraInputButton"] {
+    border-radius: 20px !important;
+}
+            
+    /* Form styling */
+    .auth-form {
+        background-color: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Input field styling */
+    .stTextInput>div>div>input, 
+    .stTextInput>div>div>input:focus {
+        border: 1px solid #4CAF50;
+        border-radius: 8px;
+        padding: 10px;
+    }
+    
+    /* Button styling */
+    .auth-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 0;
+        cursor: pointer;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+    
+    .auth-button:hover {
+        background-color: #3e8e41;
+        transform: translateY(-2px);
+    }
+    
+    /* Secondary button styling */
+    .secondary-button {
+        background-color: white;
+        color: #4CAF50;
+        border: 1px solid #4CAF50;
+    }
+    
+    .secondary-button:hover {
+        background-color: #f1f8e9;
+    }
+    
+    /* Background styling */
+    .stApp {
+        background-image: linear-gradient(to bottom, #e8f5e9, #f1f8e9);
+    }
+    
+    /* Logo styling */
+    .logo-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .logo-img {
+        width: 120px;
+        height: auto;
+    }
+    
+    /* Welcome text styling */
+    .welcome-text {
+        color: #2e7d32;
+        margin-bottom: 20px;
+    }
+    
+    /* Feature list styling */
+    .feature-list {
+        padding-left: 20px;
+    }
+    
+    .feature-list li {
+        margin-bottom: 10px;
+        color: #555;
+    }
+    
+    /* Animation for the form */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .animated-form {
+        animation: fadeInUp 0.6s ease-out;
+    }
+</style>
 <style>
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -158,6 +330,10 @@ def init_session_state():
     # Language support
     if "language" not in st.session_state:
         st.session_state.language = "en"
+    if "image_source" not in st.session_state:
+        st.session_state.image_source = None 
+    if "image_capture_method" not in st.session_state:
+        st.session_state.image_capture_method = None # Will store 'upload', 'example', or 'live'
 
 # Initialize session state
 init_session_state()
@@ -306,109 +482,239 @@ def show_header():
 
 # Login page
 def show_login_page():
-    """Display the login page"""
-    st.markdown("<h2 class='slideIn'>Login to PhytoSense</h2>", unsafe_allow_html=True)
-    
-    # Check if we need to show account created message
-    if st.session_state.show_account_created:
-        st.success("Account created successfully! Please login.")
-        st.session_state.show_account_created = False
-    
-    # Create two columns for the form
-    col1, col2 = st.columns([1, 1])
-    
-    with col1:
-        username = st.text_input("Username")
-        password = st.text_input("Password", type="password")
+    """Display the login page with enhanced design and functionality"""
+    # Create a container for the entire login page
+    with st.container():
+        # Create two columns for layout
+        col1, col2 = st.columns([1, 1])
         
-        if st.button("Login"):
-            if not username or not password:
-                st.error("Please enter both username and password")
-            else:
-                user = verify_user(username, password)
-                if user:
-                    st.session_state.current_user = user
-                    # Get user profile if it exists
-                    user_id = user['id'] if isinstance(user, dict) else user.id
-                    profile = get_user_profile(user_id)
-                    if profile:
-                        st.session_state.user_profile = profile
-                    
-                    # Check if user has completed their profile
-                    profile_complete = user.get('profile_complete', False) if isinstance(user, dict) else user.profile_complete
-                    if profile_complete:
-                        go_to_dashboard()
-                    else:
-                        go_to_profile_setup()
+        with col1:
+            # Login form container
+            st.markdown("## Login to PhytoSense")
+            
+            # Logo and title
+            svg_content = load_svg("assets/logo.svg")
+            st.image(svg_content, width=80)
+
+            # Show success message if account was just created
+            if st.session_state.show_account_created:
+                st.success("Account created successfully! Please login.")
+                st.session_state.show_account_created = False
+
+            # Login form
+            username = st.text_input("Username", key="login_username", placeholder="Enter your username")
+            password = st.text_input("Password", type="password", key="login_password", placeholder="Enter your password")
+            
+            # Remember me checkbox
+            remember_me = st.checkbox("Remember me", value=True)
+            
+            # Login button with loading state
+            if st.button("Login", key="login_button", type="primary"):
+                if not username or not password:
+                    st.error("Please enter both username and password")
                 else:
-                    st.error("Invalid username or password")
+                    with st.spinner("Authenticating..."):
+                        try:
+                            user = verify_user(username, password)
+                            if user:
+                                st.session_state.current_user = user
+                                st.success("Login successful!")
+                                
+                                # Load user profile if exists
+                                user_id = user['id'] if isinstance(user, dict) else user.id
+                                profile = get_user_profile(user_id)
+                                if profile:
+                                    st.session_state.user_profile = profile
+                                
+                                # Redirect based on profile completion
+                                if not user.get("profile_complete", False):
+                                    go_to_profile_setup()
+                                else:
+                                    go_to_dashboard()
+                                st.rerun()
+                            else:
+                                st.error("Invalid username or password")
+                        except Exception as e:
+                            st.error(f"Login failed: {str(e)}")
+            
+            # Forgot password link
+            st.markdown("[Forgot password?](#)")
+            
+            # Signup prompt
+            st.markdown("Don't have an account?")
+            if st.button("Create Account", key="signup_prompt_button"):
+                go_to_signup()
 
-        if st.button("Create Account"):
-            go_to_signup()
-    
-    with col2:
-        st.markdown("""
-        <div class="fadeIn">
-            <h3>Welcome to PhytoSense</h3>
-            <p>The AI-powered solution for monitoring and managing plant health.</p>
-            <ul>
-                <li>Analyze crop diseases with our AI engine</li>
-                <li>Get recommendations for improving crop health</li>
-                <li>Monitor soil conditions and get customized advice</li>
-                <li>Track weather patterns and receive alerts</li>
-                <li>Access region-specific farming insights</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
+        with col2:
+            # Features section
+            st.markdown("## Why Use PhytoSense?")
+            
+            feature_cols = st.columns([1, 3])
+            with feature_cols[0]:
+                st.markdown("🔍")
+            with feature_cols[1]:
+                st.markdown("**Disease Detection**")
+                st.markdown("Identify plant issues early with AI analysis")
+            
+            feature_cols = st.columns([1, 3])
+            with feature_cols[0]:
+                st.markdown("💧")
+            with feature_cols[1]:
+                st.markdown("**Water Optimization**")
+                st.markdown("Prevent over/under watering with precise analysis")
+            
+            feature_cols = st.columns([1, 3])
+            with feature_cols[0]:
+                st.markdown("🌱")
+            with feature_cols[1]:
+                st.markdown("**Smart Recommendations**")
+                st.markdown("Get personalized fertilizer and care advice")
+            
+            feature_cols = st.columns([1, 3])
+            with feature_cols[0]:
+                st.markdown("📈")
+            with feature_cols[1]:
+                st.markdown("**Track Progress**")
+                st.markdown("Monitor your farm's health over time")
+            
+            # Testimonial
+            st.markdown("---")
+            st.markdown("> *\"PhytoSense helped me reduce crop losses by 30%\"*")
+            st.markdown("> **- Rajesh K., Maharashtra Farmer**")
 
-# Signup page
 def show_signup_page():
-    """Display the signup page"""
-    st.markdown("<h2 class='slideIn'>Create a PhytoSense Account</h2>", unsafe_allow_html=True)
-    
-    # Create two columns for the form
-    col1, col2 = st.columns([1, 1])
-    
-    with col1:
-        username = st.text_input("Username (required)")
-        password = st.text_input("Password (required)", type="password")
-        confirm_password = st.text_input("Confirm Password", type="password")
-        email = st.text_input("Email (optional)")
-        farm_location = st.text_input("Farm Location (optional, can be set later)")
+    """Display the signup page with enhanced design and validation"""
+    # Create a container for the entire page
+    with st.container():
+        # Create two columns for layout
+        col1, col2 = st.columns([1, 1])
         
-        if st.button("Create Account"):
-            # Validate inputs
-            if not username or not password:
-                st.error("Username and password are required")
-            elif password != confirm_password:
-                st.error("Passwords do not match")
-            else:
-                # Create user
-                success, message = create_user(username, password, email, farm_location)
-                if success:
-                    st.session_state.show_account_created = True
-                    go_to_login()
-                else:
-                    st.error(message)
+        with col1:
+            # Form container
+            st.markdown("## Create Your Account")
+            
+            # Logo and title
+            svg_content = load_svg("assets/logo.svg")
+            st.image(svg_content, width=80)
+            
+            # Signup form with validation
+            with st.form("signup_form"):
+                # Required fields
+                username = st.text_input("Username*", help="Required. 4-20 characters, letters and numbers only")
+                email = st.text_input("Email*", help="Required for account recovery")
+                password = st.text_input("Password*", type="password", 
+                                       help="Minimum 8 characters with at least one number and special character")
+                confirm_password = st.text_input("Confirm Password*", type="password")
+                
+                # Optional fields
+                farm_location = st.text_input("Farm Location", help="Optional - helps provide localized recommendations")
+                phone = st.text_input("Phone Number", help="Optional - for SMS alerts")
+                
+                # Terms checkbox
+                agree_terms = st.checkbox("I agree to the Terms of Service and Privacy Policy*", value=False)
+                
+                # Marketing consent
+                receive_updates = st.checkbox("I'd like to receive product updates and farming tips", value=True)
+                
+                # Form submission
+                submitted = st.form_submit_button("Create Account", type="primary")
+                
+                if submitted:
+                    # Validate inputs
+                    errors = []
+                    
+                    if not username:
+                        errors.append("Username is required")
+                    elif len(username) < 4 or len(username) > 20:
+                        errors.append("Username must be 4-20 characters")
+                    elif not username.isalnum():
+                        errors.append("Username can only contain letters and numbers")
+                    
+                    if not email:
+                        errors.append("Email is required")
+                    elif "@" not in email or "." not in email:
+                        errors.append("Please enter a valid email address")
+                    
+                    if not password:
+                        errors.append("Password is required")
+                    elif len(password) < 8:
+                        errors.append("Password must be at least 8 characters")
+                    elif not any(char.isdigit() for char in password):
+                        errors.append("Password must contain at least one number")
+                    elif not any(not char.isalnum() for char in password):
+                        errors.append("Password must contain at least one special character")
+                    
+                    if password != confirm_password:
+                        errors.append("Passwords do not match")
+                    
+                    if not agree_terms:
+                        errors.append("You must agree to the terms of service")
+                    
+                    if errors:
+                        for error in errors:
+                            st.error(error)
+                    else:
+                        with st.spinner("Creating your account..."):
+                            try:
+                                # Create user
+                                success, message = create_user(
+                                username=username,
+                                password=password,
+                                email=email
+                                )
+                                
+                                if success:
+                                    st.session_state.show_account_created = True
+                                    st.success("Account created successfully!")
+                                    time.sleep(1)  # Show success message briefly
+                                    go_to_login()
+                                    st.rerun()
+                                else:
+                                    st.error(message)
+                            except Exception as e:
+                                st.error(f"Account creation failed: {str(e)}")
+            
+            # Login prompt
+            st.markdown("Already have an account?")
+            if st.button("Back to Login", key="login_prompt_button"):
+                go_to_login()
         
-        if st.button("Back to Login"):
-            go_to_login()
-    
-    with col2:
-        st.markdown("""
-        <div class="fadeIn">
-            <h3>Join PhytoSense</h3>
-            <p>Creating an account gives you access to:</p>
-            <ul>
-                <li>Personalized crop recommendations</li>
-                <li>Analysis history and trend tracking</li>
-                <li>Region-specific agricultural advice</li>
-                <li>Weather alerts for your farm location</li>
-                <li>Community resources and support</li>
-            </ul>
-            <p><small>Your data is secure and will only be used to provide you with better recommendations.</small></p>
-        </div>
-        """, unsafe_allow_html=True)
+        with col2:
+            # Benefits section
+            st.markdown("## Why Join PhytoSense?")
+            
+            benefit_cols = st.columns([1, 3])
+            with benefit_cols[0]:
+                st.markdown("🌾")
+            with benefit_cols[1]:
+                st.markdown("**Smart Farming**")
+                st.markdown("Get AI-powered insights for your crops")
+            
+            benefit_cols = st.columns([1, 3])
+            with benefit_cols[0]:
+                st.markdown("💧")
+            with benefit_cols[1]:
+                st.markdown("**Water Optimization**")
+                st.markdown("Prevent over/under watering with precise analysis")
+            
+            benefit_cols = st.columns([1, 3])
+            with benefit_cols[0]:
+                st.markdown("🔬")
+            with benefit_cols[1]:
+                st.markdown("**Disease Detection**")
+                st.markdown("Identify plant issues before they become serious")
+            
+            benefit_cols = st.columns([1, 3])
+            with benefit_cols[0]:
+                st.markdown("📊")
+            with benefit_cols[1]:
+                st.markdown("**Track Progress**")
+                st.markdown("Monitor your farm's health over time")
+            
+            # Testimonial image placeholder
+            st.markdown("---")
+            st.image("https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80", 
+                     caption="\"PhytoSense helped me reduce crop losses by 30%\" - Rajesh K., Maharashtra Farmer")
 
 # Profile setup page
 def show_profile_setup_page():
@@ -526,215 +832,258 @@ def show_profile_setup_page():
 
 # Dashboard page
 def show_dashboard_page():
-    """Display the main dashboard page"""
+    """Display the main dashboard page with overview, quick actions, and recent activities"""
     st.markdown("<h2 class='slideIn'>Farmer Dashboard</h2>", unsafe_allow_html=True)
     
     # Get user data
     user_id = st.session_state.current_user['id'] if isinstance(st.session_state.current_user, dict) else st.session_state.current_user.id
     profile = st.session_state.user_profile or {}
     
-    # Create dashboard layout
-    col1, col2 = st.columns([2, 1])
+    # Create dashboard layout with tabs
+    tab1, tab2, tab3 = st.tabs(["📊 Overview", "⚡ Quick Actions", "🕒 Recent Activities"])
     
-    with col1:
-        # Main dashboard section
-        st.markdown("<div class='card'>", unsafe_allow_html=True)
-        st.subheader("Quick Actions")
+    with tab1:
+        # Overview tab with colored heading
+        st.markdown("""
+        <div style='background-color:#4CAF50; padding:10px; border-radius:5px;'>
+            <h3 style='color:white; margin:0;'>Farm Overview</h3>
+        </div>
+        <div class='tab-content'>
+        """, unsafe_allow_html=True)
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("### 🏡 Farm Profile")
+            st.markdown(f"**Location:** {get_profile_field(profile, 'farm_location', 'Not set')}")
+            st.markdown(f"**Size:** {get_profile_field(profile, 'farm_size', 'Not set')} acres")
+            st.markdown(f"**Primary Crops:** {get_profile_field(profile, 'primary_crops', 'Not set')}")
+            st.markdown(f"**Farming Type:** {get_profile_field(profile, 'farming_type', 'Not set')}")
+            
+            if st.button("✏️ Edit Profile", key="edit_profile_dash"):
+                go_to_profile_setup()
+        
+        with col2:
+            st.markdown("### 📅 Seasonal Summary")
+            now = datetime.now()
+            month = now.month
+            
+            # Determine season
+            if 3 <= month <= 5:  # Spring
+                season = "Spring"
+                season_color = "#6EDB3E"
+                season_icon = "🌱"
+                season_tips = [
+                    "Prepare soil for planting",
+                    "Start summer crop seedlings",
+                    "Apply pre-emergent herbicides",
+                    "Check irrigation systems"
+                ]
+            elif 6 <= month <= 8:  # Summer
+                season = "Summer"
+                season_color = "#FF9800"
+                season_icon = "☀️"
+                season_tips = [
+                    "Monitor for heat stress",
+                    "Increase irrigation frequency",
+                    "Apply mulch to retain moisture",
+                    "Watch for pest outbreaks"
+                ]
+            elif 9 <= month <= 11:  # Fall
+                season = "Fall"
+                season_color = "#FF5722"
+                season_icon = "🍂"
+                season_tips = [
+                    "Harvest mature crops",
+                    "Plant cover crops",
+                    "Test and amend soil",
+                    "Clean and store equipment"
+                ]
+            else:  # Winter
+                season = "Winter"
+                season_color = "#2196F3"
+                season_icon = "❄️"
+                season_tips = [
+                    "Protect sensitive plants",
+                    "Service farm equipment",
+                    "Plan next season's crops",
+                    "Take training courses"
+                ]
+                
+            st.markdown(f"""
+            <div style='background-color:{season_color}; padding:10px; border-radius:5px; color:white; margin-bottom:15px;'>
+                <span style='font-size:24px;'>{season_icon}</span> <strong>{season} Season</strong>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            st.markdown("**Seasonal Tips:**")
+            for tip in season_tips:
+                st.markdown(f"- {tip}")
+        
+        st.markdown("</div>", unsafe_allow_html=True)  # Close tab-content
+    
+    with tab2:
+        # Quick Actions tab with colored heading
+        st.markdown("""
+        <div style='background-color:#2196F3; padding:10px; border-radius:5px;'>
+            <h3 style='color:white; margin:0;'>Quick Actions</h3>
+        </div>
+        <div class='tab-content'>
+        """, unsafe_allow_html=True)
         
         # Create action buttons in a grid layout
-        action1, action2, action3 = st.columns(3)
+        action_cols = st.columns(3)
         
-        with action1:
+        with action_cols[0]:
             st.markdown("""
-            <div class='tile'>
-                <div class='tile-icon'>🌱</div>
-                <div class='tile-title'>Test Your Crop</div>
+            <div class='action-card' style='text-align:center;'>
+                <h4>🌱 Test Your Crop</h4>
                 <p>Analyze crop health and detect diseases</p>
             </div>
             """, unsafe_allow_html=True)
-            if st.button("Analyze Crop", key="dashboard_crop"):
+            if st.button("Analyze", key="analyze_crop_btn", type="primary"):
                 go_to_crop_test()
-                
-        with action2:
+            
+        with action_cols[1]:
             st.markdown("""
-            <div class='tile'>
-                <div class='tile-icon'>🌍</div>
-                <div class='tile-title'>Soil Analysis</div>
+            <div class='action-card' style='text-align:center;'>
+                <h4>🌍 Soil Analysis</h4>
                 <p>Check soil quality and get recommendations</p>
             </div>
             """, unsafe_allow_html=True)
-            if st.button("Analyze Soil", key="dashboard_soil"):
+            if st.button("Analyze", key="analyze_soil_btn", type="primary"):
                 go_to_soil_analysis()
-                
-        with action3:
+            
+        with action_cols[2]:
             st.markdown("""
-            <div class='tile'>
-                <div class='tile-icon'>☁️</div>
-                <div class='tile-title'>Weather Alerts</div>
+            <div class='action-card' style='text-align:center;'>
+                <h4>☁️ Weather</h4>
                 <p>Get weather forecasts and farming alerts</p>
             </div>
             """, unsafe_allow_html=True)
-            if st.button("Check Weather", key="dashboard_weather"):
+            if st.button("Check", key="check_weather_btn", type="primary"):
                 go_to_weather()
         
         # Second row of actions
-        action4, action5, action6 = st.columns(3)
+        action_cols2 = st.columns(3)
         
-        with action4:
+        with action_cols2[0]:
             st.markdown("""
-            <div class='tile'>
-                <div class='tile-icon'>📊</div>
-                <div class='tile-title'>Analysis History</div>
-                <p>View previous analyses and track progress</p>
+            <div class='action-card' style='text-align:center;'>
+                <h4>📊 History</h4>
+                <p>View previous analyses and reports</p>
             </div>
             """, unsafe_allow_html=True)
-            if st.button("View History", key="dashboard_history"):
+            if st.button("View", key="view_history_btn", type="primary"):
                 go_to_history()
                 
-        with action5:
+        with action_cols2[1]:
             st.markdown("""
-            <div class='tile'>
-                <div class='tile-icon'>📚</div>
-                <div class='tile-title'>Farming Resources</div>
-                <p>Access guides and best practices</p>
+            <div class='action-card' style='text-align:center;'>
+                <h4>📚 Resources</h4>
+                <p>Access farming guides and materials</p>
             </div>
             """, unsafe_allow_html=True)
-            if st.button("Resources", key="dashboard_resources"):
+            if st.button("Browse", key="browse_resources_btn", type="primary"):
                 go_to_resources()
                 
-        with action6:
+        with action_cols2[2]:
             st.markdown("""
-            <div class='tile'>
-                <div class='tile-icon'>👤</div>
-                <div class='tile-title'>Update Profile</div>
-                <p>Manage your farmer profile settings</p>
+            <div class='action-card' style='text-align:center;'>
+                <h4>🛒 Marketplace</h4>
+                <p>Find agricultural products</p>
             </div>
             """, unsafe_allow_html=True)
-            if st.button("Edit Profile", key="dashboard_profile"):
-                go_to_profile_setup()
+            if st.button("Explore", key="explore_market_btn", type="primary"):
+                st.info("Marketplace feature coming soon!")
         
-        st.markdown("</div>", unsafe_allow_html=True)
-        
-        # Recent analyses
-        st.markdown("<div class='card'>", unsafe_allow_html=True)
-        st.subheader("Recent Analyses")
+        st.markdown("</div>", unsafe_allow_html=True)  # Close tab-content
+    
+    with tab3:
+        # Recent Activities tab with colored heading
+        st.markdown("""
+        <div style='background-color:#9C27B0; padding:10px; border-radius:5px;'>
+            <h3 style='color:white; margin:0;'>Recent Activities</h3>
+        </div>
+        <div class='tab-content'>
+        """, unsafe_allow_html=True)
         
         # Get user's analysis history
-        history = get_user_analyses(user_id, limit=3)
+        history = get_user_analyses(user_id, limit=5)
         
         if history:
             for analysis in history:
-                with st.expander(f"{analysis['analysis_type'].title()} Analysis - {analysis['timestamp'][:10]}"):
-                    # Display analysis details
-                    st.markdown(f"**Type:** {analysis['analysis_type'].title()}")
-                    st.markdown(f"**Date:** {analysis['timestamp'][:10]}")
+                # Create a card for each analysis
+                with st.container():
+                    col1, col2 = st.columns([3, 1])
                     
-                    # Show different details based on analysis type
-                    if analysis['analysis_type'] == 'plant':
-                        if 'results' in analysis and 'plant_info' in analysis['results']:
-                            plant_info = analysis['results']['plant_info']
-                            st.markdown(f"**Plant:** {plant_info.get('name', 'Unknown')}")
-                            
-                            if 'diseases' in analysis['results']:
-                                diseases = analysis['results']['diseases']
-                                if diseases.get('detected', False):
-                                    st.markdown("**Diseases Detected:** Yes")
-                                    for disease in diseases.get('diseases', []):
-                                        st.markdown(f"- {disease.get('name', 'Unknown')} ({disease.get('confidence', 0):.1f}%)")
-                                else:
-                                    st.markdown("**Diseases Detected:** No")
+                    with col1:
+                        # Display analysis summary
+                        if analysis["analysis_type"] == "plant":
+                            st.markdown(f"#### 🌱 Plant Analysis - {analysis['timestamp'][:10]}")
+                            if "results" in analysis and "plant_info" in analysis["results"]:
+                                plant_info = analysis["results"]["plant_info"]
+                                st.markdown(f"**Plant:** {plant_info.get('name', 'Unknown')}")
+                                
+                                if "diseases" in analysis["results"]:
+                                    diseases = analysis["results"]["diseases"]
+                                    if diseases.get("detected", False):
+                                        st.markdown("**Status:** <span class='status-danger'>Issues Detected</span>", unsafe_allow_html=True)
+                                    else:
+                                        st.markdown("**Status:** <span class='status-healthy'>Healthy</span>", unsafe_allow_html=True)
+                        
+                        elif analysis["analysis_type"] == "soil":
+                            st.markdown(f"#### 🌍 Soil Analysis - {analysis['timestamp'][:10]}")
+                            if "results" in analysis and "soil_type" in analysis["results"]:
+                                soil_type = analysis["results"]["soil_type"]
+                                st.markdown(f"**Soil Type:** {soil_type}")
                     
-                    elif analysis['analysis_type'] == 'soil':
-                        if 'results' in analysis and 'soil_type' in analysis['results']:
-                            soil_type = analysis['results']['soil_type']
-                            st.markdown(f"**Soil Type:** {soil_type}")
-                            
-                            if 'properties' in analysis['results']:
-                                properties = analysis['results']['properties']
-                                st.markdown(f"**pH:** {properties.get('ph', 'Unknown')}")
-                                st.markdown(f"**Organic Matter:** {properties.get('organic_matter', 'Unknown')}")
+                    with col2:
+                        # View details button
+                        if st.button("View Details", key=f"view_{analysis['id']}"):
+                            st.session_state.selected_analysis = analysis
+                            st.session_state.page = "history"
+                            st.rerun()
                     
-                    # View full details button
-                    if st.button("View Full Details", key=f"view_{analysis['id']}"):
-                        # In a real app, this would navigate to a detailed view
-                        st.session_state.page = "history"
+                    st.markdown("---")
         else:
-            st.info("No analyses yet. Start by analyzing your crops or soil!")
+            st.info("No recent activities found. Start by analyzing your crops or soil!")
         
-        st.markdown("</div>", unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)  # Close tab-content
     
-    with col2:
-        # Sidebar/Profile summary
-        st.markdown("<div class='card'>", unsafe_allow_html=True)
-        st.subheader("Farmer Profile")
+    # Add custom CSS for the dashboard
+    st.markdown("""
+    <style>
+        .tab-content {
+            padding: 15px;
+            background-color: white;
+            border-radius: 0 0 10px 10px;
+            border: 1px solid #e0e0e0;
+            border-top: none;
+        }
         
-        # Display profile information
-        st.markdown(f"**Name:** {get_profile_field(profile, 'name', 'Not set')}")
-        st.markdown(f"**Location:** {get_profile_field(profile, 'farm_location', 'Not set')}")
-        st.markdown(f"**Farm Size:** {get_profile_field(profile, 'farm_size', 'Not set')} acres")
-        st.markdown(f"**Farming Type:** {get_profile_field(profile, 'farming_type', 'Not set')}")
-        st.markdown(f"**Primary Crops:** {get_profile_field(profile, 'primary_crops', 'Not set')}")
+        .action-card {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
         
-        if st.button("Edit Profile", key="sidebar_edit_profile"):
-            go_to_profile_setup()
+        .action-card h4 {
+            margin: 0 0 10px 0;
+        }
         
-        st.markdown("</div>", unsafe_allow_html=True)
-        
-        # Weather widget
-        st.markdown("<div class='card'>", unsafe_allow_html=True)
-        display_weather_widget()
-        st.markdown("</div>", unsafe_allow_html=True)
-        
-        # Seasonal tips
-        st.markdown("<div class='card'>", unsafe_allow_html=True)
-        st.subheader("Seasonal Farming Tips")
-        
-        # Determine current season (simplified)
-        now = datetime.now()
-        month = now.month
-        
-        if 3 <= month <= 5:  # Spring (March-May)
-            season = "Spring"
-            tips = [
-                "Prepare soil with proper tillage and fertilization",
-                "Start planting summer crops by end of season",
-                "Monitor for early pest emergence with warming weather",
-                "Apply pre-emergent herbicides for weed control",
-                "Check irrigation systems before peak water needs"
-            ]
-        elif 6 <= month <= 8:  # Summer (June-August)
-            season = "Summer"
-            tips = [
-                "Ensure adequate irrigation during peak heat",
-                "Monitor for heat stress in sensitive crops",
-                "Apply mulch to reduce water evaporation",
-                "Scout regularly for pest outbreaks",
-                "Prepare for early harvest of certain crops"
-            ]
-        elif 9 <= month <= 11:  # Fall (September-November)
-            season = "Fall"
-            tips = [
-                "Harvest crops at optimal maturity",
-                "Test soil and add amendments as needed",
-                "Plant cover crops to protect soil",
-                "Clean and store equipment properly",
-                "Plan crop rotation for next season"
-            ]
-        else:  # Winter (December-February)
-            season = "Winter"
-            tips = [
-                "Protect sensitive plants from frost",
-                "Maintain proper storage conditions for harvested crops",
-                "Service and repair farm equipment",
-                "Order seeds and plan for spring planting",
-                "Take agricultural training courses"
-            ]
-        
-        st.markdown(f"**Current Season: {season}**")
-        for tip in tips:
-            st.markdown(f"• {tip}")
-        
-        st.markdown("</div>", unsafe_allow_html=True)
+        .action-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+    """, unsafe_allow_html=True)
 
 # Crop test page
 def show_crop_test_page():
@@ -742,7 +1091,7 @@ def show_crop_test_page():
     st.markdown("<h2 class='slideIn'>Plant Health Analysis</h2>", unsafe_allow_html=True)
     
     # Create tabs for different ways to add images
-    tab_upload, tab_example = st.tabs(["Upload Image", "Use Example Image"])
+    tab_upload, tab_example, tab_live = st.tabs(["📁 Upload", "🖼️ Example", "📷 Live Capture"])
     
     with tab_upload:
         uploaded_file = st.file_uploader("Upload an image of your crop for analysis", type=["jpg", "jpeg", "png"])
@@ -751,6 +1100,7 @@ def show_crop_test_page():
             # Save the uploaded image to session state
             image = Image.open(uploaded_file)
             st.session_state.uploaded_image = image
+            st.session_state.image_source = "upload"
             
             # Display the uploaded image
             st.image(image, caption="Uploaded Image", use_column_width=True)
@@ -769,10 +1119,44 @@ def show_crop_test_page():
                         # Load the selected example image
                         image = Image.open(image_path)
                         st.session_state.uploaded_image = image
+                        st.session_state.image_source = "example"
                         st.rerun()
         else:
             st.info("No example images available.")
-    
+
+    with tab_live:
+        st.markdown("### Capture Plant Image Live")
+        st.warning("Camera access is required. Your image will not be stored permanently.")
+        
+        # Add a toggle for camera visibility
+        if 'show_camera' not in st.session_state:
+            st.session_state.show_camera = False
+        
+        if not st.session_state.show_camera:
+            if st.button("Open Camera", key="open_camera"):
+                st.session_state.show_camera = True
+                st.rerun()
+        else:
+            # Camera widget
+            captured_image = st.camera_input(
+                "Position your plant and click capture",
+                key="live_camera",
+                help="Ensure good lighting and focus on affected areas"
+            )
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                if captured_image:
+                    st.session_state.uploaded_image = Image.open(captured_image)
+                    st.session_state.image_capture_method = 'live'
+                    st.success("Image captured! Scroll down for analysis.")
+                    st.session_state.show_camera = False
+                    st.rerun()
+            
+            with col2:
+                if st.button("Close Camera", key="close_camera"):
+                    st.session_state.show_camera = False
+                    st.rerun()
     # Form for additional plant details
     if st.session_state.uploaded_image:
         st.markdown("### Additional Information (Optional)")
@@ -785,7 +1169,7 @@ def show_crop_test_page():
             crop_type = st.selectbox(
                 "Crop Type",
                 options=["Unknown", "Tomato", "Potato", "Corn", "Wheat", "Rice", "Onion", "Soybean", "Cotton", 
-                         "Cabbage", "Watermelon", "Pomegranate", "Cluster Beans", "Bottle Gourd", "Cauliflower", "Lady Finger"],
+                         "Cabbage", "Watermelon", "Pomegranate", "Cluster Beans","Grapes","Cucumber","Bitter Gourd","Pumpkin", "Bottle Gourd", "Cauliflower", "Lady Finger"],
                 index=0
             )
             
@@ -913,6 +1297,13 @@ def show_crop_test_page():
     if st.session_state.analysis_complete and st.session_state.analysis_results:
         st.markdown("---")
         st.markdown("<h2 class='fadeIn'>Plant Analysis Results</h2>", unsafe_allow_html=True)
+        if hasattr(st.session_state, 'image_capture_method') and st.session_state.image_capture_method:
+            if st.session_state.image_capture_method == 'live':
+                st.markdown("*Image source: Live capture*")
+            elif st.session_state.image_capture_method == 'upload':
+                st.markdown("*Image source: File upload*")
+            elif st.session_state.image_capture_method == 'example':
+                st.markdown("*Image source: Example image*")
         
         results = st.session_state.analysis_results
         
@@ -1328,7 +1719,6 @@ def show_soil_analysis_page():
     
     with tab_example:
         # Show example soil images
-        # In a real app, these would be loaded from a directory
         example_soil_images = {
             "assets/examples/soil1.jpg": "Black Soil Sample",
             "assets/examples/soil2.jpg": "Red Soil Sample",
@@ -1339,7 +1729,6 @@ def show_soil_analysis_page():
         cols = st.columns(3)
         for i, (image_path, description) in enumerate(example_soil_images.items()):
             with cols[i % 3]:
-                # Create a placeholder for the image
                 st.markdown(f"### {description}")
                 st.markdown(f"<div style='background-color: #{'000000' if 'Black' in description else 'A52A2A' if 'Red' in description else 'F4A460'};height:150px;border-radius:10px;'></div>", unsafe_allow_html=True)
                 if st.button(f"Use this sample", key=f"soil_example_{i}"):
@@ -1388,23 +1777,53 @@ def show_soil_analysis_page():
         if st.button("Analyze Soil", key="analyze_soil_btn"):
             if st.session_state.uploaded_soil_image:
                 with st.spinner("Analyzing soil... Please wait"):
-                    # Preprocess the image
-                    image = st.session_state.uploaded_soil_image
-                    preprocessed_soil_image = preprocess_image(image)
+                    try:
+                        # Preprocess the image
+                        image = st.session_state.uploaded_soil_image
+                        preprocessed_soil_image = preprocess_image(image)
+                        
+                        # Get soil analysis results
+                        soil_results = analyze_soil(None, np.array(preprocessed_soil_image))
+                        
+                        # Ensure results are in proper dictionary format
+                        if isinstance(soil_results, str):
+                            # If it's just a string (soil type), convert to full structure
+                            soil_results = {
+                                "soil_type": soil_results,
+                                "properties": {
+                                    "ph": "Unknown",
+                                    "organic_matter": "Unknown",
+                                    "drainage": "Unknown"
+                                },
+                                "characteristics": "Basic analysis completed",
+                                "suitability": {},
+                                "recommendations": "Consult local agricultural expert for specific advice"
+                            }
+                        elif not isinstance(soil_results, dict):
+                            # Fallback for unexpected formats
+                            soil_results = {
+                                "soil_type": "Unknown",
+                                "properties": {
+                                    "ph": "Unknown",
+                                    "organic_matter": "Unknown",
+                                    "drainage": "Unknown"
+                                },
+                                "characteristics": "Analysis completed",
+                                "suitability": {},
+                                "recommendations": "Results format unexpected"
+                            }
+                        
+                        # Update session state
+                        st.session_state.soil_results = soil_results
+                        st.session_state.soil_analysis_complete = True
+                        
+                        # Save to history
+                        save_to_history("soil", soil_results)
                     
-                    # In a real app, we'd use a proper ML model here
-                    # For demo, we're using the simplified soil analyzer
-                    soil_model = None  # Placeholder - would be loaded from a file
-                    soil_results = analyze_soil(soil_model, np.array(preprocessed_soil_image))
-                    
-                    # Update session state
-                    st.session_state.soil_results = soil_results
-                    st.session_state.soil_analysis_complete = True
-                    
-                    # Save to history
-                    save_to_history("soil", soil_results)
+                    except Exception as e:
+                        st.error(f"Error during soil analysis: {str(e)}")
+                        st.session_state.soil_analysis_complete = False
                 
-                # Force a rerun to show results
                 st.rerun()
     
     # Display soil analysis results
@@ -1425,64 +1844,60 @@ def show_soil_analysis_page():
             # Soil type and characteristics
             st.markdown("### Soil Classification")
             
-            # Handle soil_results based on its structure
-            if isinstance(soil_results, dict) and len(soil_results) > 0:
-                # The soil results might be structured with soil type as the key
-                soil_type = list(soil_results.keys())[0]  # Get the soil type (key of the dict)
-                st.markdown(f"**Identified Soil Type:** {soil_type}")
-                
-                # Display soil properties
-                st.markdown("### Soil Properties")
-                
-                if "properties" in soil_results[soil_type]:
-                    properties = soil_results[soil_type]["properties"]
-                else:
-                    # Fallback if properties aren't found
-                    properties = {"ph": "Unknown", "organic_matter": "Unknown", "drainage": "Unknown"}
-            else:
-                # Handle the case where soil_results is a string or has a different structure
-                st.markdown(f"**Identified Soil Type:** {soil_results if isinstance(soil_results, str) else 'Unknown'}")
-                st.markdown("### Soil Properties")
-                properties = {"ph": "Unknown", "organic_matter": "Unknown", "drainage": "Unknown"}
+            # Get soil type safely
+            soil_type = soil_results.get("soil_type") if isinstance(soil_results, dict) else str(soil_results)
+            st.markdown(f"**Identified Soil Type:** {soil_type}")
+            
+            # Display soil properties
+            st.markdown("### Soil Properties")
+            
+            properties = soil_results.get("properties", {}) if isinstance(soil_results, dict) else {
+                "ph": "Unknown",
+                "organic_matter": "Unknown",
+                "drainage": "Unknown"
+            }
             
             # Create a two-column layout for properties
             prop_col1, prop_col2 = st.columns(2)
             
             with prop_col1:
-                st.markdown(f"**pH Value:** {properties['ph']}")
-                st.markdown(f"**Organic Matter:** {properties['organic_matter']}")
+                st.markdown(f"**pH Value:** {properties.get('ph', 'Unknown')}")
+                st.markdown(f"**Organic Matter:** {properties.get('organic_matter', 'Unknown')}")
             
             with prop_col2:
-                st.markdown(f"**Drainage:** {properties['drainage']}")
+                st.markdown(f"**Drainage:** {properties.get('drainage', 'Unknown')}")
         
         with col2:
             # Soil characteristics
             st.markdown("### Characteristics")
             
-            # Handle the case where soil_results might have a different structure
-            if isinstance(soil_results, dict) and len(soil_results) > 0 and isinstance(soil_type, str) and soil_type in soil_results:
-                characteristics = soil_results[soil_type].get("characteristics", "Information not available.")
-                st.markdown(characteristics)
-                
-                # Crop suitability
-                st.markdown("### Crop Suitability")
-                suitability = soil_results[soil_type].get("suitability", {})
+            if isinstance(soil_results, dict):
+                characteristics = soil_results.get("characteristics", "Information not available.")
             else:
-                st.markdown("Detailed soil characteristics information not available.")
-                st.markdown("### Crop Suitability")
-                suitability = {}
+                characteristics = "Basic analysis completed. Detailed characteristics not available."
             
-            for crop, suitability_text in suitability.items():
-                st.markdown(f"**{crop.title()}:** {suitability_text}")
+            st.markdown(characteristics)
+            
+            # Crop suitability
+            st.markdown("### Crop Suitability")
+            
+            suitability = soil_results.get("suitability", {}) if isinstance(soil_results, dict) else {}
+            
+            if suitability:
+                for crop, suitability_text in suitability.items():
+                    st.markdown(f"**{crop.title()}:** {suitability_text}")
+            else:
+                st.info("No specific crop suitability information available.")
             
             # Recommendations
             st.markdown("### Recommendations")
             
-            if isinstance(soil_results, dict) and isinstance(soil_type, str) and soil_type in soil_results and "recommendations" in soil_results[soil_type]:
-                recommendations = soil_results[soil_type]["recommendations"]
-                st.markdown(recommendations)
+            if isinstance(soil_results, dict):
+                recommendations = soil_results.get("recommendations", "No specific recommendations available.")
             else:
-                st.markdown("Specific recommendations not available for this soil type.")
+                recommendations = "Consult with local agricultural expert for specific advice."
+            
+            st.markdown(recommendations)
         
         # Visualize soil properties
         st.markdown("---")
@@ -1491,11 +1906,12 @@ def show_soil_analysis_page():
         # Create a simple visualization of soil properties
         fig, ax = plt.subplots(figsize=(10, 6))
         
-        # Parse pH value (assuming it's a string like "7.5")
+        # Parse pH value safely
         try:
-            ph_value = float(properties['ph'])
+            ph_str = str(properties.get('ph', '7.0'))
+            ph_value = float(ph_str) if ph_str.replace('.', '').isdigit() else 7.0
         except ValueError:
-            ph_value = 7.0  # Default
+            ph_value = 7.0
         
         # Create pH scale visualization
         ph_range = np.linspace(4, 10, 100)
@@ -1515,8 +1931,6 @@ def show_soil_analysis_page():
         
         # Plot the pH scale
         ax.scatter(ph_range, [1] * len(ph_range), c=colors, s=100, marker='|')
-        
-        # Highlight the soil's pH value
         ax.scatter(ph_value, 1, c='red', s=300, marker='v', zorder=5)
         
         # Add labels
@@ -1530,7 +1944,7 @@ def show_soil_analysis_page():
         ax.set_xlim(4, 10)
         ax.set_ylim(0.9, 1.1)
         ax.set_xlabel('pH Scale')
-        ax.set_title(f'Soil pH Analysis: {ph_value} ({properties["ph"]})')
+        ax.set_title(f'Soil pH Analysis: {ph_value} ({properties.get("ph", "Unknown")})')
         ax.get_yaxis().set_visible(False)
         
         # Show the plot
@@ -1553,62 +1967,34 @@ def show_soil_analysis_page():
         
         # Generate report button
         if st.button("Generate Detailed Soil Report"):
-            # In a real app, we'd generate a proper PDF report
-            # For now, we'll just create a formatted markdown report
-            
-            # Make sure variables are defined
-            soil_type_str = soil_type if isinstance(soil_type, str) else "Unknown"
-            
-            # Initialize report
+            # Create report content
             report_md = f"""
             # Soil Analysis Report
             
             ## Soil Classification
-            - **Identified Soil Type:** {soil_type_str}
+            - **Identified Soil Type:** {soil_type}
             
             ## Soil Properties
-            - **pH Value:** {properties['ph']}
-            - **Organic Matter:** {properties['organic_matter']}
-            - **Drainage:** {properties['drainage']}
-            """
+            - **pH Value:** {properties.get('ph', 'Unknown')}
+            - **Organic Matter:** {properties.get('organic_matter', 'Unknown')}
+            - **Drainage:** {properties.get('drainage', 'Unknown')}
             
-            # Add characteristics if available
-            if isinstance(soil_results, dict) and isinstance(soil_type, str) and soil_type in soil_results and "characteristics" in soil_results[soil_type]:
-                report_md += f"""
-                ## Characteristics
-                {soil_results[soil_type]['characteristics']}
-                """
-            else:
-                report_md += """
-                ## Characteristics
-                Detailed soil characteristics information not available.
-                """
+            ## Characteristics
+            {characteristics}
             
-            # Add crop suitability if available
-            report_md += """
             ## Crop Suitability
             """
             
-            if isinstance(suitability, dict):
+            if suitability:
                 for crop, suitability_text in suitability.items():
                     report_md += f"- **{crop.title()}:** {suitability_text}\n"
             else:
                 report_md += "No specific crop suitability information available.\n"
             
-            # Add recommendations if available
-            if isinstance(soil_results, dict) and isinstance(soil_type, str) and soil_type in soil_results and "recommendations" in soil_results[soil_type]:
-                report_md += f"""
-                ## Recommendations
-                {soil_results[soil_type]['recommendations']}
-                """
-            else:
-                report_md += """
-                ## Recommendations
-                Specific recommendations not available for this soil type.
-                """
-            
-            # Add date
             report_md += f"""
+            ## Recommendations
+            {recommendations}
+            
             ## Date of Analysis
             {datetime.now().strftime('%Y-%m-%d %H:%M')}
             """
@@ -1685,226 +2071,304 @@ def show_history_page():
         st.info("No analyses match your filter criteria.")
         return
     
+    # Check if we need to show details for a specific analysis
+    if "selected_analysis_id" in st.session_state:
+        selected_analysis = next((a for a in filtered_history if a["id"] == st.session_state.selected_analysis_id), None)
+        if selected_analysis:
+            show_analysis_details(selected_analysis)
+            if st.button("Back to History"):
+                del st.session_state.selected_analysis_id
+                st.rerun()
+            return
+    
     # Create tabs for different view types
-    tab1, tab2 = st.tabs(["List View", "Detail View"])
+    tab1, tab2 = st.columns(2)  # Changed from tabs to columns for better layout
     
     with tab1:
         # Simple list view
+        st.markdown("#### Analysis List")
         for i, analysis in enumerate(filtered_history):
-            col1, col2 = st.columns([3, 1])
-            
-            with col1:
-                if analysis["analysis_type"] == "plant":
-                    icon = "🌱"
-                    title = "Plant Health Analysis"
-                    if "results" in analysis and "plant_info" in analysis["results"]:
-                        subtitle = f"Plant: {analysis['results']['plant_info'].get('name', 'Unknown')}"
-                    else:
-                        subtitle = "Plant analysis"
-                elif analysis["analysis_type"] == "soil":
-                    icon = "🌍"
-                    title = "Soil Analysis"
-                    if "results" in analysis and "soil_type" in analysis["results"]:
-                        subtitle = f"Soil: {analysis['results']['soil_type']}"
-                    else:
-                        subtitle = "Soil analysis"
-                else:
-                    icon = "📋"
-                    title = f"{analysis['analysis_type'].title()} Analysis"
-                    subtitle = ""
-                
-                st.markdown(f"**{i+1}. {icon} {title}** - {analysis['timestamp'][:10]}")
-                st.markdown(f"{subtitle}")
-            
-            with col2:
-                if st.button("View Details", key=f"view_details_{i}"):
-                    # Set selected analysis for detail view
-                    st.session_state.selected_analysis = analysis
-                    # Switch to detail view tab
-                    st.session_state.history_view_tab = "Detail View"
-                    st.rerun()
-    
-    with tab2:
-        # Detail view of selected analysis
-        if "selected_analysis" in st.session_state:
-            analysis = st.session_state.selected_analysis
-            
-            # Display analysis details based on type
-            if analysis["analysis_type"] == "plant":
-                st.markdown(f"## Plant Health Analysis - {analysis['timestamp'][:10]}")
-                
-                # Get results
-                results = analysis.get("results", {})
-                plant_info = results.get("plant_info", {})
-                diseases = results.get("diseases", {})
-                pests = results.get("pests", {})
-                
-                # Display image if available
-                if "image_path" in analysis and analysis["image_path"]:
-                    try:
-                        image = Image.open(analysis["image_path"])
-                        st.image(image, caption="Plant Image", width=300)
-                    except Exception as e:
-                        st.error(f"Could not load image: {e}")
-                
-                # Create columns for information display
-                col1, col2 = st.columns(2)
+            with st.container():
+                col1, col2 = st.columns([4, 1])
                 
                 with col1:
-                    st.markdown("### Plant Information")
-                    st.markdown(f"**Plant:** {plant_info.get('name', 'Unknown')}")
-                    if "scientific_name" in plant_info and plant_info["scientific_name"]:
-                        st.markdown(f"**Scientific Name:** {plant_info['scientific_name']}")
-                    st.markdown(f"**Confidence:** {format_probability(plant_info.get('probability', 0))}%")
+                    if analysis["analysis_type"] == "plant":
+                        icon = "🌱"
+                        title = "Plant Health Analysis"
+                        if "results" in analysis and "plant_info" in analysis["results"]:
+                            subtitle = f"Plant: {analysis['results']['plant_info'].get('name', 'Unknown')}"
+                        else:
+                            subtitle = "Plant analysis"
+                    elif analysis["analysis_type"] == "soil":
+                        icon = "🌍"
+                        title = "Soil Analysis"
+                        if "results" in analysis and "soil_type" in analysis["results"]:
+                            subtitle = f"Soil: {analysis['results']['soil_type']}"
+                        else:
+                            subtitle = "Soil analysis"
+                    else:
+                        icon = "📋"
+                        title = f"{analysis['analysis_type'].title()} Analysis"
+                        subtitle = ""
                     
-                    if "water_content" in results:
-                        water_content = results["water_content"]
-                        st.markdown("### Water Content")
-                        st.markdown(f"**Status:** {water_content.get('status', 'Unknown')}")
-                        st.markdown(f"**Percentage:** {water_content.get('percentage', 'Unknown')}%")
+                    st.markdown(f"**{i+1}. {icon} {title}** - {analysis['timestamp'][:10]}")
+                    st.markdown(f"{subtitle}")
                 
                 with col2:
-                    st.markdown("### Disease & Pest Information")
-                    
-                    if diseases.get("detected", False):
-                        st.markdown("**Diseases Detected:** Yes")
-                        for disease in diseases.get("diseases", []):
-                            st.markdown(f"- {disease.get('name', 'Unknown')} ({format_probability(disease.get('confidence', 0))}%)")
-                    else:
-                        st.markdown("**Diseases Detected:** No")
-                    
-                    if pests.get("detected", False):
-                        st.markdown("**Pests Detected:** Yes")
-                        for pest in pests.get("pests", []):
-                            st.markdown(f"- {pest.get('name', 'Unknown')} (Level: {pest.get('infestation_level', 'Unknown')})")
-                    else:
-                        st.markdown("**Pests Detected:** No")
+                    if st.button("View Details", key=f"view_details_{analysis['id']}"):
+                        st.session_state.selected_analysis_id = analysis["id"]
+                        st.rerun()
                 
+                st.markdown("---")
+
+def show_analysis_details(analysis):
+    """Display detailed view of a single analysis"""
+    st.markdown(f"## Detailed Analysis - {analysis['timestamp'][:10]}")
+    
+    # Display analysis details based on type
+    if analysis["analysis_type"] == "plant":
+        st.markdown("### 🌱 Plant Health Analysis")
+        
+        # Get results
+        results = analysis.get("results", {})
+        plant_info = results.get("plant_info", {})
+        diseases = results.get("diseases", {})
+        pests = results.get("pests", {})
+        water_content = results.get("water_content", {})
+        preventive_measures = results.get("preventive_measures", [])
+        fertilizer_recommendations = results.get("fertilizer_recommendations", [])
+        
+        # Display image if available
+        if "image_path" in analysis and analysis["image_path"]:
+            try:
+                image = Image.open(analysis["image_path"])
+                st.image(image, caption="Plant Image", width=300)
+            except Exception as e:
+                st.error(f"Could not load image: {e}")
+        
+        # Create columns for information display
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("### Plant Information")
+            st.markdown(f"**Plant:** {plant_info.get('name', 'Unknown')}")
+            if "scientific_name" in plant_info and plant_info["scientific_name"]:
+                st.markdown(f"**Scientific Name:** {plant_info['scientific_name']}")
+            st.markdown(f"**Confidence:** {format_probability(plant_info.get('probability', 0))}%")
+            
+            st.markdown("### Water Content")
+            st.markdown(f"**Status:** {water_content.get('status', 'Unknown')}")
+            st.markdown(f"**Percentage:** {water_content.get('percentage', 'Unknown')}%")
+        
+        with col2:
+            st.markdown("### Disease & Pest Information")
+            
+            if diseases.get("detected", False):
+                st.markdown("**Diseases Detected:** Yes")
+                for disease in diseases.get("diseases", []):
+                    st.markdown(f"- {disease.get('name', 'Unknown')} ({format_probability(disease.get('confidence', 0))}%)")
+                    if "treatment" in disease:
+                        st.markdown(f"  - Treatment: {disease['treatment']}")
+            else:
+                st.markdown("**Diseases Detected:** No")
+            
+            if pests.get("detected", False):
+                st.markdown("**Pests Detected:** Yes")
+                for pest in pests.get("pests", []):
+                    st.markdown(f"- {pest.get('name', 'Unknown')} (Level: {pest.get('infestation_level', 'Unknown')}")
+                    if "treatment" in pest:
+                        st.markdown(f"  - Treatment: {pest['treatment']}")
+            else:
+                st.markdown("**Pests Detected:** No")
+        
                 # Recommendations
-                st.markdown("### Recommendations")
-                
-                if "preventive_measures" in results:
-                    st.markdown("**Preventive Measures:**")
-                    for measure in results["preventive_measures"]:
-                        st.markdown(f"- {measure}")
-                
-                if "fertilizer_recommendations" in results:
-                    st.markdown("**Fertilizer Recommendations:**")
-                    for recommendation in results["fertilizer_recommendations"]:
-                        st.markdown(f"- {recommendation}")
+        st.markdown("### Recommendations")
+        
+        if preventive_measures:
+            st.markdown("**Preventive Measures:**")
+            for measure in preventive_measures:
+                st.markdown(f"- {measure}")
+        
+        if fertilizer_recommendations:
+            st.markdown("### Fertilizer Recommendations")
             
-            elif analysis["analysis_type"] == "soil":
-                st.markdown(f"## Soil Analysis - {analysis['timestamp'][:10]}")
-                
-                # Get results
-                soil_results = analysis.get("results", {})
-                
-                # Display image if available
-                if "image_path" in analysis and analysis["image_path"]:
-                    try:
-                        image = Image.open(analysis["image_path"])
-                        st.image(image, caption="Soil Sample", width=300)
-                    except Exception as e:
-                        st.error(f"Could not load image: {e}")
-                
-                # Soil type
-                if "soil_type" in soil_results:
-                    soil_type = soil_results["soil_type"]
-                    st.markdown(f"### Soil Type: {soil_type}")
-                    
-                    # Soil properties
-                    if "properties" in soil_results:
-                        properties = soil_results["properties"]
-                        st.markdown("### Properties")
-                        col1, col2, col3 = st.columns(3)
-                        
-                        with col1:
-                            st.markdown(f"**pH:** {properties.get('ph', 'Unknown')}")
-                        
-                        with col2:
-                            st.markdown(f"**Organic Matter:** {properties.get('organic_matter', 'Unknown')}")
-                        
-                        with col3:
-                            st.markdown(f"**Drainage:** {properties.get('drainage', 'Unknown')}")
-                    
-                    # Soil characteristics
-                    if "characteristics" in soil_results:
-                        st.markdown("### Characteristics")
-                        st.markdown(soil_results["characteristics"])
-                    
-                    # Crop suitability
-                    if "suitability" in soil_results:
-                        st.markdown("### Crop Suitability")
-                        for crop, suitability in soil_results["suitability"].items():
-                            st.markdown(f"**{crop.title()}:** {suitability}")
-                    
-                    # Recommendations
-                    if "recommendations" in soil_results:
-                        st.markdown("### Recommendations")
-                        st.markdown(soil_results["recommendations"])
+            # Create tabs for different fertilizer types if they exist
+            fertilizer_types = set()
+            for rec in fertilizer_recommendations:
+                if isinstance(rec, dict) and 'type' in rec:
+                    fertilizer_types.add(rec['type'].title())
             
-            # Generate report button
-            if st.button("Generate Report"):
-                # Placeholder for report generation
-                if analysis["analysis_type"] == "plant":
-                    report_md = generate_report_markdown(
-                        plant_info=analysis.get("results", {}).get("plant_info", {}),
-                        water_content=analysis.get("results", {}).get("water_content", {}),
-                        diseases=analysis.get("results", {}).get("diseases", {}),
-                        pests=analysis.get("results", {}).get("pests", {}),
-                        preventive_measures=analysis.get("results", {}).get("preventive_measures", []),
-                        fertilizer_recommendations=analysis.get("results", {}).get("fertilizer_recommendations", []),
-                        local_recommendations=analysis.get("results", {}).get("local_recommendations", {}),
-                        plant_details=analysis.get("results", {}).get("plant_details", {})
-                    )
-                    
-                    st.download_button(
-                        label="Download Plant Report",
-                        data=report_md,
-                        file_name=f"plant_report_{analysis['timestamp'][:10]}.md",
-                        mime="text/markdown"
-                    )
-                elif analysis["analysis_type"] == "soil":
-                    # Create soil report
-                    soil_results = analysis.get("results", {})
-                    soil_type = soil_results.get("soil_type", "Unknown")
-                    
-                    report_md = f"""
-                    # Soil Analysis Report
-                    
-                    ## Analysis Date: {analysis['timestamp'][:10]}
-                    
-                    ## Soil Classification
-                    - **Identified Soil Type:** {soil_type}
-                    
-                    ## Soil Properties
-                    """
-                    
-                    if "properties" in soil_results:
-                        properties = soil_results["properties"]
-                        report_md += f"- **pH Value:** {properties.get('ph', 'Unknown')}\n"
-                        report_md += f"- **Organic Matter:** {properties.get('organic_matter', 'Unknown')}\n"
-                        report_md += f"- **Drainage:** {properties.get('drainage', 'Unknown')}\n"
-                    
-                    if "characteristics" in soil_results:
-                        report_md += f"\n## Characteristics\n{soil_results['characteristics']}\n"
-                    
-                    if "suitability" in soil_results:
-                        report_md += "\n## Crop Suitability\n"
-                        for crop, suitability in soil_results["suitability"].items():
-                            report_md += f"- **{crop.title()}:** {suitability}\n"
-                    
-                    if "recommendations" in soil_results:
-                        report_md += f"\n## Recommendations\n{soil_results['recommendations']}\n"
-                    
-                    st.download_button(
-                        label="Download Soil Report",
-                        data=report_md,
-                        file_name=f"soil_report_{analysis['timestamp'][:10]}.md",
-                        mime="text/markdown"
-                    )
-        else:
-            st.info("Select an analysis from the list view to see details.")
+            if fertilizer_types:
+                tabs = st.tabs([f"{ftype}" for ftype in sorted(fertilizer_types)] + ["All"])
+            else:
+                tabs = [st.container()]
+            
+            # Organize recommendations by type
+            typed_recommendations = {}
+            for rec in fertilizer_recommendations:
+                if isinstance(rec, dict):
+                    ftype = rec.get('type', 'other').title()
+                    if ftype not in typed_recommendations:
+                        typed_recommendations[ftype] = []
+                    typed_recommendations[ftype].append(rec)
+                else:
+                    if 'other' not in typed_recommendations:
+                        typed_recommendations['other'] = []
+                    typed_recommendations['other'].append(rec)
+            
+            # Display in tabs
+            for i, (ftype, tab) in enumerate(zip(sorted(typed_recommendations.keys()), tabs)):
+                with tab:
+                    for rec in typed_recommendations[ftype]:
+                        if isinstance(rec, dict):
+                            with st.expander(f"🔹 {rec.get('name', 'Fertilizer')}"):
+                                # Create a nice card-like display
+                                col1, col2 = st.columns([1, 3])
+                                
+                                with col1:
+                                    # Display NPK ratio with colored badges
+                                    if 'npk' in rec:
+                                        npk = rec['npk'].split('-')
+                                        if len(npk) == 3:
+                                            st.markdown("""
+                                            <style>
+                                                .npk-badge {
+                                                    display: inline-block;
+                                                    padding: 2px 8px;
+                                                    border-radius: 12px;
+                                                    font-weight: bold;
+                                                    font-size: 0.8em;
+                                                    margin: 2px;
+                                                }
+                                                .npk-N { background-color: #4CAF50; color: white; }
+                                                .npk-P { background-color: #2196F3; color: white; }
+                                                .npk-K { background-color: #FF9800; color: black; }
+                                            </style>
+                                            """, unsafe_allow_html=True)
+                                            
+                                            st.markdown(f"""
+                                            <div style="margin-bottom: 10px;">
+                                                <span class="npk-badge npk-N">N: {npk[0]}</span>
+                                                <span class="npk-badge npk-P">P: {npk[1]}</span>
+                                                <span class="npk-badge npk-K">K: {npk[2]}</span>
+                                            </div>
+                                            """, unsafe_allow_html=True)
+                                
+                                with col2:
+                                    st.markdown(f"**Type:** {rec.get('type', 'N/A').title()}")
+                                    
+                                    if 'description' in rec:
+                                        st.markdown(f"**Description:** {rec['description']}")
+                                    
+                                    if 'application' in rec:
+                                        st.markdown(f"**Application:** {rec['application']}")
+                                    
+                                    if 'conditions' in rec:
+                                        st.markdown(f"**Best For:** {rec['conditions']}")
+                                    
+                                    if 'scientific_backing' in rec:
+                                        st.markdown(f"*Scientific Backing:* {rec['scientific_backing']}", unsafe_allow_html=True)
+                        else:
+                            st.markdown(f"- {rec}")
+            
+            # If there's only one type, don't show tabs
+            if len(fertilizer_types) <= 1:
+                tabs[0].empty()  # Clear the single tab
+                for rec in fertilizer_recommendations:
+                    if isinstance(rec, dict):
+                        with st.expander(f"🔹 {rec.get('name', 'Fertilizer')}"):
+                            # Same card display as above
+                            col1, col2 = st.columns([1, 3])
+                            
+                            with col1:
+                                if 'npk' in rec:
+                                    npk = rec['npk'].split('-')
+                                    if len(npk) == 3:
+                                        st.markdown(f"""
+                                        <div style="margin-bottom: 10px;">
+                                            <span class="npk-badge npk-N">N: {npk[0]}</span>
+                                            <span class="npk-badge npk-P">P: {npk[1]}</span>
+                                            <span class="npk-badge npk-K">K: {npk[2]}</span>
+                                        </div>
+                                        """, unsafe_allow_html=True)
+                            
+                            with col2:
+                                st.markdown(f"**Type:** {rec.get('type', 'N/A').title()}")
+                                
+                                if 'description' in rec:
+                                    st.markdown(f"**Description:** {rec['description']}")
+                                
+                                if 'application' in rec:
+                                    st.markdown(f"**Application:** {rec['application']}")
+                                
+                                if 'conditions' in rec:
+                                    st.markdown(f"**Best For:** {rec['conditions']}")
+                                
+                                if 'scientific_backing' in rec:
+                                    st.markdown(f"*Scientific Backing:* {rec['scientific_backing']}", unsafe_allow_html=True)
+                    else:
+                        st.markdown(f"- {rec}")
+
+    
+    # Generate report button
+    if st.button("Generate Report"):
+        if analysis["analysis_type"] == "plant":
+            report_md = generate_report_markdown(
+                plant_info=analysis.get("results", {}).get("plant_info", {}),
+                water_content=analysis.get("results", {}).get("water_content", {}),
+                diseases=analysis.get("results", {}).get("diseases", {}),
+                pests=analysis.get("results", {}).get("pests", {}),
+                preventive_measures=analysis.get("results", {}).get("preventive_measures", []),
+                fertilizer_recommendations=analysis.get("results", {}).get("fertilizer_recommendations", []),
+                local_recommendations=analysis.get("results", {}).get("local_recommendations", {}),
+                plant_details=analysis.get("results", {}).get("plant_details", {})
+            )
+            
+            st.download_button(
+                label="Download Plant Report",
+                data=report_md,
+                file_name=f"plant_report_{analysis['timestamp'][:10]}.md",
+                mime="text/markdown"
+            )
+        elif analysis["analysis_type"] == "soil":
+            # Create soil report
+            soil_results = analysis.get("results", {})
+            soil_type = soil_results.get("soil_type", "Unknown")
+            
+            report_md = f"""
+            # Soil Analysis Report
+            
+            ## Analysis Date: {analysis['timestamp'][:10]}
+            
+            ## Soil Classification
+            - **Identified Soil Type:** {soil_type}
+            
+            ## Soil Properties
+            """
+            
+            if "properties" in soil_results:
+                properties = soil_results["properties"]
+                report_md += f"- **pH Value:** {properties.get('ph', 'Unknown')}\n"
+                report_md += f"- **Organic Matter:** {properties.get('organic_matter', 'Unknown')}\n"
+                report_md += f"- **Drainage:** {properties.get('drainage', 'Unknown')}\n"
+            
+            if "characteristics" in soil_results:
+                report_md += f"\n## Characteristics\n{soil_results['characteristics']}\n"
+            
+            if "suitability" in soil_results:
+                report_md += "\n## Crop Suitability\n"
+                for crop, suitability in soil_results["suitability"].items():
+                    report_md += f"- **{crop.title()}:** {suitability}\n"
+            
+            if "recommendations" in soil_results:
+                report_md += f"\n## Recommendations\n{soil_results['recommendations']}\n"
+            
+            st.download_button(
+                label="Download Soil Report",
+                data=report_md,
+                file_name=f"soil_report_{analysis['timestamp'][:10]}.md",
+                mime="text/markdown"
+            )
 
 # Resources page (placeholder - would be implemented with actual resources)
 def show_resources_page():
@@ -2576,271 +3040,22 @@ def show_resources_page():
         - Upcoming workshops and training sessions
         """)
 
+
+
 # Weather page
 def show_weather_page():
-    """Display detailed weather information and forecasts"""
-    st.markdown("<h2 class='slideIn'>Weather Information</h2>", unsafe_allow_html=True)
+    """Display the full weather analysis page"""
+    # Get location from profile or user input
+    location = get_profile_field(st.session_state.user_profile, "location")
+    if not location:
+        location = st.text_input("Enter your location (city, country):")
+        if not location:
+            st.warning("Please enter a location to view weather data")
+            return
     
-    # Get farm location from profile
-    farm_location = get_profile_field(st.session_state.user_profile, 'farm_location')
-    
-    # Create input for location
-    location = st.text_input("Location", value=farm_location if farm_location else "")
-    
-    if st.button("Get Weather") or (location and not st.session_state.weather_data):
-        if location:
-            with st.spinner("Fetching weather data..."):
-                # Fetch current weather
-                weather_data = fetch_weather_data(location)
-                
-                # Fetch forecast
-                forecast_data = fetch_forecast_data(location)
-                
-                # Get weather alerts
-                if weather_data:
-                    weather_alerts = get_weather_alerts(weather_data)
-                else:
-                    weather_alerts = []
-                
-                # Update session state
-                st.session_state.weather_location = location
-                st.session_state.weather_data = weather_data
-                st.session_state.forecast_data = forecast_data
-                st.session_state.weather_alerts = weather_alerts
-                
-                # Force page refresh
-                st.rerun()
-        else:
-            st.error("Please enter a location")
-    
-    # Display weather information if available
-    if st.session_state.weather_data:
-        weather_data = st.session_state.weather_data
-        forecast_data = st.session_state.forecast_data
-        
-        # Create columns for current weather and alerts
-        col1, col2 = st.columns([2, 1])
-        
-        with col1:
-            # Current weather
-            st.markdown("### Current Weather")
-            
-            # Get data from weather response
-            temp = weather_data["main"]["temp"]
-            feels_like = weather_data["main"]["feels_like"]
-            humidity = weather_data["main"]["humidity"]
-            wind_speed = weather_data["wind"]["speed"]
-            weather_desc = weather_data["weather"][0]["description"].capitalize()
-            weather_icon = weather_data["weather"][0]["icon"]
-            
-            # Display current conditions
-            st.markdown(f"""
-            <div style="display: flex; align-items: center;">
-                <img src="https://openweathermap.org/img/wn/{weather_icon}@2x.png" style="width: 100px; height: 100px;">
-                <div>
-                    <h1 style="margin: 0;">{temp:.1f}°C</h1>
-                    <p>Feels like: {feels_like:.1f}°C</p>
-                    <p>{weather_desc}</p>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-            
-            # Display additional details
-            col_a, col_b, col_c = st.columns(3)
-            
-            with col_a:
-                st.markdown(f"**Humidity:** {humidity}%")
-            
-            with col_b:
-                st.markdown(f"**Wind:** {wind_speed} m/s")
-            
-            with col_c:
-                if "rain" in weather_data:
-                    rain_1h = weather_data["rain"].get("1h", 0)
-                    st.markdown(f"**Rain (1h):** {rain_1h} mm")
-                else:
-                    st.markdown("**Rain:** None")
-        
-        with col2:
-            # Weather alerts
-            st.markdown("### Alerts")
-            
-            if st.session_state.weather_alerts:
-                for alert in st.session_state.weather_alerts:
-                    if alert["type"] == "danger":
-                        st.error(alert["message"])
-                    elif alert["type"] == "warning":
-                        st.warning(alert["message"])
-                    else:
-                        st.info(alert["message"])
-            else:
-                st.info("No weather alerts at this time.")
-        
-        # Display forecast if available
-        if forecast_data:
-            st.markdown("### 5-Day Forecast")
-            
-            # Format forecast data for display
-            from weather_service import format_forecast_data
-            formatted_forecast = format_forecast_data(forecast_data)
-            
-            # Create columns for each day
-            if formatted_forecast:
-                cols = st.columns(min(5, len(formatted_forecast)))
-                
-                for i, day_forecast in enumerate(formatted_forecast[:5]):  # Show up to 5 days
-                    with cols[i]:
-                        # Format date
-                        day_name = day_forecast["day_name"]
-                        
-                        # Get weather icon
-                        icon = day_forecast["weather_icon"]
-                        
-                        # Display forecast for this day
-                        st.markdown(f"""
-                        <div style="text-align: center;">
-                            <h4>{day_name}</h4>
-                            <img src="https://openweathermap.org/img/wn/{icon}@2x.png" style="width: 50px; height: 50px;">
-                            <p>{day_forecast["weather_description"]}</p>
-                            <p><strong>{day_forecast["max_temp"]:.1f}°C</strong> / {day_forecast["min_temp"]:.1f}°C</p>
-                            <p>Humidity: {day_forecast["avg_humidity"]:.0f}%</p>
-                        </div>
-                        """, unsafe_allow_html=True)
-            else:
-                st.info("Forecast data not available.")
-            
-            # Agricultural recommendations based on weather
-            st.markdown("### Agricultural Recommendations")
-            
-            # Get current weather conditions
-            current_temp = weather_data["main"]["temp"]
-            current_humidity = weather_data["main"]["humidity"]
-            is_raining = "rain" in weather_data
-            
-            # Generate recommendations based on conditions
-            recommendations = []
-            
-            # Temperature-based recommendations
-            if current_temp > 35:
-                recommendations.append("- Apply light irrigation to reduce heat stress on crops")
-                recommendations.append("- Consider temporary shade for sensitive crops")
-                recommendations.append("- Irrigate during early morning or evening")
-            elif current_temp < 10:
-                recommendations.append("- Monitor for frost damage, especially in low-lying areas")
-                recommendations.append("- Cover sensitive crops if temperatures drop further")
-                recommendations.append("- Delay fertilizer application until temperatures rise")
-            
-            # Humidity-based recommendations
-            if current_humidity > 80:
-                recommendations.append("- Monitor crops for fungal diseases due to high humidity")
-                recommendations.append("- Avoid irrigation to prevent excess moisture")
-                recommendations.append("- Consider preventative fungicide application")
-            elif current_humidity < 30:
-                recommendations.append("- Increase irrigation frequency to combat low humidity")
-                recommendations.append("- Apply mulch to conserve soil moisture")
-                recommendations.append("- Monitor for water stress in crops")
-            
-            # Rain-based recommendations
-            if is_raining:
-                rain_amount = weather_data["rain"].get("1h", 0)
-                
-                if rain_amount > 10:
-                    recommendations.append("- Check fields for waterlogging and improve drainage if needed")
-                    recommendations.append("- Postpone fertilizer application to prevent runoff")
-                    recommendations.append("- Monitor for soil erosion in sloped fields")
-                else:
-                    recommendations.append("- Light rain can be beneficial; reduce irrigation accordingly")
-                    recommendations.append("- Good time for foliar fertilizer application after rain stops")
-            
-            # Display recommendations
-            if recommendations:
-                for recommendation in recommendations:
-                    st.markdown(recommendation)
-            else:
-                st.markdown("- Current weather conditions are favorable for most agricultural activities")
-                st.markdown("- Continue with regular farm operations and monitoring")
-            
-            # Weather impact on crops
-            st.markdown("### Potential Weather Impact on Crops")
-            
-            # Allow user to select crops
-            crop_options = ["Tomato", "Onion", "Cotton", "Rice", "Wheat", "Sugarcane"]
-            selected_crops = st.multiselect("Select your crops", options=crop_options)
-            
-            if selected_crops:
-                # Get weather factors
-                has_high_temp = current_temp > 32
-                has_low_temp = current_temp < 15
-                has_high_humidity = current_humidity > 75
-                has_low_humidity = current_humidity < 40
-                has_rain = is_raining
-                
-                # Display impacts for each selected crop
-                for crop in selected_crops:
-                    st.markdown(f"#### {crop}")
-                    
-                    impacts = []
-                    
-                    if crop == "Tomato":
-                        if has_high_temp:
-                            impacts.append("⚠️ High temperatures may cause flower drop and reduce fruit set")
-                        if has_high_humidity:
-                            impacts.append("⚠️ High humidity increases risk of late blight and leaf mold")
-                        if has_rain:
-                            impacts.append("⚠️ Rain may increase disease pressure; monitor for early blight")
-                        if not impacts:
-                            impacts.append("✅ Current conditions are favorable for tomato development")
-                    
-                    elif crop == "Onion":
-                        if has_high_temp:
-                            impacts.append("⚠️ High temperatures may reduce bulb size and quality")
-                        if has_high_humidity:
-                            impacts.append("⚠️ High humidity increases risk of purple blotch and downy mildew")
-                        if has_rain:
-                            impacts.append("⚠️ Excessive rain may lead to rot; ensure good drainage")
-                        if not impacts:
-                            impacts.append("✅ Current conditions are favorable for onion growth")
-                    
-                    elif crop == "Cotton":
-                        if has_high_temp and has_low_humidity:
-                            impacts.append("⚠️ Hot, dry conditions may cause square and boll shedding")
-                        if has_high_humidity:
-                            impacts.append("⚠️ High humidity increases risk of boll rot")
-                        if has_rain:
-                            impacts.append("⚠️ Rain during boll opening can reduce fiber quality")
-                        if not impacts:
-                            impacts.append("✅ Current conditions are favorable for cotton development")
-                    
-                    elif crop == "Rice":
-                        if has_high_temp:
-                            impacts.append("⚠️ High temperatures during flowering may reduce fertility")
-                        if has_low_humidity:
-                            impacts.append("⚠️ Low humidity may increase water requirements")
-                        if not has_rain and has_high_temp:
-                            impacts.append("⚠️ Hot, dry conditions may cause water stress; increase irrigation")
-                        if not impacts:
-                            impacts.append("✅ Current conditions are favorable for rice growth")
-                    
-                    elif crop == "Wheat":
-                        if has_high_temp:
-                            impacts.append("⚠️ High temperatures may accelerate maturity and reduce grain fill")
-                        if has_high_humidity:
-                            impacts.append("⚠️ High humidity increases risk of rust and powdery mildew")
-                        if has_rain:
-                            impacts.append("⚠️ Rain during grain fill may affect quality; during harvest can cause sprouting")
-                        if not impacts:
-                            impacts.append("✅ Current conditions are favorable for wheat development")
-                    
-                    elif crop == "Sugarcane":
-                        if has_low_temp:
-                            impacts.append("⚠️ Low temperatures may slow growth and reduce sucrose accumulation")
-                        if has_low_humidity and has_high_temp:
-                            impacts.append("⚠️ Hot, dry conditions increase water requirements; check irrigation")
-                        if not impacts:
-                            impacts.append("✅ Current conditions are favorable for sugarcane growth")
-                    
-                    for impact in impacts:
-                        st.markdown(impact)
+    # Simply call the weather service's full page display
+    from weather_service import show_weather_page as show_weather_service_page
+    show_weather_service_page()
 
 # Main app logic
 def main():
@@ -2852,8 +3067,8 @@ def main():
     # Language selector in sidebar (would be implemented in full app)
     if st.session_state.page not in ["login", "signup"]:
         with st.sidebar:
-            show_language_selector()
-    
+                lang = initialize_language()
+
     # Display current page
     if st.session_state.page == "login":
         show_login_page()

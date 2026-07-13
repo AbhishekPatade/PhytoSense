@@ -11,5 +11,31 @@
     "preferred_language": "Marathi",
     "last_updated": "2025-04-10T17:14:30.325379",
     "updated_at": "2025-04-10T17:14:30.329287"
+  },
+  "shubhamp": {
+    "name": "shubham bhausaheb pagar",
+    "farm_location": "Nashik,IN",
+    "farm_size": "11",
+    "farming_type": "Conventional",
+    "irrigation": "Drip",
+    "primary_crops": "Tomato",
+    "secondary_crops": "Onion",
+    "receive_weather_alerts": true,
+    "preferred_language": "English",
+    "last_updated": "2025-04-16T17:47:09.908596",
+    "updated_at": "2025-04-16T12:17:09.937545"
+  },
+  "Abhishek": {
+    "name": "Abhishek ",
+    "farm_location": "Nashik",
+    "farm_size": "5",
+    "farming_type": "Conventional",
+    "irrigation": "Drip",
+    "primary_crops": "grapes",
+    "secondary_crops": "cucumber,tomatos",
+    "receive_weather_alerts": true,
+    "preferred_language": "English",
+    "last_updated": "2025-09-24T23:12:05.085194",
+    "updated_at": "2025-09-24T17:42:05.086411"
   }
 }

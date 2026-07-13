@@ -366,5 +366,2015 @@
         "drainage": "Excessive"
       }
     }
+  },
+  {
+    "id": 6,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-11T03:36:33.821463",
+    "analysis_type": "plant",
+    "image_path": "uploads\\225f0232-c7b2-40d4-8d6f-fcbd2c8d680f.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Onion",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 60,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Downy Mildew",
+            "confidence": 79,
+            "scientific_name": "Peronospora destructor",
+            "description": "Pale-green to yellow elongated patches on leaves with gray-violet fuzzy growth",
+            "treatment": "Apply appropriate Metalaxyl, Chlorothalonil or organic options: Copper hydroxide, Potassium bicarbonate"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Tomato Hornworm",
+            "scientific_name": "Manduca quinquemaculata",
+            "infestation_level": "High",
+            "description": "Large (up to 10cm) green caterpillars with diagonal white stripes and a horn-like projection. Extensive defoliation, feeding on fruits, significant damage to tomato plants",
+            "treatment": "Chemical control: Carbaryl, Permethrin. Organic options: Bacillus thuringiensis (Bt), Handpicking"
+          },
+          {
+            "name": "Thrips",
+            "scientific_name": "Various species (e.g., Thrips tabaci, Frankliniella occidentalis)",
+            "infestation_level": "High",
+            "description": "Tiny (1-2mm), slender insects with fringed wings, difficult to see without magnification. Silvery stippling on leaves, leaf distortion, scarring of fruits, transmission of viruses",
+            "treatment": "Chemical control: Spinosad, Spinetoram. Organic options: Spinosad, Neem oil"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Use drip irrigation rather than overhead watering",
+        "Plant resistant varieties where available",
+        "Introduce predatory mites like Amblyseius swirskii",
+        "Use reflective mulch to reduce landing rates",
+        "Implement physical barriers or traps for the specific pest",
+        "Apply appropriate insecticide following IPM principles",
+        "Enhance natural enemy populations through habitat management",
+        "Practice shallow cultivation to avoid damaging shallow root systems",
+        "Maintain consistent soil moisture to prevent splitting and secondary infections",
+        "Cure harvested bulbs properly with good ventilation to prevent storage diseases"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "vegetative",
+          "name": "Nitrogen-Sulfur Blend",
+          "npk": "21-0-0-24S",
+          "description": "Provides nitrogen for leaf growth and sulfur which is essential for onion flavor development and disease resistance.",
+          "application": "Side-dress 1 lb/100 ft row at 3-leaf stage and again 3-4 weeks later.",
+          "conditions": "Early to mid-growth stage onions",
+          "scientific_backing": "Sulfur application increases pyruvic acid content by 30%, enhancing flavor"
+        },
+        {
+          "type": "bulbing",
+          "name": "Low-N, High-K Blend",
+          "npk": "5-10-20",
+          "description": "Lower nitrogen with higher potassium for bulb development phase. Reducing nitrogen prevents excess leaf growth that can delay bulbing.",
+          "application": "Apply 1 lb/100 ft row when bulbs begin to form, typically 6-8 weeks after planting.",
+          "conditions": "During bulb formation stage",
+          "scientific_backing": "Potassium application at bulbing improves storage quality by 25-40%"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Onion",
+        "plant_age": "Mature",
+        "symptoms": null,
+        "planting_date": "2024-12-16",
+        "irrigation_method": "Flood",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 7,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-13T03:09:20.490309",
+    "analysis_type": "plant",
+    "image_path": "uploads\\76b019df-6589-49a8-a7f6-c4891f3c7e78.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Cabbage",
+        "scientific_name": "Brassica oleracea var. capitata",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 85,
+        "status": "Optimal"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Powdery Mildew",
+            "confidence": 82,
+            "description": "Symptoms of Powdery Mildew observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Aphids",
+            "scientific_name": "Various species (e.g., Aphis gossypii, Myzus persicae)",
+            "infestation_level": "High",
+            "description": "Small (1-3mm), soft-bodied insects, often clustered on new growth, various colors. Stunted growth, leaf curling, transmission of plant viruses, honeydew secretion",
+            "treatment": "Chemical control: Imidacloprid, Acetamiprid. Organic options: Neem oil, Insecticidal soap",
+            "detailed_info": {
+              "symptoms": "Curled leaves, yellowing of leaves, sticky residue on plants",
+              "description": "Small soft-bodied insects that cluster on leaves and stems",
+              "treatment": "Use Neem oil or insecticidal soaps for control"
+            }
+          },
+          {
+            "name": "Tomato Hornworm",
+            "scientific_name": "Manduca quinquemaculata",
+            "infestation_level": "High",
+            "description": "Large (up to 10cm) green caterpillars with diagonal white stripes and a horn-like projection. Extensive defoliation, feeding on fruits, significant damage to tomato plants",
+            "treatment": "Chemical control: Carbaryl, Permethrin. Organic options: Bacillus thuringiensis (Bt), Handpicking"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Use UV-C light treatments at night which suppress spore production",
+        "Apply sulfur dust weekly when humidity >60% but <90%",
+        "Apply flonicamid when populations exceed 50 aphids/leaf",
+        "Plant banker plants with non-pest aphids to maintain parasitoids",
+        "Implement physical barriers or traps for the specific pest",
+        "Apply appropriate insecticide following IPM principles",
+        "Enhance natural enemy populations through habitat management",
+        "Use drip irrigation instead of overhead (reduces disease spread by 40%)",
+        "Apply 2-3 inches of organic mulch (reduces soil-borne disease splash by 75%)",
+        "Rotate crops following scientific rotation schedules (minimum 3-year cycle)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        },
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Cabbage",
+        "plant_age": "Fruiting",
+        "symptoms": null,
+        "planting_date": "2025-01-15",
+        "irrigation_method": "Flood",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 8,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-13T03:10:59.603029",
+    "analysis_type": "soil",
+    "image_path": "uploads\\0632d52a-ea60-44ba-92f1-cf32e4aee928.jpg",
+    "results": {
+      "characteristics": "\n            - High sand content (>70%)\n            - Very low water retention\n            - Poor in organic matter and nutrients\n            - Excellent drainage (often excessive)\n            - May have salinity issues\n            - pH range: 7.0-8.5 (neutral to alkaline)\n            ",
+      "suitability": {
+        "onion": "Poor suitability for onions without significant amendments. Requires intensive management.",
+        "tomato": "Moderate suitability with irrigation, mulching, and nutrient management."
+      },
+      "recommendations": "\n            ### Recommendations for Coastal Sandy Soil:\n            \n            1. **Water Management:**\n               - Install drip irrigation systems\n               - Use mulching extensively to conserve moisture\n               - Apply hydrogels for improving water retention\n            \n            2. **Soil Improvement:**\n               - Add clay or silt-rich soil to improve texture\n               - Incorporate very high rates of organic matter (30-40 tonnes/ha)\n               - Use cocopeat or vermiculite as soil amendments\n            \n            3. **Crop-Specific Recommendations:**\n               - **For Onions:** Consider container or raised bed cultivation\n               - **For Tomatoes:** Use salt-tolerant varieties and mulching\n            ",
+      "properties": {
+        "ph": "7.7",
+        "organic_matter": "Very Low",
+        "drainage": "Excessive"
+      }
+    }
+  },
+  {
+    "id": 9,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-13T03:35:55.576688",
+    "analysis_type": "soil",
+    "image_path": "uploads\\6edccc6d-de79-4acf-97bc-db28cacb2a87.jpg",
+    "results": {
+      "characteristics": "\n            - High sand content (>70%)\n            - Very low water retention\n            - Poor in organic matter and nutrients\n            - Excellent drainage (often excessive)\n            - May have salinity issues\n            - pH range: 7.0-8.5 (neutral to alkaline)\n            ",
+      "suitability": {
+        "onion": "Poor suitability for onions without significant amendments. Requires intensive management.",
+        "tomato": "Moderate suitability with irrigation, mulching, and nutrient management."
+      },
+      "recommendations": "\n            ### Recommendations for Coastal Sandy Soil:\n            \n            1. **Water Management:**\n               - Install drip irrigation systems\n               - Use mulching extensively to conserve moisture\n               - Apply hydrogels for improving water retention\n            \n            2. **Soil Improvement:**\n               - Add clay or silt-rich soil to improve texture\n               - Incorporate very high rates of organic matter (30-40 tonnes/ha)\n               - Use cocopeat or vermiculite as soil amendments\n            \n            3. **Crop-Specific Recommendations:**\n               - **For Onions:** Consider container or raised bed cultivation\n               - **For Tomatoes:** Use salt-tolerant varieties and mulching\n            ",
+      "properties": {
+        "ph": "7.7",
+        "organic_matter": "Very Low",
+        "drainage": "Excessive"
+      }
+    }
+  },
+  {
+    "id": 10,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-16T11:55:39.938991",
+    "analysis_type": "plant",
+    "image_path": "uploads\\1513ff2e-ac29-4849-8fd7-e57e78afa948.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Tomato",
+        "scientific_name": "Solanum lycopersicum",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 71,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Early Blight",
+            "confidence": 77,
+            "scientific_name": "Alternaria solani",
+            "description": "Dark brown lesions with concentric rings (target-like) on lower leaves spreading upward",
+            "treatment": "Apply appropriate Chlorothalonil, Azoxystrobin or organic options: Copper hydroxide, Neem oil",
+            "detailed_info": {
+              "symptoms": "Dark brown spots with concentric rings on older leaves ('target board' appearance). Yellowing of leaves leading to defoliation",
+              "causes": "Fungus (Alternaria solani) persists in soil and plant debris. Spread facilitated by splashing water and wind",
+              "treatment": "Spray Chlorothalonil or Mancozeb @ 2\u20132.5 g/L. Use Azoxystrobin as systemic option",
+              "prevention": "Practice crop rotation, remove plant debris after harvest, ensure balanced fertilization (especially nitrogen and potassium)"
+            }
+          }
+        ]
+      },
+      "pests": {
+        "detected": false,
+        "pests": []
+      },
+      "preventive_measures": [
+        "Remove and destroy infected plant parts immediately",
+        "Apply appropriate fungicide/bactericide for the specific pathogen",
+        "Improve growing conditions to reduce disease pressure",
+        "Prune to 2-3 main stems for optimal airflow (reduces disease pressure 30%)",
+        "Install reflective mulch to repel aphids and whiteflies (50% reduction)",
+        "Apply calcium nitrate foliar spray weekly to prevent blossom end rot",
+        "Water at the base in early morning (reduces leaf wetness duration by 60%)",
+        "Introduce beneficial insects 2 weeks before expected pest outbreaks",
+        "Use drip irrigation instead of overhead (reduces disease spread by 40%)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "vegetative",
+          "name": "Calcium Nitrate",
+          "npk": "15-0-0 + 19% Ca",
+          "description": "Provides readily available nitrogen and prevents blossom end rot by supplying calcium during fruit development.",
+          "application": "Apply 1-2 tbsp/gal as foliar spray or 1 lb/100 sq ft as soil application every 2 weeks during fruiting.",
+          "conditions": "For fruiting stage, especially when blossom end rot is a concern",
+          "scientific_backing": "Reduces blossom end rot incidence by up to 80% in field trials"
+        },
+        {
+          "type": "flowering",
+          "name": "Phosphorus-Potassium Booster",
+          "npk": "3-15-15",
+          "description": "Lower nitrogen with higher phosphorus and potassium to encourage flowering and fruit development instead of excessive vegetative growth.",
+          "application": "Apply 1 lb/100 sq ft at first flower cluster formation and repeat every 3-4 weeks.",
+          "conditions": "When plants are transitioning from vegetative to flowering stage",
+          "scientific_backing": "Improves fruit set by 25-30% compared to high-nitrogen fertilizers"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Tomato",
+        "plant_age": "Vegetative",
+        "symptoms": null,
+        "planting_date": "2025-03-20",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 11,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-16T12:08:15.486409",
+    "analysis_type": "plant",
+    "image_path": "uploads\\cc56c7b5-ef12-4c43-92c5-d1f2e97fce27.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Tomato",
+        "scientific_name": "Solanum lycopersicum",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 71,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Early Blight",
+            "confidence": 77,
+            "scientific_name": "Alternaria solani",
+            "description": "Dark brown lesions with concentric rings (target-like) on lower leaves spreading upward",
+            "treatment": "Apply appropriate Chlorothalonil, Azoxystrobin or organic options: Copper hydroxide, Neem oil",
+            "detailed_info": {
+              "symptoms": "Dark brown spots with concentric rings on older leaves ('target board' appearance). Yellowing of leaves leading to defoliation",
+              "causes": "Fungus (Alternaria solani) persists in soil and plant debris. Spread facilitated by splashing water and wind",
+              "treatment": "Spray Chlorothalonil or Mancozeb @ 2\u20132.5 g/L. Use Azoxystrobin as systemic option",
+              "prevention": "Practice crop rotation, remove plant debris after harvest, ensure balanced fertilization (especially nitrogen and potassium)"
+            }
+          }
+        ]
+      },
+      "pests": {
+        "detected": false,
+        "pests": []
+      },
+      "preventive_measures": [
+        "Remove and destroy infected plant parts immediately",
+        "Apply appropriate fungicide/bactericide for the specific pathogen",
+        "Improve growing conditions to reduce disease pressure",
+        "Prune to 2-3 main stems for optimal airflow (reduces disease pressure 30%)",
+        "Apply calcium nitrate foliar spray weekly to prevent blossom end rot",
+        "Stake plants at 45\u00b0 angle for maximum sun exposure and air flow",
+        "Monitor plants weekly with a 10x magnifier for early pest/disease detection",
+        "Maintain optimal plant spacing for good air circulation (prevents 85% of fungal issues)",
+        "Water at the base in early morning (reduces leaf wetness duration by 60%)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        },
+        {
+          "type": "vegetative",
+          "name": "Calcium Nitrate",
+          "npk": "15-0-0 + 19% Ca",
+          "description": "Provides readily available nitrogen and prevents blossom end rot by supplying calcium during fruit development.",
+          "application": "Apply 1-2 tbsp/gal as foliar spray or 1 lb/100 sq ft as soil application every 2 weeks during fruiting.",
+          "conditions": "For fruiting stage, especially when blossom end rot is a concern",
+          "scientific_backing": "Reduces blossom end rot incidence by up to 80% in field trials"
+        },
+        {
+          "type": "flowering",
+          "name": "Phosphorus-Potassium Booster",
+          "npk": "3-15-15",
+          "description": "Lower nitrogen with higher phosphorus and potassium to encourage flowering and fruit development instead of excessive vegetative growth.",
+          "application": "Apply 1 lb/100 sq ft at first flower cluster formation and repeat every 3-4 weeks.",
+          "conditions": "When plants are transitioning from vegetative to flowering stage",
+          "scientific_backing": "Improves fruit set by 25-30% compared to high-nitrogen fertilizers"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Tomato",
+        "plant_age": "Vegetative",
+        "symptoms": null,
+        "planting_date": "2024-03-20",
+        "irrigation_method": "Flood",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 12,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-16T12:12:04.337861",
+    "analysis_type": "plant",
+    "image_path": "uploads\\b6fc3fd7-8895-44d5-a7a6-1ecc9544d251.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Tomato",
+        "scientific_name": "Solanum lycopersicum",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 50,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Late Blight",
+            "confidence": 77,
+            "scientific_name": "Phytophthora infestans",
+            "description": "Dark, water-soaked lesions on leaves, stems and fruits with white fuzzy growth",
+            "treatment": "Apply appropriate Chlorothalonil, Mancozeb or organic options: Copper formulations, Bacillus subtilis",
+            "detailed_info": {
+              "symptoms": "Water-soaked lesions on leaves, stems, and fruits. White mold growth under leaves in humid conditions",
+              "causes": "Oomycete pathogen Phytophthora infestans thrives in cool, wet weather. Spores spread via wind and rain",
+              "treatment": "Apply fungicides like Mancozeb + Metalaxyl, Phosphoric acid-based foliar fertilizers",
+              "prevention": "Remove and destroy infected plants immediately, avoid overhead watering to reduce leaf wetness"
+            }
+          }
+        ]
+      },
+      "pests": {
+        "detected": false,
+        "pests": []
+      },
+      "preventive_measures": [
+        "Apply phosphorous acid fungicides which show 85% efficacy",
+        "Harvest early when disease pressure exceeds economic threshold",
+        "Stake plants at 45\u00b0 angle for maximum sun exposure and air flow",
+        "Apply calcium nitrate foliar spray weekly to prevent blossom end rot",
+        "Prune to 2-3 main stems for optimal airflow (reduces disease pressure 30%)",
+        "Maintain soil pH between 6.0-6.8 for optimal nutrient availability",
+        "Water at the base in early morning (reduces leaf wetness duration by 60%)",
+        "Introduce beneficial insects 2 weeks before expected pest outbreaks"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        },
+        {
+          "type": "vegetative",
+          "name": "Calcium Nitrate",
+          "npk": "15-0-0 + 19% Ca",
+          "description": "Provides readily available nitrogen and prevents blossom end rot by supplying calcium during fruit development.",
+          "application": "Apply 1-2 tbsp/gal as foliar spray or 1 lb/100 sq ft as soil application every 2 weeks during fruiting.",
+          "conditions": "For fruiting stage, especially when blossom end rot is a concern",
+          "scientific_backing": "Reduces blossom end rot incidence by up to 80% in field trials"
+        },
+        {
+          "type": "flowering",
+          "name": "Phosphorus-Potassium Booster",
+          "npk": "3-15-15",
+          "description": "Lower nitrogen with higher phosphorus and potassium to encourage flowering and fruit development instead of excessive vegetative growth.",
+          "application": "Apply 1 lb/100 sq ft at first flower cluster formation and repeat every 3-4 weeks.",
+          "conditions": "When plants are transitioning from vegetative to flowering stage",
+          "scientific_backing": "Improves fruit set by 25-30% compared to high-nitrogen fertilizers"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Tomato",
+        "plant_age": "Fruiting",
+        "symptoms": null,
+        "planting_date": "2024-01-25",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 13,
+    "user_id": "shubhamp",
+    "timestamp": "2025-04-16T12:18:59.557275",
+    "analysis_type": "plant",
+    "image_path": "uploads\\60bb4a9e-636f-4cdb-a7f5-0afe83fcfd18.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Tomato",
+        "scientific_name": "Solanum lycopersicum",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 14,
+        "status": "Critical"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Late Blight",
+            "confidence": 89,
+            "scientific_name": "Phytophthora infestans",
+            "description": "Dark, water-soaked lesions on leaves, stems and fruits with white fuzzy growth",
+            "treatment": "Apply appropriate Chlorothalonil, Mancozeb or organic options: Copper formulations, Bacillus subtilis",
+            "detailed_info": {
+              "symptoms": "Water-soaked lesions on leaves, stems, and fruits. White mold growth under leaves in humid conditions",
+              "causes": "Oomycete pathogen Phytophthora infestans thrives in cool, wet weather. Spores spread via wind and rain",
+              "treatment": "Apply fungicides like Mancozeb + Metalaxyl, Phosphoric acid-based foliar fertilizers",
+              "prevention": "Remove and destroy infected plants immediately, avoid overhead watering to reduce leaf wetness"
+            }
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Tomato Hornworm",
+            "scientific_name": "Manduca quinquemaculata",
+            "infestation_level": "High",
+            "description": "Large (up to 10cm) green caterpillars with diagonal white stripes and a horn-like projection. Extensive defoliation, feeding on fruits, significant damage to tomato plants",
+            "treatment": "Chemical control: Carbaryl, Permethrin. Organic options: Bacillus thuringiensis (Bt), Handpicking"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Apply phosphorous acid fungicides which show 85% efficacy",
+        "Use resistant varieties with Ph-2 and Ph-3 genes where available",
+        "Implement physical barriers or traps for the specific pest",
+        "Apply appropriate insecticide following IPM principles",
+        "Enhance natural enemy populations through habitat management",
+        "Prune to 2-3 main stems for optimal airflow (reduces disease pressure 30%)",
+        "Use floating row covers until flowering to prevent early pest damage",
+        "Stake plants at 45\u00b0 angle for maximum sun exposure and air flow",
+        "Apply 2-3 inches of organic mulch (reduces soil-borne disease splash by 75%)",
+        "Rotate crops following scientific rotation schedules (minimum 3-year cycle)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "vegetative",
+          "name": "Calcium Nitrate",
+          "npk": "15-0-0 + 19% Ca",
+          "description": "Provides readily available nitrogen and prevents blossom end rot by supplying calcium during fruit development.",
+          "application": "Apply 1-2 tbsp/gal as foliar spray or 1 lb/100 sq ft as soil application every 2 weeks during fruiting.",
+          "conditions": "For fruiting stage, especially when blossom end rot is a concern",
+          "scientific_backing": "Reduces blossom end rot incidence by up to 80% in field trials"
+        },
+        {
+          "type": "flowering",
+          "name": "Phosphorus-Potassium Booster",
+          "npk": "3-15-15",
+          "description": "Lower nitrogen with higher phosphorus and potassium to encourage flowering and fruit development instead of excessive vegetative growth.",
+          "application": "Apply 1 lb/100 sq ft at first flower cluster formation and repeat every 3-4 weeks.",
+          "conditions": "When plants are transitioning from vegetative to flowering stage",
+          "scientific_backing": "Improves fruit set by 25-30% compared to high-nitrogen fertilizers"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Tomato",
+        "plant_age": "Vegetative",
+        "symptoms": null,
+        "planting_date": "2025-02-12",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 14,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-16T16:09:36.913449",
+    "analysis_type": "plant",
+    "image_path": "uploads\\5fee1f73-43b2-4ccf-ba7a-2cc20764e80f.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Cabbage",
+        "scientific_name": "Brassica oleracea var. capitata",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 40,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Leaf Spot",
+            "confidence": 82,
+            "description": "Symptoms of Leaf Spot observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Thrips",
+            "scientific_name": "Various species (e.g., Thrips tabaci, Frankliniella occidentalis)",
+            "infestation_level": "High",
+            "description": "Tiny (1-2mm), slender insects with fringed wings, difficult to see without magnification. Silvery stippling on leaves, leaf distortion, scarring of fruits, transmission of viruses",
+            "treatment": "Chemical control: Spinosad, Spinetoram. Organic options: Spinosad, Neem oil"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Apply copper bactericides + mancozeb (improves efficacy 40%)",
+        "Apply acibenzolar-S-methyl to induce systemic resistance",
+        "Introduce predatory mites like Amblyseius swirskii",
+        "Avoid planting near known host plants like onions and garlic",
+        "Maintain soil pH between 6.0-6.8 for optimal nutrient availability",
+        "Apply 2-3 inches of organic mulch (reduces soil-borne disease splash by 75%)",
+        "Maintain optimal plant spacing for good air circulation (prevents 85% of fungal issues)",
+        "Introduce beneficial insects 2 weeks before expected pest outbreaks"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        },
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Cabbage",
+        "plant_age": "Fruiting",
+        "symptoms": null,
+        "planting_date": "2024-12-15",
+        "irrigation_method": "Flood",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 15,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-16T17:12:07.534227",
+    "analysis_type": "plant",
+    "image_path": "uploads\\44bbd5d6-62d1-4084-acdd-ef854be96402.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Cucumber",
+        "scientific_name": "Cucumis sativus",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 30,
+        "status": "Critical"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Leaf Spot",
+            "confidence": 86,
+            "description": "Symptoms of Leaf Spot observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Aphids",
+            "scientific_name": "Various species (e.g., Aphis gossypii, Myzus persicae)",
+            "infestation_level": "High",
+            "description": "Small (1-3mm), soft-bodied insects, often clustered on new growth, various colors. Stunted growth, leaf curling, transmission of plant viruses, honeydew secretion",
+            "treatment": "Chemical control: Imidacloprid, Acetamiprid. Organic options: Neem oil, Insecticidal soap",
+            "detailed_info": {
+              "symptoms": "Tiny soft-bodied insects found on the underside of leaves. Leaves curl, wrinkle, and become sticky. May transmit viral diseases",
+              "description": "Green/black aphids that suck plant sap",
+              "treatment": "Spray imidacloprid (0.3 ml/l) or acetamiprid (0.2 g/l). Neem oil (5 ml/l) as organic option. Introduce ladybird beetles"
+            }
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Avoid working fields when plants are wet",
+        "Apply acibenzolar-S-methyl to induce systemic resistance",
+        "Release Aphidius colemani wasps at first sign (1 wasp/10 aphids)",
+        "Apply flonicamid when populations exceed 50 aphids/leaf",
+        "Apply Trichoderma harzianum as soil treatment to suppress Fusarium wilt",
+        "Train vines vertically on trellises for better air circulation (reduces disease by 40%)",
+        "Apply calcium nitrate foliar spray weekly to prevent blossom end rot",
+        "Implement strict sanitation: disinfect tools with 70% alcohol between plants",
+        "Record pest/disease occurrences to predict and prevent future outbreaks",
+        "Maintain soil pH between 6.0-6.8 for optimal nutrient availability"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        },
+        {
+          "type": "vegetative",
+          "name": "High Nitrogen Starter",
+          "npk": "20-10-10",
+          "description": "Promotes vigorous vine growth during early development stages.",
+          "application": "Apply 1 lb/100 sq ft at planting and again at 3-leaf stage.",
+          "conditions": "Early growth phase (first 3-4 weeks)",
+          "scientific_backing": "Increases vine length by 30% compared to balanced fertilizers"
+        },
+        {
+          "type": "flowering",
+          "name": "Balanced NPK + Calcium",
+          "npk": "10-10-10 + 5% Ca",
+          "description": "Supports flowering and prevents blossom end rot with added calcium.",
+          "application": "Apply 1.5 lbs/100 sq ft at first flower appearance.",
+          "conditions": "Flowering through early fruiting stage",
+          "scientific_backing": "Reduces blossom end rot incidence by 75% in field trials"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Cucumber",
+        "plant_age": "Mature",
+        "symptoms": null,
+        "planting_date": "2025-03-02",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 16,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-16T17:13:52.833698",
+    "analysis_type": "plant",
+    "image_path": "uploads\\48cea4e0-05fd-433d-b5f5-508041d06eb7.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Cucumber",
+        "scientific_name": "Cucumis sativus",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 30,
+        "status": "Critical"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Leaf Spot",
+            "confidence": 86,
+            "description": "Symptoms of Leaf Spot observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Aphids",
+            "scientific_name": "Various species (e.g., Aphis gossypii, Myzus persicae)",
+            "infestation_level": "High",
+            "description": "Small (1-3mm), soft-bodied insects, often clustered on new growth, various colors. Stunted growth, leaf curling, transmission of plant viruses, honeydew secretion",
+            "treatment": "Chemical control: Imidacloprid, Acetamiprid. Organic options: Neem oil, Insecticidal soap",
+            "detailed_info": {
+              "symptoms": "Tiny soft-bodied insects found on the underside of leaves. Leaves curl, wrinkle, and become sticky. May transmit viral diseases",
+              "description": "Green/black aphids that suck plant sap",
+              "treatment": "Spray imidacloprid (0.3 ml/l) or acetamiprid (0.2 g/l). Neem oil (5 ml/l) as organic option. Introduce ladybird beetles"
+            }
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Avoid working fields when plants are wet",
+        "Rotate with non-host crops for minimum 2 years",
+        "Release Aphidius colemani wasps at first sign (1 wasp/10 aphids)",
+        "Apply flonicamid when populations exceed 50 aphids/leaf",
+        "Use reflective silver mulch to repel aphids and improve growth",
+        "Maintain consistent soil moisture to prevent fruit deformities",
+        "Apply Trichoderma harzianum as soil treatment to suppress Fusarium wilt",
+        "Monitor plants weekly with a 10x magnifier for early pest/disease detection",
+        "Implement strict sanitation: disinfect tools with 70% alcohol between plants",
+        "Maintain optimal plant spacing for good air circulation (prevents 85% of fungal issues)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "vegetative",
+          "name": "High Nitrogen Starter",
+          "npk": "20-10-10",
+          "description": "Promotes vigorous vine growth during early development stages.",
+          "application": "Apply 1 lb/100 sq ft at planting and again at 3-leaf stage.",
+          "conditions": "Early growth phase (first 3-4 weeks)",
+          "scientific_backing": "Increases vine length by 30% compared to balanced fertilizers"
+        },
+        {
+          "type": "flowering",
+          "name": "Balanced NPK + Calcium",
+          "npk": "10-10-10 + 5% Ca",
+          "description": "Supports flowering and prevents blossom end rot with added calcium.",
+          "application": "Apply 1.5 lbs/100 sq ft at first flower appearance.",
+          "conditions": "Flowering through early fruiting stage",
+          "scientific_backing": "Reduces blossom end rot incidence by 75% in field trials"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Cucumber",
+        "plant_age": "Mature",
+        "symptoms": null,
+        "planting_date": "2025-02-18",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 17,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-16T17:16:37.679633",
+    "analysis_type": "plant",
+    "image_path": "uploads\\c55a7020-cf98-4b63-9ff2-103adb7f5727.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Grapes",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 53,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Powdery Mildew",
+            "confidence": 89,
+            "description": "Symptoms of Powdery Mildew observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Spider Mites",
+            "scientific_name": "Various species (e.g., Tetranychus urticae)",
+            "infestation_level": "High",
+            "description": "Tiny (0.5mm) arachnids, often forming webbing on plants, various colors. Fine stippling on leaves, yellowing or bronzing of foliage, webbing on plants",
+            "treatment": "Chemical control: Abamectin, Bifenazate. Organic options: Predatory mites, Neem oil"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Use UV-C light treatments at night which suppress spore production",
+        "Time plantings to avoid peak spore dispersal periods",
+        "Implement physical barriers or traps for the specific pest",
+        "Apply appropriate insecticide following IPM principles",
+        "Enhance natural enemy populations through habitat management",
+        "Record pest/disease occurrences to predict and prevent future outbreaks",
+        "Rotate crops following scientific rotation schedules (minimum 3-year cycle)",
+        "Water at the base in early morning (reduces leaf wetness duration by 60%)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        },
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        },
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Grapes",
+        "plant_age": "Mature",
+        "symptoms": null,
+        "planting_date": "2024-10-29",
+        "irrigation_method": null,
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 18,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-16T17:17:31.257075",
+    "analysis_type": "plant",
+    "image_path": "uploads\\d80c2649-9c59-4199-abac-1923cae252f1.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Grapes",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 53,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Powdery Mildew",
+            "confidence": 89,
+            "description": "Symptoms of Powdery Mildew observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Spider Mites",
+            "scientific_name": "Various species (e.g., Tetranychus urticae)",
+            "infestation_level": "High",
+            "description": "Tiny (0.5mm) arachnids, often forming webbing on plants, various colors. Fine stippling on leaves, yellowing or bronzing of foliage, webbing on plants",
+            "treatment": "Chemical control: Abamectin, Bifenazate. Organic options: Predatory mites, Neem oil"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Apply sulfur dust weekly when humidity >60% but <90%",
+        "Plant resistant varieties with Pm genes where available",
+        "Implement physical barriers or traps for the specific pest",
+        "Apply appropriate insecticide following IPM principles",
+        "Enhance natural enemy populations through habitat management",
+        "Implement strict sanitation: disinfect tools with 70% alcohol between plants",
+        "Maintain soil pH between 6.0-6.8 for optimal nutrient availability",
+        "Water at the base in early morning (reduces leaf wetness duration by 60%)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        },
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Grapes",
+        "plant_age": "Mature",
+        "symptoms": null,
+        "planting_date": "2024-10-15",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 19,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-16T17:23:40.686837",
+    "analysis_type": "plant",
+    "image_path": "uploads\\43caa1b9-cc91-40f6-b7a6-72b3a07b3a44.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Tomato",
+        "scientific_name": "Solanum lycopersicum",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 57,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Late Blight",
+            "confidence": 78,
+            "scientific_name": "Phytophthora infestans",
+            "description": "Dark, water-soaked lesions on leaves, stems and fruits with white fuzzy growth",
+            "treatment": "Apply appropriate Chlorothalonil, Mancozeb or organic options: Copper formulations, Bacillus subtilis",
+            "detailed_info": {
+              "symptoms": "Water-soaked lesions on leaves, stems, and fruits. White mold growth under leaves in humid conditions",
+              "causes": "Oomycete pathogen Phytophthora infestans thrives in cool, wet weather. Spores spread via wind and rain",
+              "treatment": "Apply fungicides like Mancozeb + Metalaxyl, Phosphoric acid-based foliar fertilizers",
+              "prevention": "Remove and destroy infected plants immediately, avoid overhead watering to reduce leaf wetness"
+            }
+          }
+        ]
+      },
+      "pests": {
+        "detected": false,
+        "pests": []
+      },
+      "preventive_measures": [
+        "Apply copper fungicides preventatively when Smith Periods occur (2+ days >10\u00b0C with 10+ hrs leaf wetness)",
+        "Use resistant varieties with Ph-2 and Ph-3 genes where available",
+        "Use floating row covers until flowering to prevent early pest damage",
+        "Prune to 2-3 main stems for optimal airflow (reduces disease pressure 30%)",
+        "Stake plants at 45\u00b0 angle for maximum sun exposure and air flow",
+        "Introduce beneficial insects 2 weeks before expected pest outbreaks",
+        "Use drip irrigation instead of overhead (reduces disease spread by 40%)",
+        "Rotate crops following scientific rotation schedules (minimum 3-year cycle)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        },
+        {
+          "type": "vegetative",
+          "name": "Calcium Nitrate",
+          "npk": "15-0-0 + 19% Ca",
+          "description": "Provides readily available nitrogen and prevents blossom end rot by supplying calcium during fruit development.",
+          "application": "Apply 1-2 tbsp/gal as foliar spray or 1 lb/100 sq ft as soil application every 2 weeks during fruiting.",
+          "conditions": "For fruiting stage, especially when blossom end rot is a concern",
+          "scientific_backing": "Reduces blossom end rot incidence by up to 80% in field trials"
+        },
+        {
+          "type": "flowering",
+          "name": "Phosphorus-Potassium Booster",
+          "npk": "3-15-15",
+          "description": "Lower nitrogen with higher phosphorus and potassium to encourage flowering and fruit development instead of excessive vegetative growth.",
+          "application": "Apply 1 lb/100 sq ft at first flower cluster formation and repeat every 3-4 weeks.",
+          "conditions": "When plants are transitioning from vegetative to flowering stage",
+          "scientific_backing": "Improves fruit set by 25-30% compared to high-nitrogen fertilizers"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Tomato",
+        "plant_age": "Fruiting",
+        "symptoms": null,
+        "planting_date": "2025-02-14",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 20,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-16T17:28:04.034468",
+    "analysis_type": "plant",
+    "image_path": "uploads\\3d1be449-c99c-4654-8c7c-c6cc34617f05.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Corn",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 68,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Powdery Mildew",
+            "confidence": 91,
+            "description": "Symptoms of Powdery Mildew observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Spider Mites",
+            "scientific_name": "Various species (e.g., Tetranychus urticae)",
+            "infestation_level": "High",
+            "description": "Tiny (0.5mm) arachnids, often forming webbing on plants, various colors. Fine stippling on leaves, yellowing or bronzing of foliage, webbing on plants",
+            "treatment": "Chemical control: Abamectin, Bifenazate. Organic options: Predatory mites, Neem oil"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Apply potassium bicarbonate (3g/L) at first sign - 70% control",
+        "Apply sulfur dust weekly when humidity >60% but <90%",
+        "Implement physical barriers or traps for the specific pest",
+        "Apply appropriate insecticide following IPM principles",
+        "Enhance natural enemy populations through habitat management",
+        "Plant in blocks of at least 4 rows for proper pollination",
+        "Side-dress nitrogen when plants are knee-high (V6 growth stage)",
+        "Leave 30% residue cover after harvest to prevent soil erosion",
+        "Apply 2-3 inches of organic mulch (reduces soil-borne disease splash by 75%)",
+        "Maintain optimal plant spacing for good air circulation (prevents 85% of fungal issues)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        },
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Corn",
+        "plant_age": "Fruiting",
+        "symptoms": null,
+        "planting_date": "2025-01-10",
+        "irrigation_method": "Flood",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 21,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-17T03:18:32.303369",
+    "analysis_type": "plant",
+    "image_path": "uploads\\15e03bad-21f1-4aea-a34a-f0846bfa690b.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Corn",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 68,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Powdery Mildew",
+            "confidence": 91,
+            "description": "Symptoms of Powdery Mildew observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Spider Mites",
+            "scientific_name": "Various species (e.g., Tetranychus urticae)",
+            "infestation_level": "High",
+            "description": "Tiny (0.5mm) arachnids, often forming webbing on plants, various colors. Fine stippling on leaves, yellowing or bronzing of foliage, webbing on plants",
+            "treatment": "Chemical control: Abamectin, Bifenazate. Organic options: Predatory mites, Neem oil"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Time plantings to avoid peak spore dispersal periods",
+        "Plant resistant varieties with Pm genes where available",
+        "Implement physical barriers or traps for the specific pest",
+        "Apply appropriate insecticide following IPM principles",
+        "Enhance natural enemy populations through habitat management",
+        "Use pheromone traps to monitor European corn borer flights",
+        "Plant in blocks of at least 4 rows for proper pollination",
+        "Leave 30% residue cover after harvest to prevent soil erosion",
+        "Maintain soil pH between 6.0-6.8 for optimal nutrient availability",
+        "Introduce beneficial insects 2 weeks before expected pest outbreaks"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        },
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Corn",
+        "plant_age": "Fruiting",
+        "symptoms": null,
+        "planting_date": "2025-01-17",
+        "irrigation_method": "Flood",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 22,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-17T03:20:07.686017",
+    "analysis_type": "plant",
+    "image_path": "uploads\\d3e7c776-c119-4198-b6fa-3110bb648244.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Corn",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 68,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Powdery Mildew",
+            "confidence": 91,
+            "description": "Symptoms of Powdery Mildew observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Spider Mites",
+            "scientific_name": "Various species (e.g., Tetranychus urticae)",
+            "infestation_level": "High",
+            "description": "Tiny (0.5mm) arachnids, often forming webbing on plants, various colors. Fine stippling on leaves, yellowing or bronzing of foliage, webbing on plants",
+            "treatment": "Chemical control: Abamectin, Bifenazate. Organic options: Predatory mites, Neem oil"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Apply sulfur dust weekly when humidity >60% but <90%",
+        "Apply potassium bicarbonate (3g/L) at first sign - 70% control",
+        "Implement physical barriers or traps for the specific pest",
+        "Apply appropriate insecticide following IPM principles",
+        "Enhance natural enemy populations through habitat management",
+        "Side-dress nitrogen when plants are knee-high (V6 growth stage)",
+        "Apply mycorrhizal fungi inoculant at planting (boosts yield 15-20%)",
+        "Plant in blocks of at least 4 rows for proper pollination",
+        "Record pest/disease occurrences to predict and prevent future outbreaks",
+        "Introduce beneficial insects 2 weeks before expected pest outbreaks"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        },
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Corn",
+        "plant_age": "Flowering",
+        "symptoms": null,
+        "planting_date": "2025-01-17",
+        "irrigation_method": "Flood",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 23,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-17T03:22:17.756732",
+    "analysis_type": "plant",
+    "image_path": "uploads\\17fe6588-3543-48d5-a875-901f56e2cfee.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Corn",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 44,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Leaf Spot",
+            "confidence": 92,
+            "description": "Symptoms of Leaf Spot observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": false,
+        "pests": []
+      },
+      "preventive_measures": [
+        "Use pathogen-free certified seeds and transplants",
+        "Avoid working fields when plants are wet",
+        "Plant in blocks of at least 4 rows for proper pollination",
+        "Use pheromone traps to monitor European corn borer flights",
+        "Leave 30% residue cover after harvest to prevent soil erosion",
+        "Water at the base in early morning (reduces leaf wetness duration by 60%)",
+        "Maintain soil pH between 6.0-6.8 for optimal nutrient availability",
+        "Use drip irrigation instead of overhead (reduces disease spread by 40%)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        },
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Corn",
+        "plant_age": "Vegetative",
+        "symptoms": null,
+        "planting_date": "2025-01-13",
+        "irrigation_method": "Flood",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 24,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-17T16:47:25.179815",
+    "analysis_type": "plant",
+    "image_path": "uploads\\7b752b84-bbbc-436e-ab8e-82d616d23c7d.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Corn",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 44,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Leaf Spot",
+            "confidence": 92,
+            "description": "Symptoms of Leaf Spot observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": false,
+        "pests": []
+      },
+      "preventive_measures": [
+        "Avoid working fields when plants are wet",
+        "Apply copper bactericides + mancozeb (improves efficacy 40%)",
+        "Leave 30% residue cover after harvest to prevent soil erosion",
+        "Apply mycorrhizal fungi inoculant at planting (boosts yield 15-20%)",
+        "Plant in blocks of at least 4 rows for proper pollination",
+        "Monitor plants weekly with a 10x magnifier for early pest/disease detection",
+        "Use drip irrigation instead of overhead (reduces disease spread by 40%)",
+        "Water at the base in early morning (reduces leaf wetness duration by 60%)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        },
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Corn",
+        "plant_age": "Vegetative",
+        "symptoms": null,
+        "planting_date": "2025-01-15",
+        "irrigation_method": "Flood",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 25,
+    "user_id": "Aditya",
+    "timestamp": "2025-04-17T17:53:41.184848",
+    "analysis_type": "plant",
+    "image_path": "uploads\\cbd05b72-8387-4a8e-996c-c5c283c5f06a.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Tomato",
+        "scientific_name": "Solanum lycopersicum",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 57,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Late Blight",
+            "confidence": 78,
+            "scientific_name": "Phytophthora infestans",
+            "description": "Dark, water-soaked lesions on leaves, stems and fruits with white fuzzy growth",
+            "treatment": "Apply appropriate Chlorothalonil, Mancozeb or organic options: Copper formulations, Bacillus subtilis",
+            "detailed_info": {
+              "symptoms": "Water-soaked lesions on leaves, stems, and fruits. White mold growth under leaves in humid conditions",
+              "causes": "Oomycete pathogen Phytophthora infestans thrives in cool, wet weather. Spores spread via wind and rain",
+              "treatment": "Apply fungicides like Mancozeb + Metalaxyl, Phosphoric acid-based foliar fertilizers",
+              "prevention": "Remove and destroy infected plants immediately, avoid overhead watering to reduce leaf wetness"
+            }
+          }
+        ]
+      },
+      "pests": {
+        "detected": false,
+        "pests": []
+      },
+      "preventive_measures": [
+        "Use resistant varieties with Ph-2 and Ph-3 genes where available",
+        "Harvest early when disease pressure exceeds economic threshold",
+        "Stake plants at 45\u00b0 angle for maximum sun exposure and air flow",
+        "Use floating row covers until flowering to prevent early pest damage",
+        "Prune to 2-3 main stems for optimal airflow (reduces disease pressure 30%)",
+        "Maintain soil pH between 6.0-6.8 for optimal nutrient availability",
+        "Implement strict sanitation: disinfect tools with 70% alcohol between plants",
+        "Rotate crops following scientific rotation schedules (minimum 3-year cycle)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "vegetative",
+          "name": "Calcium Nitrate",
+          "npk": "15-0-0 + 19% Ca",
+          "description": "Provides readily available nitrogen and prevents blossom end rot by supplying calcium during fruit development.",
+          "application": "Apply 1-2 tbsp/gal as foliar spray or 1 lb/100 sq ft as soil application every 2 weeks during fruiting.",
+          "conditions": "For fruiting stage, especially when blossom end rot is a concern",
+          "scientific_backing": "Reduces blossom end rot incidence by up to 80% in field trials"
+        },
+        {
+          "type": "flowering",
+          "name": "Phosphorus-Potassium Booster",
+          "npk": "3-15-15",
+          "description": "Lower nitrogen with higher phosphorus and potassium to encourage flowering and fruit development instead of excessive vegetative growth.",
+          "application": "Apply 1 lb/100 sq ft at first flower cluster formation and repeat every 3-4 weeks.",
+          "conditions": "When plants are transitioning from vegetative to flowering stage",
+          "scientific_backing": "Improves fruit set by 25-30% compared to high-nitrogen fertilizers"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Tomato",
+        "plant_age": "Mature",
+        "symptoms": null,
+        "planting_date": "2025-01-14",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 26,
+    "user_id": "Abhishek",
+    "timestamp": "2025-09-24T18:01:44.166381",
+    "analysis_type": "plant",
+    "image_path": "uploads\\af3c7e32-ca8f-41c9-a7a3-33be3203b374.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Grapes",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 53,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Powdery Mildew",
+            "confidence": 89,
+            "description": "Symptoms of Powdery Mildew observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Spider Mites",
+            "scientific_name": "Various species (e.g., Tetranychus urticae)",
+            "infestation_level": "High",
+            "description": "Tiny (0.5mm) arachnids, often forming webbing on plants, various colors. Fine stippling on leaves, yellowing or bronzing of foliage, webbing on plants",
+            "treatment": "Chemical control: Abamectin, Bifenazate. Organic options: Predatory mites, Neem oil"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Plant resistant varieties with Pm genes where available",
+        "Use UV-C light treatments at night which suppress spore production",
+        "Implement physical barriers or traps for the specific pest",
+        "Apply appropriate insecticide following IPM principles",
+        "Enhance natural enemy populations through habitat management",
+        "Monitor plants weekly with a 10x magnifier for early pest/disease detection",
+        "Maintain optimal plant spacing for good air circulation (prevents 85% of fungal issues)",
+        "Apply 2-3 inches of organic mulch (reduces soil-borne disease splash by 75%)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        },
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Grapes",
+        "plant_age": "Fruiting",
+        "symptoms": null,
+        "planting_date": "2025-07-16",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 27,
+    "user_id": "Abhishek",
+    "timestamp": "2025-09-24T18:19:11.167048",
+    "analysis_type": "plant",
+    "image_path": "uploads\\4c5f4ef2-4fc8-4878-89db-b7836a7cb96a.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Grapes",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 53,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Powdery Mildew",
+            "confidence": 89,
+            "description": "Symptoms of Powdery Mildew observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Spider Mites",
+            "scientific_name": "Various species (e.g., Tetranychus urticae)",
+            "infestation_level": "High",
+            "description": "Tiny (0.5mm) arachnids, often forming webbing on plants, various colors. Fine stippling on leaves, yellowing or bronzing of foliage, webbing on plants",
+            "treatment": "Chemical control: Abamectin, Bifenazate. Organic options: Predatory mites, Neem oil"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Apply sulfur dust weekly when humidity >60% but <90%",
+        "Plant resistant varieties with Pm genes where available",
+        "Implement physical barriers or traps for the specific pest",
+        "Apply appropriate insecticide following IPM principles",
+        "Enhance natural enemy populations through habitat management",
+        "Use drip irrigation instead of overhead (reduces disease spread by 40%)",
+        "Monitor plants weekly with a 10x magnifier for early pest/disease detection",
+        "Water at the base in early morning (reduces leaf wetness duration by 60%)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        },
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Grapes",
+        "plant_age": "Fruiting",
+        "symptoms": null,
+        "planting_date": "2025-08-22",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 28,
+    "user_id": "Abhishek",
+    "timestamp": "2025-09-25T05:53:39.893351",
+    "analysis_type": "plant",
+    "image_path": "uploads\\9d381e5e-7fdf-42c1-8c1e-39a13122d27f.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Grapes",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 53,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Powdery Mildew",
+            "confidence": 89,
+            "description": "Symptoms of Powdery Mildew observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Spider Mites",
+            "scientific_name": "Various species (e.g., Tetranychus urticae)",
+            "infestation_level": "High",
+            "description": "Tiny (0.5mm) arachnids, often forming webbing on plants, various colors. Fine stippling on leaves, yellowing or bronzing of foliage, webbing on plants",
+            "treatment": "Chemical control: Abamectin, Bifenazate. Organic options: Predatory mites, Neem oil"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Use UV-C light treatments at night which suppress spore production",
+        "Time plantings to avoid peak spore dispersal periods",
+        "Implement physical barriers or traps for the specific pest",
+        "Apply appropriate insecticide following IPM principles",
+        "Enhance natural enemy populations through habitat management",
+        "Monitor plants weekly with a 10x magnifier for early pest/disease detection",
+        "Rotate crops following scientific rotation schedules (minimum 3-year cycle)",
+        "Record pest/disease occurrences to predict and prevent future outbreaks"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        },
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        },
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Grapes",
+        "plant_age": "Fruiting",
+        "symptoms": null,
+        "planting_date": "2025-07-17",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
+  },
+  {
+    "id": 29,
+    "user_id": "Abhishek",
+    "timestamp": "2025-09-25T06:09:37.188123",
+    "analysis_type": "plant",
+    "image_path": "uploads\\62132479-5417-4c53-9bb2-7ccb26f1aa82.jpg",
+    "results": {
+      "plant_info": {
+        "name": "Grapes",
+        "scientific_name": "",
+        "probability": 100.0
+      },
+      "water_content": {
+        "percentage": 53,
+        "status": "Low"
+      },
+      "diseases": {
+        "detected": true,
+        "diseases": [
+          {
+            "name": "Powdery Mildew",
+            "confidence": 89,
+            "description": "Symptoms of Powdery Mildew observed on the plant",
+            "treatment": "Consult a local agricultural expert for specific treatment options"
+          }
+        ]
+      },
+      "pests": {
+        "detected": true,
+        "pests": [
+          {
+            "name": "Spider Mites",
+            "scientific_name": "Various species (e.g., Tetranychus urticae)",
+            "infestation_level": "High",
+            "description": "Tiny (0.5mm) arachnids, often forming webbing on plants, various colors. Fine stippling on leaves, yellowing or bronzing of foliage, webbing on plants",
+            "treatment": "Chemical control: Abamectin, Bifenazate. Organic options: Predatory mites, Neem oil"
+          }
+        ]
+      },
+      "preventive_measures": [
+        "Use UV-C light treatments at night which suppress spore production",
+        "Apply potassium bicarbonate (3g/L) at first sign - 70% control",
+        "Implement physical barriers or traps for the specific pest",
+        "Apply appropriate insecticide following IPM principles",
+        "Enhance natural enemy populations through habitat management",
+        "Use drip irrigation instead of overhead (reduces disease spread by 40%)",
+        "Record pest/disease occurrences to predict and prevent future outbreaks",
+        "Rotate crops following scientific rotation schedules (minimum 3-year cycle)"
+      ],
+      "fertilizer_recommendations": [
+        {
+          "type": "mineral",
+          "name": "Rock Phosphate",
+          "npk": "0-20-0",
+          "description": "Slow-release source of phosphorus that becomes available over 2-3 years. Ideal for building long-term soil phosphorus reserves.",
+          "application": "Apply 5-10 lbs per 100 sq ft and incorporate into soil before planting. Does not dissolve in water.",
+          "conditions": "Soils testing low in phosphorus, perennial crops",
+          "scientific_backing": "Long-term studies show cumulative benefits over 3-5 year period"
+        },
+        {
+          "type": "organic",
+          "name": "Compost Tea",
+          "npk": "Varies (typically 1-1-1)",
+          "description": "Liquid extract of compost containing beneficial microbes, nutrients, and organic compounds that improve soil biology and plant health.",
+          "application": "Apply as soil drench (5 gal/100 sq ft) or foliar spray (diluted 1:5) every 2-4 weeks.",
+          "conditions": "All plants, especially when microbial activity is desired",
+          "scientific_backing": "Research demonstrates 30-50% increase in beneficial soil microbes after application"
+        },
+        {
+          "type": "general",
+          "name": "Balanced NPK (10-10-10)",
+          "npk": "10-10-10",
+          "description": "Provides equal parts nitrogen (N), phosphorus (P), and potassium (K). Nitrogen promotes leaf growth, phosphorus supports root and flower development, potassium enhances overall plant health.",
+          "application": "Apply 2-3 lbs per 100 sq ft before planting and side-dress during active growth. Water thoroughly after application.",
+          "conditions": "General purpose for most plants during vegetative growth",
+          "scientific_backing": "University studies show balanced NPK improves yield by 15-20% over unfertilized controls"
+        }
+      ],
+      "plant_details": {
+        "crop_type": "Grapes",
+        "plant_age": "Fruiting",
+        "symptoms": null,
+        "planting_date": "2025-08-19",
+        "irrigation_method": "Drip",
+        "previous_treatments": null
+      }
+    }
   }
 ]

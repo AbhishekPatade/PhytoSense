@@ -455,7 +455,345 @@ CROP_DATABASE = {
                 "treatment": "Apply zinc sulfate as foliar spray or soil application. Organic alternatives include composted manure with zinc additives"
             }
         }
-    }
+    },
+   "Cucumber": {
+        "info": {
+            "scientific_name": "Cucumis sativus",
+            "best_season": "Zaid season (February to April), Kharif season (June to July), and Rabi season (October to December) in some regions. Requires temperatures between 24°C and 32°C",
+            "best_soil": "Well-drained sandy loam to loamy soils rich in organic matter with pH 6.0-7.5",
+            "time_period": "70 to 90 days from sowing to harvest",
+            "estimated_cost": "₹22,300 to ₹34,700 per acre",
+            "varieties": [
+                "Pusa Uday", "Kashi Abhijeet", "Pant Khira-1", "Pant Khira-2", 
+                "NS 408", "VNS Hybrid-202", "Pusa Barkha", "Kashi Bahar",
+                "Japanese Long Green", "Green Long", "Pusa Sanyog", "Punjab Naveen",
+                "Kashi Nayan", "Pusa Samridhi"
+            ]
+        },
+        "diseases": {
+            "Powdery Mildew": {
+                "symptoms": "White powdery patches on leaves, stems, and buds. Leaves may curl, yellow, dry, and fall off prematurely",
+                "causes": "Fungal spores spread through wind, especially in dry, warm climates",
+                "treatment": "Spray with wettable sulfur, karathane (dinocap), or hexaconazole. Use potassium bicarbonate as organic option",
+                "prevention": "Use resistant varieties, maintain good air circulation, avoid overhead irrigation, remove infected plant parts"
+            },
+            "Downy Mildew": {
+                "symptoms": "Yellow angular spots on upper side of leaves; undersides show grayish mold. Leads to rapid leaf death and stunted growth",
+                "causes": "Spreads through airborne spores, favored by high humidity and wet leaves",
+                "treatment": "Spray with metalaxyl + mancozeb, cymoxanil + mancozeb, or chlorothalonil",
+                "prevention": "Avoid water stagnation and overcrowding, grow resistant varieties, practice early morning irrigation"
+            },
+            "Anthracnose": {
+                "symptoms": "Water-soaked round spots on leaves and fruits; spots turn black with sunken centers. Can lead to fruit rot",
+                "causes": "Fungal spores spread by rain splash and tools. Persists in crop residues",
+                "treatment": "Spray with carbendazim, copper oxychloride, or chlorothalonil at 10-14-day intervals",
+                "prevention": "Avoid water splashing and overhead irrigation, remove plant debris and rotate crops"
+            },
+            "Fusarium Wilt": {
+                "symptoms": "Lower leaves turn yellow and droop; whole plant wilts, especially during midday. Brown streaks visible in vascular tissues",
+                "causes": "Soil-inhabiting fungus enters through roots; survives in soil for many years",
+                "treatment": "Apply Trichoderma viride with compost or as soil drench. Use carbendazim or thiophanate-methyl as soil fungicide",
+                "prevention": "Use resistant varieties and certified seeds, practice crop rotation with non-cucurbit crops, avoid overwatering"
+            },
+            "Bacterial Wilt": {
+                "symptoms": "Sudden wilting of entire plant or individual vines; white sticky bacterial ooze may come out when stem is cut",
+                "causes": "Spread by feeding activity of cucumber beetles carrying bacteria in their mouthparts",
+                "treatment": "No direct chemical treatment. Control cucumber beetles using imidacloprid or neem oil sprays",
+                "prevention": "Use floating row covers, monitor and control beetle population early, remove and destroy infected plants"
+            },
+            "Cucumber Mosaic Virus": {
+                "symptoms": "Mosaic or mottled pattern on leaves, stunted growth, leaf deformation, fruit yellowing, blistering, and curling",
+                "causes": "Spread by aphids in a non-persistent manner; also through infected seed or sap",
+                "treatment": "No direct treatment for viruses. Spray imidacloprid, acetamiprid, or neem oil to control aphid vectors",
+                "prevention": "Use virus-free seeds and resistant varieties, remove and destroy infected plants, use reflective mulches"
+            }
+        },
+        "pests": {
+            "Aphids": {
+                "symptoms": "Tiny soft-bodied insects found on the underside of leaves. Leaves curl, wrinkle, and become sticky. May transmit viral diseases",
+                "description": "Green/black aphids that suck plant sap",
+                "treatment": "Spray imidacloprid (0.3 ml/l) or acetamiprid (0.2 g/l). Neem oil (5 ml/l) as organic option. Introduce ladybird beetles"
+            },
+            "Whiteflies": {
+                "symptoms": "Tiny white insects fly off when disturbed. Yellowing and stunted growth; leaves become sticky. Transmit viral diseases",
+                "description": "Small white flying insects",
+                "treatment": "Spray with buprofezin, imidacloprid, or pyriproxyfen. Use sticky traps and neem oil spray"
+            },
+            "Red Spider Mites": {
+                "symptoms": "Fine webbing on leaves. Leaves appear yellow or bronze and may drop. Common in hot, dry climates",
+                "description": "Tiny spider-like pests",
+                "treatment": "Spray miticides like propargite, dicofol, or abamectin. Neem oil at higher doses can suppress populations"
+            },
+            "Fruit Fly": {
+                "symptoms": "Eggs laid inside young fruits; fruits show puncture marks. Affected fruits rot or drop prematurely",
+                "description": "Small flies that lay eggs in fruits",
+                "treatment": "Use methyl eugenol traps (pheromone traps). Spray malathion (2 ml/l) with jaggery solution as bait. Remove infested fruits"
+            },
+            "Cucumber Beetle": {
+                "symptoms": "Chew leaves and stems; transmit bacterial wilt disease",
+                "description": "Yellow-green beetles with black spots or stripes",
+                "treatment": "Spray carbaryl, chlorpyrifos, or spinosad. Apply neem oil to deter feeding. Use row covers early in season"
+            }
+        },
+        "deficiencies": {
+            "Nitrogen": {
+                "symptoms": "Pale yellowing of older leaves (bottom of plant). Stunted growth, thin vines, fewer flowers and fruits",
+                "treatment": "Apply Urea (46% N) - 40-50 kg/acre in split doses. Use composted farmyard manure (FYM) or vermicompost"
+            },
+            "Phosphorus": {
+                "symptoms": "Dark green or purplish discoloration on older leaves. Poor root development and delayed flowering/fruiting",
+                "treatment": "Apply Single Super Phosphate (SSP) or DAP (Di-Ammonium Phosphate). Use bone meal or rock phosphate in organic farming"
+            },
+            "Potassium": {
+                "symptoms": "Yellowing and browning of leaf edges (leaf scorching). Weak stems, poor fruit development, low disease resistance",
+                "treatment": "Apply Muriate of Potash (MOP) - 20-25 kg/acre. Organic option: wood ash, banana peel tea, or sulphate of potash (SOP)"
+            },
+            "Calcium": {
+                "symptoms": "Young leaves curl and appear distorted. Blossom end rot in fruits (black sunken spot at fruit tip)",
+                "treatment": "Apply calcium nitrate as foliar spray (1%) or soil drench. Use dolomite lime, eggshell compost, or bone meal organically"
+            },
+            "Magnesium": {
+                "symptoms": "Interveinal chlorosis (yellowing between veins) on older leaves. Leaf edges may curl upwards",
+                "treatment": "Apply magnesium sulfate (Epsom salt) - 5 kg/acre or as 1% foliar spray. Organic: seaweed extract or wood ash"
+            }
+        }
+    },
+    "Bitter Gourd": {
+        "info": {
+            "scientific_name": "Momordica charantia",
+            "best_season": "Warm-season crop. In Northern India: February-March (Summer), June-July (Monsoon), September (Autumn). In Southern India: Can be grown year-round.",
+            "best_soil": "Well-drained sandy loam or loamy soils rich in organic matter with pH 6.0-6.7",
+            "time_period": "Germination: 6-10 days. First harvest: 55-65 days after sowing. Harvesting continues for 1.5-2 months.",
+            "estimated_cost": "₹40,000-₹55,000 per acre",
+            "varieties": [
+                "Pusa Do Mausami", "Arka Harit", "Phule Priyanka", "Coimbatore Long", 
+                "Pusa Vishesh", "Hirkani", "Green Long", "Phule Ujjwala", "MDU 1",
+                "Phule Green Gold", "Indam 111", "Kanchan", "Priya Hybrid"
+            ]
+        },
+        "diseases": {
+            "Downy Mildew": {
+                "symptoms": "Yellow angular spots on upper leaf surface, purplish mold on underside, premature leaf drop",
+                "causes": "Caused by Pseudoperonospora cubensis, favored by humid, wet conditions",
+                "treatment": "Spray Mancozeb 75% WP at 2.0 g/liter of water or Metalaxyl",
+                "prevention": "Ensure good air circulation, avoid overhead irrigation, plant resistant varieties"
+            },
+            "Powdery Mildew": {
+                "symptoms": "White powdery spots on upper side of leaves, gradual leaf yellowing and drying",
+                "causes": "Caused by Erysiphe cichoracearum, favored by warm and dry weather with high humidity",
+                "treatment": "Apply Sulphur 80% WP at 2 g/liter or Hexaconazole",
+                "prevention": "Avoid dense planting, use resistant cultivars"
+            },
+            "Anthracnose": {
+                "symptoms": "Sunken dark spots on fruits and stems, dark brown to black lesions on leaves",
+                "causes": "Caused by Colletotrichum lagenarium, favored by warm and wet weather",
+                "treatment": "Spray Carbendazim 50% WP at 1 g/liter or Chlorothalonil",
+                "prevention": "Practice crop rotation, avoid working in wet fields"
+            },
+            "Mosaic Virus": {
+                "symptoms": "Light and dark green mottling on leaves, distorted wrinkled leaves, reduced fruit size",
+                "causes": "Transmitted by aphids and whiteflies, caused by Cucumber mosaic virus",
+                "treatment": "Spray Imidacloprid 17.8% SL at 0.3 ml/liter to control vectors",
+                "prevention": "Control aphid/whitefly populations, use reflective mulches, remove infected plants"
+            }
+        },
+        "pests": {
+            "Fruit Fly": {
+                "symptoms": "Fruit deformation and premature drop, oozing sap, maggots inside fruits",
+                "description": "Bactrocera cucurbitae lays eggs inside developing fruits",
+                "treatment": "Spray Malathion 50% EC at 1 ml/liter, use bait spray with jaggery + Malathion"
+            },
+            "Red Pumpkin Beetle": {
+                "symptoms": "Holes in leaves, flowers and young shoots, wilting of seedlings",
+                "description": "Aulacophora foveicollis beetles feed on plant parts",
+                "treatment": "Spray Carbaryl (4 g/L) or Imidacloprid (0.5 ml/L), handpick adult beetles"
+            },
+            "Aphids": {
+                "symptoms": "Clusters of small black/green insects under leaves, sticky honeydew, leaf curling",
+                "description": "Aphis gossypii suck plant sap and transmit viruses",
+                "treatment": "Spray Imidacloprid (0.5 ml/L) or Thiamethoxam, use Neem oil (3%)"
+            },
+            "Whiteflies": {
+                "symptoms": "Tiny white insects flying from leaves, yellowing and wilting",
+                "description": "Bemisia tabaci transmit viral diseases",
+                "treatment": "Spray Imidacloprid, Acetamiprid or Neem oil (5 ml/L), use yellow sticky traps"
+            }
+        },
+        "deficiencies": {
+            "Nitrogen": {
+                "symptoms": "Yellowing of older leaves (bottom first), poor vine growth, small pale leaves",
+                "treatment": "Apply Urea (46% N) @ 50-60 kg/acre, foliar spray of urea solution (1%)"
+            },
+            "Phosphorus": {
+                "symptoms": "Stunted root/shoot growth, purplish/reddish leaf discoloration, delayed flowering",
+                "treatment": "Apply Single Super Phosphate (SSP) @ 100 kg/acre, use bone meal or rock phosphate"
+            },
+            "Potassium": {
+                "symptoms": "Leaf edges turn yellow and brown (scorching), small deformed fruits",
+                "treatment": "Apply Muriate of Potash (MOP) @ 40-50 kg/acre, use wood ash or banana peel compost"
+            },
+            "Calcium": {
+                "symptoms": "New leaves distorted/hook-shaped, blossom-end rot in fruits, shoot tip dieback",
+                "treatment": "Spray Calcium Nitrate (1%) or Calcium Chloride (0.5%), use crushed egg shells or gypsum"
+            }
+        }
+    },
+    "Pumpkin" : {
+        "info": {
+            "scientific_name": "Cucurbita spp.",
+            "best_season": "Summer (Feb-April) and monsoon (June-July)",
+            "best_soil": "Well-drained sandy loam or loamy soil with pH 6.5-7.5",
+            "time_period": "90-120 days from planting to harvest",
+            "estimated_cost": "₹30,000-₹50,000 per acre",
+            "varieties": [
+                "Small Sugar", "Jack O'Lantern", "Cinderella", "Atlantic Giant", 
+                "Baby Boo", "Jarrahdale", "Lumina", "Fairytale"
+            ]
+        },
+        "diseases": {
+            "Powdery Mildew": {
+                "symptoms": "White powdery patches appear on leaves, leading to yellowing and drying",
+                "causes": "Fungus Podosphaera xanthii thrives in dry and warm conditions",
+                "treatment": "Spray sulfur-based fungicides or neem oil",
+                "prevention": "Use resistant varieties, avoid overcrowding, maintain proper spacing",
+                "fertilizers": "Potassium-rich fertilizers (Muriate of Potash)",
+                "compost": "Neem cake compost and vermicompost"
+            },
+            "Downy Mildew": {
+                "symptoms": "Yellow patches on leaves, with greyish mold underneath. Leaves eventually dry and die",
+                "causes": "Fungus Pseudoperonospora cubensis spreads through moisture and high humidity",
+                "treatment": "Apply Copper fungicides or Mancozeb spray",
+                "prevention": "Rotate crops regularly, avoid overhead irrigation, water plants early morning",
+                "fertilizers": "Calcium nitrate and Potassium sulfate",
+                "compost": "Cow dung compost or bio-compost enriched with Trichoderma"
+            },
+            "Anthracnose": {
+                "symptoms": "Dark sunken spots develop on leaves and fruits, leading to fruit rot",
+                "causes": "Colletotrichum spp. spreads through infected seeds or splashing rainwater",
+                "treatment": "Spray Chlorothalonil or Copper oxychloride",
+                "prevention": "Avoid excessive moisture, remove infected plants, maintain field hygiene",
+                "fertilizers": "Balanced NPK (Nitrogen-Phosphorus-Potassium)",
+                "compost": "Bone meal and Neem cake compost"
+            },
+            "Fusarium Wilt": {
+                "symptoms": "Leaves wilt suddenly, stems turn brown or reddish. Plant may die prematurely",
+                "causes": "Soil-borne fungus Fusarium oxysporum infects through roots",
+                "treatment": "Apply Trichoderma-enriched biofertilizers",
+                "prevention": "Use disease-free seeds, practice crop rotation, conduct soil solarization",
+                "fertilizers": "Phosphorus-rich fertilizers (Rock phosphate)",
+                "compost": "Vermicompost, Neem cake, well-rotted farmyard manure"
+            },
+            "Bacterial Wilt": {
+                "symptoms": "Sudden wilting of vines, yellow streaks on stems, plants eventually die",
+                "causes": "Bacterium Erwinia tracheiphila spreads through insect vectors like beetles",
+                "treatment": "No chemical cure - remove infected plants immediately",
+                "prevention": "Control cucumber beetles, use resistant varieties, practice sanitation",
+                "fertilizers": "Zinc sulfate and Boron",
+                "compost": "Cow dung compost mixed with Neem cake"
+            }
+        },
+        "pests": {
+            "Squash Bugs": {
+                "symptoms": "Yellow spots on leaves that turn brown, wilting plants",
+                "description": "Grayish-brown bugs that suck plant juices",
+                "treatment": "Handpick bugs and eggs, use insecticidal soap or neem oil"
+            },
+            "Cucumber Beetles": {
+                "symptoms": "Holes in leaves, can transmit bacterial wilt",
+                "description": "Yellow-green beetles with black spots or stripes",
+                "treatment": "Use row covers, apply kaolin clay or pyrethrin"
+            },
+            "Squash Vine Borers": {
+                "symptoms": "Sudden wilting of vines, sawdust-like frass at base",
+                "description": "White caterpillars that bore into vines",
+                "treatment": "Inject Bt into vines, wrap base with aluminum foil"
+            }
+        },
+        "deficiencies": {
+            "Nitrogen": {
+                "symptoms": "Older leaves turn pale yellow, stunted growth",
+                "treatment": "Apply blood meal, fish emulsion, or composted manure"
+            },
+            "Phosphorus": {
+                "symptoms": "Purplish discoloration on leaves, poor root development",
+                "treatment": "Apply bone meal or rock phosphate"
+            },
+            "Potassium": {
+                "symptoms": "Yellowing leaf edges, weak stems",
+                "treatment": "Apply wood ash or kelp meal"
+            },
+            "Calcium": {
+                "symptoms": "Blossom end rot in fruits, distorted new growth",
+                "treatment": "Apply gypsum or calcium nitrate"
+            }
+        }
+    },
+    "Grape": {
+        "info": {
+            "scientific_name": "Vitis vinifera",
+            "best_season": "Spring planting (March-April) after frost in temperate regions. Fall planting (October-November) in tropics. Ideal temperature: 15-35°C.",
+            "best_soil": "Well-drained sandy loam with pH 5.5-6.5. Avoid clayey/waterlogged soils.",
+            "time_period": "First harvest in 2-3 years after planting. Yield lifespan: 15-30 years with care.",
+            "estimated_cost": "₹2,00,000--₹4,00,000 per acre",
+            "varieties": [
+                "Thompson Seedless", "Flame Seedless", "Cabernet Sauvignon", 
+                "Shiraz", "Bangalore Blue", "Anab-e-Shahi"
+            ]
+        },
+        "diseases": {
+            "Powdery Mildew": {
+                "symptoms": "White powdery patches on leaves resembling talcum powder, curled edges, brown scorched patches, corky scars on berries",
+                "causes": "Fungus Uncinula necator, thrives in warm dry conditions",
+                "treatment": "Sulfur sprays (2-3 g/L), Tebuconazole (0.5 mL/L), Myclobutanil (0.3 mL/L), Bacillus subtilis (2 g/L)",
+                "prevention": "Prune for airflow, avoid dense canopies, avoid overhead irrigation"
+            },
+            "Downy Mildew": {
+                "symptoms": "Yellow 'oil spots' on upper leaf surface, white cottony sporulation underneath, purple-brown discoloration on berries",
+                "causes": "Fungus Plasmopara viticola, favors cool wet conditions",
+                "treatment": "Copper-based fungicides (Bordeaux mixture), Metalaxyl + Mancozeb (2 g/L), Fosetyl-Al (2.5 g/L)",
+                "prevention": "Remove infected leaves, use drip irrigation, maintain good air circulation"
+            },
+            "Anthracnose": {
+                "symptoms": "Small circular spots with dark margins and gray centers on leaves, sunken black spots with pinkish spore masses on berries",
+                "causes": "Fungus Elsinoë ampelina, spreads through rain splash",
+                "treatment": "Mancozeb (2.5 g/L), Chlorothalonil (2 g/L), Azoxystrobin (0.5 mL/L)",
+                "prevention": "Sanitation (burn infected prunings), avoid wounding berries"
+            },
+            "Black Rot": {
+                "symptoms": "Red-brown circular spots with black pycnidia on leaves, shriveled black 'mummies' on berries",
+                "causes": "Fungus Guignardia bidwellii, persists in infected plant material",
+                "treatment": "Captan (3 g/L) at bud break, Pyraclostrobin + Boscalid (0.5 mL/L)",
+                "prevention": "Remove mummies from vines post-harvest, canopy management"
+            }
+        },
+        "pests": {
+            "Grape Berry Moth": {
+                "symptoms": "Larvae tunneling into berries, frass at entry holes",
+                "description": "Small moth whose larvae feed on grape berries",
+                "treatment": "Spinosad (0.5 mL/L) + pheromone traps, Bacillus thuringiensis"
+            },
+            "Aphids": {
+                "symptoms": "Curled leaves, sticky honeydew, sooty mold growth",
+                "description": "Small sap-sucking insects that transmit viruses",
+                "treatment": "Imidacloprid (0.3 mL/L), neem oil, introduce ladybugs"
+            }
+        },
+        "deficiencies": {
+            "Nitrogen": {
+                "symptoms": "Pale yellow leaves, reduced growth and yield",
+                "treatment": "Urea (50 kg/acre), composted manure"
+            },
+            "Potassium": {
+                "symptoms": "Brown leaf edges, weak stems, poor fruit quality",
+                "treatment": "MOP (40 kg/acre), wood ash"
+            },
+            "Zinc": {
+                "symptoms": "Small leaves, short internodes, rosetting",
+                "treatment": "ZnSO₄ spray (0.5%), zinc chelates"
+            }
+        }
+    },
+
 }
 
 def get_crop_info(crop_name):
@@ -572,12 +910,18 @@ def standardize_crop_name(crop_name):
     
     # Handle common aliases
     aliases = {
-        "okra": "Ladyfinger (Okra)",
-        "ladyfinger": "Ladyfinger (Okra)",
-        "bhindi": "Ladyfinger (Okra)",
-        "tinda": "Watermelon",
-        "anar": "Pomegranate"
-    }
+    "okra": "Ladyfinger (Okra)",
+    "ladyfinger": "Ladyfinger (Okra)",
+    "bhindi": "Ladyfinger (Okra)",
+    "tinda": "Watermelon",
+    "anar": "Pomegranate",
+    "karela": "Bitter Gourd",
+    "bitter melon": "Bitter Gourd",
+    "bitter gourd": "Bitter Gourd",
+    "kaddu": "Pumpkin",
+    "sitaphal": "Pumpkin",
+    "yellow gourd": "Pumpkin"
+}
     
     if crop_name.lower() in aliases:
         return aliases[crop_name.lower()]

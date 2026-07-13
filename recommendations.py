@@ -100,7 +100,44 @@ def get_preventive_measures(plant_name: str,
             "Apply sulfur-containing fertilizers to enhance pungency and disease resistance",
             "Practice shallow cultivation to avoid damaging shallow root systems",
             "Cure harvested bulbs properly with good ventilation to prevent storage diseases"
-        ]
+        ],
+        "Cucumber": [
+            "Train vines vertically on trellises for better air circulation (reduces disease by 40%)",
+            "Apply calcium nitrate foliar spray weekly to prevent blossom end rot",
+            "Use reflective silver mulch to repel aphids and improve growth",
+            "Maintain consistent soil moisture to prevent fruit deformities",
+            "Apply Trichoderma harzianum as soil treatment to suppress Fusarium wilt"
+        ],
+        "Bitter Gourd": [
+            "Train vines on trellises for better air circulation (reduces disease by 40%)",
+            "Apply calcium nitrate foliar spray weekly to prevent blossom end rot",
+            "Use yellow sticky traps (10/acre) to monitor fruit fly populations",
+            "Apply neem cake (250 kg/acre) to soil for pest control and nutrient supply",
+            "Maintain consistent soil moisture to prevent fruit cracking and blossom end rot"
+        ],
+        "Pumpkin": [
+            "Train vines to grow in one direction for better air circulation",
+            "Place fruits on boards or straw to prevent soil contact and rot",
+            "Apply calcium-rich fertilizers during fruit development",
+            "Use floating row covers early in season to prevent pest damage",
+            "Hand-pollinate if bee activity is low for better fruit set"
+        ],
+        "Grape": [
+            "Train vines on trellis systems for optimal sunlight exposure and air circulation",
+            "Prune to 2-4 canes per vine during dormancy (Dec-Jan) for balanced fruit production",
+            "Maintain soil pH between 5.5-6.5 for optimal nutrient availability",
+            "Use drip irrigation to prevent leaf wetness and reduce disease pressure",
+            "Apply 2-3 inches of organic mulch to conserve moisture and regulate soil temperature",
+            "Monitor berry sugar content (Brix) for optimal harvest timing (16-18° for table grapes)",
+            "Implement pheromone traps for grape berry moth monitoring and control",
+            "Apply calcium sprays during berry development to improve fruit quality and shelf life",
+            "Conduct regular leaf analysis to monitor nutrient status and adjust fertilization",
+            "Remove and destroy infected plant material to reduce disease inoculum"
+        ],
+
+
+
+
     }
 
     # Enhanced disease-specific measures (now with pathogen names and efficacy data)
@@ -153,7 +190,16 @@ def get_preventive_measures(plant_name: str,
             "Use drip irrigation rather than overhead watering",
             "Plant resistant varieties where available",
             "Remove infected leaves immediately to prevent spore spread"
-        ]
+        ],
+        "Bitter Gourd Mosaic Virus": [
+            "Rogue out infected plants immediately upon detection of symptoms",
+            "Control whitefly vectors with imidacloprid (0.3 ml/L) or thiamethoxam",
+            "Use reflective silver mulch to repel whitefly vectors",
+            "Plant barrier crops like maize around the field to intercept whiteflies",
+            "Apply salicylic acid (100 ppm) to induce systemic resistance"
+        ],
+
+
     }
 
     # Enhanced pest-specific measures (with scientific names and thresholds)
@@ -192,7 +238,23 @@ def get_preventive_measures(plant_name: str,
             "Introduce predatory mites like Amblyseius swirskii",
             "Avoid planting near known host plants like onions and garlic",
             "Use reflective mulch to reduce landing rates"
-        ]
+        ],
+        "Fruit Fly (Bactrocera cucurbitae)": [
+            "Use methyl eugenol traps (10 traps/acre) for mass trapping",
+            "Apply protein bait sprays with malathion (0.1%) + jaggery (10%)",
+            "Harvest fruits slightly early to avoid peak infestation periods",
+            "Bag individual fruits with paper or poly bags for protection",
+            "Destroy all infested fruits to break life cycle"
+        ],
+        "Grape Berry Moth (Paralobesia viteana)": [
+            "Install pheromone traps (3-5/acre) to monitor adult flights",
+            "Time insecticide applications to target newly hatched larvae",
+            "Apply Bt (Bacillus thuringiensis) formulations during egg hatch",
+            "Remove wild grapes within 200m which serve as alternate hosts",
+            "Use kaolin clay as physical barrier against egg-laying adults"
+        ],
+
+
     }
 
     # Compile recommendations with priority scoring
@@ -390,7 +452,97 @@ def get_fertilizer_recommendations(plant_name: str,
                 "conditions": "At jointing/stem elongation phase",
                 "scientific_backing": "Sulfur addition improves protein quality and bread-making characteristics"
             }
-        ]
+        ],
+        "Cucumber": [
+            {
+                "type": "vegetative",
+                "name": "High Nitrogen Starter",
+                "npk": "20-10-10",
+                "description": "Promotes vigorous vine growth during early development stages.",
+                "application": "Apply 1 lb/100 sq ft at planting and again at 3-leaf stage.",
+                "conditions": "Early growth phase (first 3-4 weeks)",
+                "scientific_backing": "Increases vine length by 30% compared to balanced fertilizers"
+            },
+            {
+                "type": "flowering",
+                "name": "Balanced NPK + Calcium",
+                "npk": "10-10-10 + 5% Ca",
+                "description": "Supports flowering and prevents blossom end rot with added calcium.",
+                "application": "Apply 1.5 lbs/100 sq ft at first flower appearance.",
+                "conditions": "Flowering through early fruiting stage",
+                "scientific_backing": "Reduces blossom end rot incidence by 75% in field trials"
+            }
+        ],
+        "Bitter Gourd": [
+            {
+                "type": "vegetative",
+                "name": "High Nitrogen Starter",
+                "npk": "20-10-10",
+                "description": "Promotes vigorous vine growth during early development stages.",
+                "application": "Apply 1 lb/100 sq ft at planting and again at 3-leaf stage.",
+                "conditions": "Early growth phase (first 3-4 weeks)",
+                "scientific_backing": "Increases vine length by 30% compared to balanced fertilizers"
+            },
+            {
+                "type": "flowering",
+                "name": "Balanced NPK + Calcium",
+                "npk": "10-10-10 + 5% Ca",
+                "description": "Supports flowering and prevents blossom end rot with added calcium.",
+                "application": "Apply 1.5 lbs/100 sq ft at first flower appearance.",
+                "conditions": "Flowering through early fruiting stage",
+                "scientific_backing": "Reduces blossom end rot incidence by 75% in field trials"
+            }
+        ],
+        "Pumpkin": [
+            {
+                "type": "vegetative",
+                "name": "High Nitrogen Starter",
+                "npk": "20-10-10",
+                "description": "Promotes vigorous vine growth during early development stages",
+                "application": "Apply 1 lb/100 sq ft at planting and again at 3-leaf stage",
+                "conditions": "Early growth phase (first 3-4 weeks)",
+                "scientific_backing": "Increases vine length by 30% compared to balanced fertilizers"
+            },
+            {
+                "type": "fruiting",
+                "name": "High Potassium Booster",
+                "npk": "5-10-20",
+                "description": "Supports fruit development and improves disease resistance",
+                "application": "Apply 1.5 lbs/100 sq ft when fruits are baseball-sized",
+                "conditions": "Fruit development stage",
+                "scientific_backing": "Increases fruit size and sugar content by 15-20%"
+            }
+        ],
+        "Grape": [
+            {
+                "type": "vegetative",
+                "name": "Balanced NPK (10-10-10)",
+                "npk": "10-10-10",
+                "description": "Promotes balanced growth during establishment phase",
+                "application": "Apply 50-100 kg/acre in early spring before bud break",
+                "conditions": "For young vines during first 2-3 years",
+                "scientific_backing": "Improves vine establishment by 25-30%"
+            },
+            {
+                "type": "fruiting",
+                "name": "High Potassium Blend (8-12-24)",
+                "npk": "8-12-24",
+                "description": "Enhances fruit quality and sugar accumulation",
+                "application": "Apply 40-60 kg/acre at berry set and veraison",
+                "conditions": "For mature bearing vines",
+                "scientific_backing": "Increases Brix levels by 1-2 degrees in trials"
+            },
+            {
+                "type": "micronutrient",
+                "name": "Zinc + Boron Foliar",
+                "npk": "0-0-0 + Zn, B",
+                "description": "Corrects common micronutrient deficiencies in grapes",
+                "application": "Apply 0.5% ZnSO4 + 0.2% borax at pre-bloom and fruit set",
+                "conditions": "When leaf analysis shows deficiencies",
+                "scientific_backing": "Improves fruit set and reduces bunch stem necrosis"
+            }
+        ],
+
     }
     
     # Soil condition specific recommendations

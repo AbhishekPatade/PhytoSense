@@ -6,5 +6,45 @@
     "created_at": "2025-04-10T17:02:20.139465",
     "updated_at": "2025-04-10T17:14:30.329281",
     "profile_complete": true
+  },
+  "abhi": {
+    "password": "ac93dd97ba261cb45c5a9be8b2fe7e84634016110b446f59bf001f5b4335c3e3",
+    "email": "ahu@gamail.com",
+    "farm_location": null,
+    "created_at": "2025-04-16T02:37:54.793095",
+    "updated_at": "2025-04-16T02:37:54.793095",
+    "profile_complete": false
+  },
+  "abhu": {
+    "password": "c6b3491f15b3f66f30c82b87431e60114de8abe2e423cb5fdb5ae856b6f64279",
+    "email": "ahu@gamail.com",
+    "farm_location": null,
+    "created_at": "2025-04-16T10:21:41.756740",
+    "updated_at": "2025-04-16T10:21:41.756740",
+    "profile_complete": false
+  },
+  "shubham": {
+    "password": "e27eb4da429f05423a102de205206fbf4873b3fa83528ced2c3852b9e9f921fc",
+    "email": "shubhampagar0253@gmail.com",
+    "farm_location": null,
+    "created_at": "2025-04-16T12:14:36.241063",
+    "updated_at": "2025-04-16T12:14:36.241063",
+    "profile_complete": false
+  },
+  "shubhamp": {
+    "password": "e27eb4da429f05423a102de205206fbf4873b3fa83528ced2c3852b9e9f921fc",
+    "email": "shubhampagar0253@gmail.com",
+    "farm_location": "Nashik,IN",
+    "created_at": "2025-04-16T12:14:47.049393",
+    "updated_at": "2025-04-16T12:17:09.937545",
+    "profile_complete": true
+  },
+  "Abhishek": {
+    "password": "3883d3cc0bce581bf910e8d27fd585b9850c4283c9aed4b048f21475a520f56c",
+    "email": "xyz@gmail.com",
+    "farm_location": "Nashik",
+    "created_at": "2025-09-24T17:39:41.218270",
+    "updated_at": "2025-09-24T17:42:05.086400",
+    "profile_complete": true
   }
 }
